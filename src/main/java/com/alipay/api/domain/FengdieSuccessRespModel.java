@@ -1,0 +1,40 @@
+package com.alipay.api.domain;
+
+import com.alipay.api.AlipayObject;
+import com.alipay.api.internal.mapping.ApiField;
+
+/**
+ * 判断云凤蝶请求的接口成功与否
+ *
+ * @author auto create
+ * @since 1.0, 2018-05-17 16:01:09
+ */
+public class FengdieSuccessRespModel extends AlipayObject {
+
+	private static final long serialVersionUID = 2659913913143964176L;
+
+	/**
+	 * 判断请求操作是否成功，值为 true 或者 false
+	 */
+	@ApiField("success")
+	private Boolean success;
+
+    /**
+     * Gets success.
+     *
+     * @return the success
+     */
+    public Boolean getSuccess() {
+		return this.success;
+	}
+
+    /**
+     * Sets success.
+     *
+     * @param success the success
+     */
+    public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+}

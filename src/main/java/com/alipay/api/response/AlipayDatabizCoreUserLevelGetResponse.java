@@ -1,0 +1,45 @@
+package com.alipay.api.response;
+
+import java.util.List;
+import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.internal.mapping.ApiListField;
+import com.alipay.api.domain.AlipayUserLevelInfo;
+
+import com.alipay.api.AlipayResponse;
+
+/**
+ * ALIPAY API: alipay.databiz.core.user.level.get response.
+ *
+ * @author auto create
+ * @since 1.0, 2018-01-22 10:50:44
+ */
+public class AlipayDatabizCoreUserLevelGetResponse extends AlipayResponse {
+
+	private static final long serialVersionUID = 7173446925887258195L;
+
+	/** 
+	 * 支付宝用户等级信息
+	 */
+	@ApiListField("user_level_infos")
+	@ApiField("alipay_user_level_info")
+	private List<AlipayUserLevelInfo> userLevelInfos;
+
+    /**
+     * Sets user level infos.
+     *
+     * @param userLevelInfos the user level infos
+     */
+    public void setUserLevelInfos(List<AlipayUserLevelInfo> userLevelInfos) {
+		this.userLevelInfos = userLevelInfos;
+	}
+
+    /**
+     * Gets user level infos.
+     *
+     * @return the user level infos
+     */
+    public List<AlipayUserLevelInfo> getUserLevelInfos( ) {
+		return this.userLevelInfos;
+	}
+
+}

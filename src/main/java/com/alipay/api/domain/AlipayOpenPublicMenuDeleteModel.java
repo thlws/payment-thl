@@ -1,0 +1,40 @@
+package com.alipay.api.domain;
+
+import com.alipay.api.AlipayObject;
+import com.alipay.api.internal.mapping.ApiField;
+
+/**
+ * 默认菜单删除
+ *
+ * @author auto create
+ * @since 1.0, 2018-04-27 10:59:29
+ */
+public class AlipayOpenPublicMenuDeleteModel extends AlipayObject {
+
+	private static final long serialVersionUID = 2154516197375833674L;
+
+	/**
+	 * 默认菜单菜单key，文本菜单为“default”，icon菜单为“iconDefault”
+	 */
+	@ApiField("menu_key")
+	private String menuKey;
+
+    /**
+     * Gets menu key.
+     *
+     * @return the menu key
+     */
+    public String getMenuKey() {
+		return this.menuKey;
+	}
+
+    /**
+     * Sets menu key.
+     *
+     * @param menuKey the menu key
+     */
+    public void setMenuKey(String menuKey) {
+		this.menuKey = menuKey;
+	}
+
+}

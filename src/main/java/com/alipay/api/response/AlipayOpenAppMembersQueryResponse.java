@@ -1,0 +1,45 @@
+package com.alipay.api.response;
+
+import java.util.List;
+import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.internal.mapping.ApiListField;
+import com.alipay.api.domain.AppMemberInfo;
+
+import com.alipay.api.AlipayResponse;
+
+/**
+ * ALIPAY API: alipay.open.app.members.query response.
+ *
+ * @author auto create
+ * @since 1.0, 2018-01-15 13:26:35
+ */
+public class AlipayOpenAppMembersQueryResponse extends AlipayResponse {
+
+	private static final long serialVersionUID = 6868377343225565458L;
+
+	/** 
+	 * 小程序成员模型
+	 */
+	@ApiListField("app_member_info_list")
+	@ApiField("app_member_info")
+	private List<AppMemberInfo> appMemberInfoList;
+
+    /**
+     * Sets app member info list.
+     *
+     * @param appMemberInfoList the app member info list
+     */
+    public void setAppMemberInfoList(List<AppMemberInfo> appMemberInfoList) {
+		this.appMemberInfoList = appMemberInfoList;
+	}
+
+    /**
+     * Gets app member info list.
+     *
+     * @return the app member info list
+     */
+    public List<AppMemberInfo> getAppMemberInfoList( ) {
+		return this.appMemberInfoList;
+	}
+
+}

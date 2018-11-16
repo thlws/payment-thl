@@ -1,0 +1,40 @@
+package com.alipay.api.domain;
+
+import com.alipay.api.AlipayObject;
+import com.alipay.api.internal.mapping.ApiField;
+
+/**
+ * （快捷投保）查询该保险公司的线下产品列表
+ *
+ * @author auto create
+ * @since 1.0, 2017-10-24 10:29:35
+ */
+public class AlipayInsCooperationProductOfflineBatchqueryModel extends AlipayObject {
+
+	private static final long serialVersionUID = 7154693598863511469L;
+
+	/**
+	 * 机构在蚂蚁平台上的惟一标识
+	 */
+	@ApiField("inst_id")
+	private String instId;
+
+    /**
+     * Gets inst id.
+     *
+     * @return the inst id
+     */
+    public String getInstId() {
+		return this.instId;
+	}
+
+    /**
+     * Sets inst id.
+     *
+     * @param instId the inst id
+     */
+    public void setInstId(String instId) {
+		this.instId = instId;
+	}
+
+}
