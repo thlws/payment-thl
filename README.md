@@ -42,7 +42,7 @@
 [org.thlws.payment.WechatPayClient](src/main/java/org/thlws/payment/WechatPayClient.java)
 
 | 方法名称 | 功能说明 |
-|:--|:--|
+|--------|--------|
 | unifiedOrder | 统一下单(类似预订单) |
 | refund | 申请退款 |
 | reverse | 支付撤销 |
@@ -57,7 +57,7 @@
 [org.thlws.payment.WechatMpClient](src/main/java/org/thlws/payment/WechatMpClient.java)
 
 | 方法名称 | 功能说明 |
-|:--|:--|
+|--------|--------|
 | obtainOauthAccessToken | 获取accesToken(OAuth2) |
 | refreshOauthAccessToken | 刷新accesToken(OAuth2) |
 | isvalidOauthAccessToken | 验证token是否过期(OAuth2) |
@@ -73,7 +73,7 @@
 [org.thlws.payment.BestPayClient](src/main/java/org/thlws/payment/BestPayClient.java) 
 
 | 方法名称 | 功能说明 |
-|:--|:--|
+|--------|--------|
 | barcode | 扫码支付 |
 | query | 订单查询 |
 | refund | 订单退款 |
@@ -175,7 +175,8 @@ String  message = response.getMessage();
 System.out.println("isSuccess="+flag+", message="+message);
 ```
 
-**支持Android App吗**? 
+**支持Android App吗**
+
 不支持Android App，有这方面需求的请至 [官方说明](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_4)
 
 ### 源码托管
