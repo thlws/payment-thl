@@ -28,24 +28,9 @@
 **支付宝**
 [org.thlws.payment.AlipayClient](src/main/java/org/thlws/payment/AlipayClient.java) 
 
-<style>
-table th:nth-of-type(1){
-width: 10%;
-}
-table th:nth-of-type(2){
-width: 20%
-;
-}
-table th:nth-of-type(3){
-width: 30%;
-}
-table th:nth-of-type(4){
-width: 40%;
-}
-</style>
 
 | 方法名称 | 功能说明 |
-|--------|--------|
+|:--------|:--------|
 | payInMobileSite | 手机网页支付 |
 | payInWebSite | 普通网站支付 |
 | preCreate | 创建预订单 |
@@ -58,7 +43,7 @@ width: 40%;
 [org.thlws.payment.WechatPayClient](src/main/java/org/thlws/payment/WechatPayClient.java)
 
 | 方法名称 | 功能说明 |
-|--------|--------|
+|:--------|:--------|
 | unifiedOrder | 统一下单(类似预订单) |
 | refund | 申请退款 |
 | reverse | 支付撤销 |
