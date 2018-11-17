@@ -29,8 +29,18 @@
 [org.thlws.payment.AlipayClient](src/main/java/org/thlws/payment/AlipayClient.java) 
 
 <style>
-table th:first-of-type {
-    width: 50%;
+table th:nth-of-type(1){
+width: 10%;
+}
+table th:nth-of-type(2){
+width: 20%
+;
+}
+table th:nth-of-type(3){
+width: 30%;
+}
+table th:nth-of-type(4){
+width: 40%;
 }
 </style>
 
