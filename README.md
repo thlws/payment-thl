@@ -28,8 +28,14 @@
 **支付宝**
 [org.thlws.payment.AlipayClient](src/main/java/org/thlws/payment/AlipayClient.java) 
 
+<style>
+table th:first-of-type {
+    width: 50%;
+}
+</style>
+
 | 方法名称 | 功能说明 |
-|:--|:--|
+|--------|--------|
 | payInMobileSite | 手机网页支付 |
 | payInWebSite | 普通网站支付 |
 | preCreate | 创建预订单 |
@@ -182,3 +188,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
 - [https://github.com/thlws/payment-thl](https://github.com/thlws/payment-thl)
+
+
