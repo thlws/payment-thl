@@ -50,7 +50,7 @@ public class AlipayPayClientTest {
         //alipayCore = clientBuilder.setAppId(appid).setPrivateKey(private_key).setSignType(AlipayConstants.SIGN_TYPE_RSA).build();
 
         //signType=rsa2时，必须传 支付宝公钥 alipay_public_key
-        alipayCore = clientBuilder.setAlipayPublicKey(alipay_public_key_2).setAppId(appid_2).setPrivateKey(alipay_public_key_2).setSignType(AlipayConstants.SIGN_TYPE_RSA2).build();
+        alipayCore = clientBuilder.setAlipayPublicKey(alipay_public_key_2).setAppId(appid_2).setPrivateKey(private_key_2).setSignType(AlipayConstants.SIGN_TYPE_RSA2).build();
     }
 
 

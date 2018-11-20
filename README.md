@@ -100,7 +100,7 @@ AlipayCore alipayCore = clientBuilder
  
 AlipayTradeRequest request = new AlipayTradeRequest();
 request.setTotalAmount("0.01");
-request.setStoreId("00001025104487");
+request.setStoreId("123456");
 request.setOperatorId("hanley001");
 request.setAuthCode("288609492126942746");
 request.setOutTradeNo(System.currentTimeMillis()+"");

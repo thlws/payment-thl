@@ -1,19 +1,17 @@
 package org.thlws.utils;
 
-import java.io.*;
-import java.security.KeyStore;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.http.Method;
+import cn.hutool.http.ssl.SSLSocketFactoryBuilder;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLSocketFactory;
-
-import cn.hutool.http.HttpUtil;
-import cn.hutool.http.Method;
-import cn.hutool.http.ssl.SSLSocketFactoryBuilder;
-
-import cn.hutool.log.Log;
-import cn.hutool.log.LogFactory;
-import org.thlws.payment.wechat.config.WechatConfig;
+import java.io.File;
+import java.io.FileInputStream;
+import java.security.KeyStore;
 
 
 /**
@@ -123,7 +121,7 @@ public final class ConnUtil {
 			}
 			
 			//读取证书，初始化http相关参数
-			KeyStore keyStore  = KeyStore.getInstance(WechatConfig.PKCS12);
+			KeyStore keyStore  = KeyStore.getInstance("PKCS12");
 			FileInputStream instream = new FileInputStream(new File(absoluteFile));
 			try {
 				keyStore.load(instream, pwd.toCharArray());

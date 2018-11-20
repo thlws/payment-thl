@@ -5,6 +5,7 @@ package org.thlws.payment.wechat.config;
  *
  * @author Hanley | hanley@thlws.com
  * @version 1.0
+ * @deprecated
  */
 public class WechatConfig {
 
