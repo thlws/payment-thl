@@ -12,8 +12,13 @@
 ### 在线文档
 - [https://thlws.gitee.io/payment-thl](https://thlws.gitee.io/payment-thl)
 
+### 在线交流
+- 邮箱：hanley@thlws.com 
+- QQ群：  [![](https://img.shields.io/badge/chat-on%20qq-red.svg)](//shang.qq.com/wpa/qunwpa?idkey=521df1fba7ef96db15c898e48feb26b6a82f6c2a60612154181b301febb30494) 693169203
+
+
 ### 示例项目
-- [https://gitee.com/thlws/payment-simple](https://gitee.com/thlws/payment-simple)
+- [https://gitee.com/thlws/payment-simple 【未完成】](https://gitee.com/thlws/payment-simple)
 
 ### 接口列表
 **支付宝**
@@ -132,13 +137,6 @@ boolean isSuccess = response.isPaySuccess();
 
 全部支付的入口在此,直接使用Client中的对应方法即可,测试功能请至test目录下参考Junit.
 ![](img/client.png) ![](img/test.png)
-
-
-
-### 在线交流
-- 邮箱：hanley@thlws.com 
-- QQ群：  [![](https://img.shields.io/badge/chat-on%20qq-red.svg)](//shang.qq.com/wpa/qunwpa?idkey=521df1fba7ef96db15c898e48feb26b6a82f6c2a60612154181b301febb30494) 693169203
-
 
 
 ### 依赖安装
