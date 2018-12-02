@@ -1,6 +1,6 @@
 # 接口列表
 
-[org.thlws.payment.BestPayClient](../../src/main/java/org/thlws/payment/BestPayClient.java) 
+[org.thlws.payment.BestPayClient](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/BestPayClient.java) 
 
 | 方法名称 | 功能说明 |
 |--------|--------|

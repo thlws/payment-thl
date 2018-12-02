@@ -8,10 +8,10 @@
 - ~~小微支付(不支持)~~ 
 
 #### 请求参数
-- 参数对象 [org.thlws.payment.wechat.entity.request.WechatPayRequest](../../src/main/java/org/thlws/payment/wechat/entity/request/WechatPayRequest.java)
+- 参数对象 [org.thlws.payment.wechat.entity.request.WechatPayRequest](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/wechat/entity/request/WechatPayRequest.java)
 - 官方说明 [https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_10&index=1](https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_10&index=1)
 #### 返回参数
-- 参数对象 [org.thlws.payment.wechat.entity.response.WechatPayResponse](../../src/main/java/org/thlws/payment/wechat/entity/response/WechatPayResponse.java)
+- 参数对象 [org.thlws.payment.wechat.entity.response.WechatPayResponse](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/wechat/entity/response/WechatPayResponse.java)
 - 官方说明 [https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1#6](https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1#6)
 #### 示例代码
 
@@ -46,10 +46,10 @@ String  message = response.getMessage();
 - 小微支付
 
 #### 请求参数
-- 参数对象 [org.thlws.payment.wechat.entity.request.UnifiedOrderRequest](../../src/main/java/org/thlws/payment/wechat/entity/request/UnifiedOrderRequest.java)
+- 参数对象 [org.thlws.payment.wechat.entity.request.UnifiedOrderRequest](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/wechat/entity/request/UnifiedOrderRequest.java)
 - 官方说明 [https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1](https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1)
 #### 返回参数
-- 参数对象 [org.thlws.payment.wechat.entity.response.UnifiedOrderResponse](../../src/main/java/org/thlws/payment/wechat/entity/response/UnifiedOrderResponse.java)
+- 参数对象 [org.thlws.payment.wechat.entity.response.UnifiedOrderResponse](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/wechat/entity/response/UnifiedOrderResponse.java)
 - 官方说明 [https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1](https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1)
 
 #### 示例代码
@@ -222,5 +222,5 @@ System.out.println("openid="+response.getOpenid());
 ```
 
 ## 功能测试
-- [org.thlws.payment.wechat.WechatPayClientTest](../../src/test/java/org/thlws/payment/wechat/WechatPayClientTest.java)
-- [org.thlws.payment.wechat.WechatMpClientTest](../../src/test/java/org/thlws/payment/wechat/WechatMpClientTest.java)
+- [org.thlws.payment.wechat.WechatPayClientTest](https://gitee.com/thlws/payment-thl/tree/master/src/test/java/org/thlws/payment/wechat/WechatPayClientTest.java)
+- [org.thlws.payment.wechat.WechatMpClientTest](https://gitee.com/thlws/payment-thl/tree/master/src/test/java/org/thlws/payment/wechat/WechatMpClientTest.java)

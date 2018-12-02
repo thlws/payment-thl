@@ -1,6 +1,6 @@
 # 接口列表
 
-[org.thlws.payment.AlipayClient](../../src/main/java/org/thlws/payment/AlipayClient.java) 
+[org.thlws.payment.AlipayClient](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/AlipayClient.java) 
 
 
 | 方法名称 | 功能说明 |

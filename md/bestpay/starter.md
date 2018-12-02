@@ -20,4 +20,4 @@ boolean isSuccess = response.isPaySuccess();
 ```
 
 ### 功能测试
-- [org.thlws.payment.bestpay.BestpayTest](../../src/test/java/org/thlws/payment/bestpay/BestpayTest.java)
+- [org.thlws.payment.bestpay.BestpayTest](https://gitee.com/thlws/payment-thl/tree/master/src/test/java/org/thlws/payment/bestpay/BestpayTest.java)

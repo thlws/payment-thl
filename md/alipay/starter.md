@@ -34,4 +34,4 @@ AlipayRefundResponse response = AlipayClient.refund(request,alipayCore);
 ```
 
 ### 功能测试
-- [org.thlws.payment.alipay.AlipayPayClientTest](../../src/test/java/org/thlws/payment/alipay/AlipayPayClientTest.java)
+- [org.thlws.payment.alipay.AlipayPayClientTest](https://gitee.com/thlws/payment-thl/tree/master/src/test/java/org/thlws/payment/alipay/AlipayPayClientTest.java)

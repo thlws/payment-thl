@@ -2,7 +2,7 @@
 
 
 **微信支付**
-[org.thlws.payment.WechatPayClient](../../src/main/java/org/thlws/payment/WechatPayClient.java)
+[org.thlws.payment.WechatPayClient](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/WechatPayClient.java)
 
 | 方法名称 | 功能说明 |
 |:--------|:--------|
@@ -17,7 +17,7 @@
 | postMicroMch | 申请开通小微收款功能|
 
 **微信公众号**
-[org.thlws.payment.WechatMpClient](../../src/main/java/org/thlws/payment/WechatMpClient.java)
+[org.thlws.payment.WechatMpClient](https://gitee.com/thlws/payment-thl/tree/master/src/main/java/org/thlws/payment/WechatMpClient.java)
 
 | 方法名称 | 功能说明 |
 |--------|--------|
