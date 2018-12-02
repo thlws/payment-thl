@@ -23,6 +23,14 @@ public class AlipayUtil {
      */
     private static final String HTTPS_VERIFY_URL = "https://mapi.alipay.com/gateway.do?service=notify_verify&";
 
+    /**
+     * Verify alipay notify response.
+     *
+     * @param alipayRequest   the alipay request
+     * @param partner         the partner
+     * @param alipayPublicKey the alipay public key
+     * @return the alipay notify response
+     */
     public AlipayNotifyResponse verify(HttpServletRequest alipayRequest, String partner, String alipayPublicKey){
         AlipayNotifyResponse output = new AlipayNotifyResponse();
         try {

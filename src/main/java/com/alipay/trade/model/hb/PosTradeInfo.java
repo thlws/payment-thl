@@ -12,6 +12,14 @@ public class PosTradeInfo implements TradeInfo {
         // no public constructor.
     }
 
+    /**
+     * New instance pos trade info.
+     *
+     * @param status      the status
+     * @param time        the time
+     * @param timeConsume the time consume
+     * @return the pos trade info
+     */
     public static PosTradeInfo newInstance(HbStatus status, String time, int timeConsume) {
         PosTradeInfo info = new PosTradeInfo();
         if (timeConsume > 99 || timeConsume < 0) {
@@ -36,14 +44,29 @@ public class PosTradeInfo implements TradeInfo {
         return status;
     }
 
+    /**
+     * Sets status.
+     *
+     * @param status the status
+     */
     public void setStatus(HbStatus status) {
         this.status = status;
     }
 
+    /**
+     * Gets time.
+     *
+     * @return the time
+     */
     public String getTime() {
         return time;
     }
 
+    /**
+     * Sets time.
+     *
+     * @param time the time
+     */
     public void setTime(String time) {
         this.time = time;
     }
@@ -53,6 +76,11 @@ public class PosTradeInfo implements TradeInfo {
         return (double) timeConsume;
     }
 
+    /**
+     * Sets time consume.
+     *
+     * @param timeConsume the time consume
+     */
     public void setTimeConsume(int timeConsume) {
         this.timeConsume = timeConsume;
     }

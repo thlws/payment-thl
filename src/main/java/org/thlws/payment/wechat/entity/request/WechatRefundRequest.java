@@ -81,105 +81,225 @@ public class WechatRefundRequest {
 	@XmlElement(name="sub_mch_id")
 	private String subMchId;
 
-	/**
-	 * Instantiates a new Wechat refund request.
-	 */
-	public WechatRefundRequest(){}
+    /**
+     * Instantiates a new Wechat refund request.
+     */
+    public WechatRefundRequest(){}
 
 
-	public String getAppId() {
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
+    public String getAppId() {
 		return appId;
 	}
 
-	public void setAppId(String appId) {
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
+    public void setAppId(String appId) {
 		this.appId = appId;
 	}
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getOutRefundNo() {
+    /**
+     * Gets out refund no.
+     *
+     * @return the out refund no
+     */
+    public String getOutRefundNo() {
 		return outRefundNo;
 	}
 
-	public void setOutRefundNo(String outRefundNo) {
+    /**
+     * Sets out refund no.
+     *
+     * @param outRefundNo the out refund no
+     */
+    public void setOutRefundNo(String outRefundNo) {
 		this.outRefundNo = outRefundNo;
 	}
 
-	public String getTotalFee() {
+    /**
+     * Gets total fee.
+     *
+     * @return the total fee
+     */
+    public String getTotalFee() {
 		return totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+    /**
+     * Sets total fee.
+     *
+     * @param totalFee the total fee
+     */
+    public void setTotalFee(String totalFee) {
 		this.totalFee = totalFee;
 	}
 
-	public String getRefundFee() {
+    /**
+     * Gets refund fee.
+     *
+     * @return the refund fee
+     */
+    public String getRefundFee() {
 		return refundFee;
 	}
 
-	public void setRefundFee(String refundFee) {
+    /**
+     * Sets refund fee.
+     *
+     * @param refundFee the refund fee
+     */
+    public void setRefundFee(String refundFee) {
 		this.refundFee = refundFee;
 	}
 
-	public String getTransactionId() {
+    /**
+     * Gets transaction id.
+     *
+     * @return the transaction id
+     */
+    public String getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(String transactionId) {
+    /**
+     * Sets transaction id.
+     *
+     * @param transactionId the transaction id
+     */
+    public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
 
-	public String getOutTradeNo() {
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
+    public String getOutTradeNo() {
 		return outTradeNo;
 	}
 
-	public void setOutTradeNo(String outTradeNo) {
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     */
+    public void setOutTradeNo(String outTradeNo) {
 		this.outTradeNo = outTradeNo;
 	}
 
-	public String getRefundFeeType() {
+    /**
+     * Gets refund fee type.
+     *
+     * @return the refund fee type
+     */
+    public String getRefundFeeType() {
 		return refundFeeType;
 	}
 
-	public void setRefundFeeType(String refundFeeType) {
+    /**
+     * Sets refund fee type.
+     *
+     * @param refundFeeType the refund fee type
+     */
+    public void setRefundFeeType(String refundFeeType) {
 		this.refundFeeType = refundFeeType;
 	}
 
-	public String getRefundDesc() {
+    /**
+     * Gets refund desc.
+     *
+     * @return the refund desc
+     */
+    public String getRefundDesc() {
 		return refundDesc;
 	}
 
-	public void setRefundDesc(String refundDesc) {
+    /**
+     * Sets refund desc.
+     *
+     * @param refundDesc the refund desc
+     */
+    public void setRefundDesc(String refundDesc) {
 		this.refundDesc = refundDesc;
 	}
 
-	public String getRefundAccount() {
+    /**
+     * Gets refund account.
+     *
+     * @return the refund account
+     */
+    public String getRefundAccount() {
 		return refundAccount;
 	}
 
-	public void setRefundAccount(String refundAccount) {
+    /**
+     * Sets refund account.
+     *
+     * @param refundAccount the refund account
+     */
+    public void setRefundAccount(String refundAccount) {
 		this.refundAccount = refundAccount;
 	}
 
-	public String getSubAppId() {
+    /**
+     * Gets sub app id.
+     *
+     * @return the sub app id
+     */
+    public String getSubAppId() {
 		return subAppId;
 	}
 
-	public void setSubAppId(String subAppId) {
+    /**
+     * Sets sub app id.
+     *
+     * @param subAppId the sub app id
+     */
+    public void setSubAppId(String subAppId) {
 		this.subAppId = subAppId;
 	}
 
-	public String getSubMchId() {
+    /**
+     * Gets sub mch id.
+     *
+     * @return the sub mch id
+     */
+    public String getSubMchId() {
 		return subMchId;
 	}
 
-	public void setSubMchId(String subMchId) {
+    /**
+     * Sets sub mch id.
+     *
+     * @param subMchId the sub mch id
+     */
+    public void setSubMchId(String subMchId) {
 		this.subMchId = subMchId;
 	}
 

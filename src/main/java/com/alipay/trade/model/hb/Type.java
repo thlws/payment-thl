@@ -4,17 +4,44 @@ package com.alipay.trade.model.hb;
  * Created by liuyangkly on 15/8/27.
  */
 public enum Type {
-     CR       // 收银机
+    /**
+     * Cr type.
+     */
+    CR       // 收银机
 
-    ,STORE    // 门店
+    ,
+    /**
+     * Store type.
+     */
+    STORE    // 门店
 
-    ,VM       // 售卖机
+    ,
+    /**
+     * Vm type.
+     */
+    VM       // 售卖机
 
-    ,MD       // 医疗设备
+    ,
+    /**
+     * Md type.
+     */
+    MD       // 医疗设备
 
-    ,SOFT_POS // 软POS
+    ,
+    /**
+     * Soft pos type.
+     */
+    SOFT_POS // 软POS
 
-    ,POS      // POS终端
+    ,
+    /**
+     * Pos type.
+     */
+    POS      // POS终端
 
-    ,ALI_POS  // 支付宝POS
+    ,
+    /**
+     * Ali pos type.
+     */
+    ALI_POS  // 支付宝POS
 }

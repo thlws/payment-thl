@@ -9,10 +9,10 @@ import java.util.HashMap;
 /**
  * Created by HanleyTang on 2017/11/23
  * 微信门店信息,用于数据上报
- * @author Hanley[hanley@thlws.com]
+ *
+ * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
-
 public class WStoreInfo{
 
     /**门店唯一标识 String(32)*/
@@ -107,10 +107,11 @@ public class WStoreInfo{
      * 创建场景JSON数据,完成创建后，请将结果赋值给 scene_info
      * {@link WechatPayRequest#sceneInfo}
      * {@link UnifiedOrderRequest#sceneInfo}
-     * @param id        the id 门店唯一编号
-     * @param name      the name 门店名称
+     *
+     * @param id       the id 门店唯一编号
+     * @param name     the name 门店名称
      * @param areaCode the area code 区域编码
-     * @param address   the address 门店地址
+     * @param address  the address 门店地址
      * @return 场景信息JSON string
      */
     public static String create(String id, String name, String areaCode, String address) {

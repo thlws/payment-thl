@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * 新增收款个人用户资料 Req POJO
  * 服务商调用该接口将收款个人用户资料提交给微信侧,微信根据提交的 资料情况,判断收款用户资料正确性,返回收款识别码;
+ *
  * @author Hanley | hanley@thlws.com
  * @version 1.0
  */
@@ -88,163 +89,363 @@ public class MicroMchRequest {
 	}
 
 
-	public String getAppid() {
+    /**
+     * Gets appid.
+     *
+     * @return the appid
+     */
+    public String getAppid() {
 		return appid;
 	}
 
-	public void setAppid(String appid) {
+    /**
+     * Sets appid.
+     *
+     * @param appid the appid
+     */
+    public void setAppid(String appid) {
 		this.appid = appid;
 	}
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getSign() {
+    /**
+     * Gets sign.
+     *
+     * @return the sign
+     */
+    public String getSign() {
 		return sign;
 	}
 
-	public void setSign(String sign) {
+    /**
+     * Sets sign.
+     *
+     * @param sign the sign
+     */
+    public void setSign(String sign) {
 		this.sign = sign;
 	}
 
-	public String getMerchantName() {
+    /**
+     * Gets merchant name.
+     *
+     * @return the merchant name
+     */
+    public String getMerchantName() {
 		return merchantName;
 	}
 
-	public void setMerchantName(String merchantName) {
+    /**
+     * Sets merchant name.
+     *
+     * @param merchantName the merchant name
+     */
+    public void setMerchantName(String merchantName) {
 		this.merchantName = merchantName;
 	}
 
-	public String getMerchantShortname() {
+    /**
+     * Gets merchant shortname.
+     *
+     * @return the merchant shortname
+     */
+    public String getMerchantShortname() {
 		return merchantShortname;
 	}
 
-	public void setMerchantShortname(String merchantShortname) {
+    /**
+     * Sets merchant shortname.
+     *
+     * @param merchantShortname the merchant shortname
+     */
+    public void setMerchantShortname(String merchantShortname) {
 		this.merchantShortname = merchantShortname;
 	}
 
-	public String getRecipientName() {
+    /**
+     * Gets recipient name.
+     *
+     * @return the recipient name
+     */
+    public String getRecipientName() {
 		return recipientName;
 	}
 
-	public void setRecipientName(String recipientName) {
+    /**
+     * Sets recipient name.
+     *
+     * @param recipientName the recipient name
+     */
+    public void setRecipientName(String recipientName) {
 		this.recipientName = recipientName;
 	}
 
-	public String getRecipientIdcardno() {
+    /**
+     * Gets recipient idcardno.
+     *
+     * @return the recipient idcardno
+     */
+    public String getRecipientIdcardno() {
 		return recipientIdcardno;
 	}
 
-	public void setRecipientIdcardno(String recipientIdcardno) {
+    /**
+     * Sets recipient idcardno.
+     *
+     * @param recipientIdcardno the recipient idcardno
+     */
+    public void setRecipientIdcardno(String recipientIdcardno) {
 		this.recipientIdcardno = recipientIdcardno;
 	}
 
-	public String getBusiness() {
+    /**
+     * Gets business.
+     *
+     * @return the business
+     */
+    public String getBusiness() {
 		return business;
 	}
 
-	public void setBusiness(String business) {
+    /**
+     * Sets business.
+     *
+     * @param business the business
+     */
+    public void setBusiness(String business) {
 		this.business = business;
 	}
 
-	public String getMerchantRemark() {
+    /**
+     * Gets merchant remark.
+     *
+     * @return the merchant remark
+     */
+    public String getMerchantRemark() {
 		return merchantRemark;
 	}
 
-	public void setMerchantRemark(String merchantRemark) {
+    /**
+     * Sets merchant remark.
+     *
+     * @param merchantRemark the merchant remark
+     */
+    public void setMerchantRemark(String merchantRemark) {
 		this.merchantRemark = merchantRemark;
 	}
 
-	public String getServicePhone() {
+    /**
+     * Gets service phone.
+     *
+     * @return the service phone
+     */
+    public String getServicePhone() {
 		return servicePhone;
 	}
 
-	public void setServicePhone(String servicePhone) {
+    /**
+     * Sets service phone.
+     *
+     * @param servicePhone the service phone
+     */
+    public void setServicePhone(String servicePhone) {
 		this.servicePhone = servicePhone;
 	}
 
-	public String getMerchantGbaddress() {
+    /**
+     * Gets merchant gbaddress.
+     *
+     * @return the merchant gbaddress
+     */
+    public String getMerchantGbaddress() {
 		return merchantGbaddress;
 	}
 
-	public void setMerchantGbaddress(String merchantGbaddress) {
+    /**
+     * Sets merchant gbaddress.
+     *
+     * @param merchantGbaddress the merchant gbaddress
+     */
+    public void setMerchantGbaddress(String merchantGbaddress) {
 		this.merchantGbaddress = merchantGbaddress;
 	}
 
-	public String getMerchantDetailaddress() {
+    /**
+     * Gets merchant detailaddress.
+     *
+     * @return the merchant detailaddress
+     */
+    public String getMerchantDetailaddress() {
 		return merchantDetailaddress;
 	}
 
-	public void setMerchantDetailaddress(String merchantDetailaddress) {
+    /**
+     * Sets merchant detailaddress.
+     *
+     * @param merchantDetailaddress the merchant detailaddress
+     */
+    public void setMerchantDetailaddress(String merchantDetailaddress) {
 		this.merchantDetailaddress = merchantDetailaddress;
 	}
 
-	public String getContact() {
+    /**
+     * Gets contact.
+     *
+     * @return the contact
+     */
+    public String getContact() {
 		return contact;
 	}
 
-	public void setContact(String contact) {
+    /**
+     * Sets contact.
+     *
+     * @param contact the contact
+     */
+    public void setContact(String contact) {
 		this.contact = contact;
 	}
 
-	public String getContactPhone() {
+    /**
+     * Gets contact phone.
+     *
+     * @return the contact phone
+     */
+    public String getContactPhone() {
 		return contactPhone;
 	}
 
-	public void setContactPhone(String contactPhone) {
+    /**
+     * Sets contact phone.
+     *
+     * @param contactPhone the contact phone
+     */
+    public void setContactPhone(String contactPhone) {
 		this.contactPhone = contactPhone;
 	}
 
-	public String getContactEmail() {
+    /**
+     * Gets contact email.
+     *
+     * @return the contact email
+     */
+    public String getContactEmail() {
 		return contactEmail;
 	}
 
-	public void setContactEmail(String contactEmail) {
+    /**
+     * Sets contact email.
+     *
+     * @param contactEmail the contact email
+     */
+    public void setContactEmail(String contactEmail) {
 		this.contactEmail = contactEmail;
 	}
 
-	public String getRecipientWechatid() {
+    /**
+     * Gets recipient wechatid.
+     *
+     * @return the recipient wechatid
+     */
+    public String getRecipientWechatid() {
 		return recipientWechatid;
 	}
 
-	public void setRecipientWechatid(String recipientWechatid) {
+    /**
+     * Sets recipient wechatid.
+     *
+     * @param recipientWechatid the recipient wechatid
+     */
+    public void setRecipientWechatid(String recipientWechatid) {
 		this.recipientWechatid = recipientWechatid;
 	}
 
-	public String getMicroMchId() {
+    /**
+     * Gets micro mch id.
+     *
+     * @return the micro mch id
+     */
+    public String getMicroMchId() {
 		return microMchId;
 	}
 
-	public void setMicroMchId(String microMchId) {
+    /**
+     * Sets micro mch id.
+     *
+     * @param microMchId the micro mch id
+     */
+    public void setMicroMchId(String microMchId) {
 		this.microMchId = microMchId;
 	}
 
-	public String getDeviceInfo() {
+    /**
+     * Gets device info.
+     *
+     * @return the device info
+     */
+    public String getDeviceInfo() {
 		return deviceInfo;
 	}
 
-	public void setDeviceInfo(String deviceInfo) {
+    /**
+     * Sets device info.
+     *
+     * @param deviceInfo the device info
+     */
+    public void setDeviceInfo(String deviceInfo) {
 		this.deviceInfo = deviceInfo;
 	}
 
-	public String getBody() {
+    /**
+     * Gets body.
+     *
+     * @return the body
+     */
+    public String getBody() {
 		return body;
 	}
 
-	public void setBody(String body) {
+    /**
+     * Sets body.
+     *
+     * @param body the body
+     */
+    public void setBody(String body) {
 		this.body = body;
 	}
 
-	public String getNonceStr() {
+    /**
+     * Gets nonce str.
+     *
+     * @return the nonce str
+     */
+    public String getNonceStr() {
 		return nonceStr;
 	}
 
-	public void setNonceStr(String nonceStr) {
+    /**
+     * Sets nonce str.
+     *
+     * @param nonceStr the nonce str
+     */
+    public void setNonceStr(String nonceStr) {
 		this.nonceStr = nonceStr;
 	}
 }

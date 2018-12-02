@@ -42,15 +42,29 @@ public class AlipayTradeCancelRequestBuilder extends RequestBuilder {
         return (AlipayTradeCancelRequestBuilder) super.setNotifyUrl(notifyUrl);
     }
 
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
     public String getOutTradeNo() {
         return bizContent.outTradeNo;
     }
 
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     * @return the out trade no
+     */
     public AlipayTradeCancelRequestBuilder setOutTradeNo(String outTradeNo) {
         bizContent.outTradeNo = outTradeNo;
         return this;
     }
 
+    /**
+     * The type Biz content.
+     */
     public static class BizContent {
         // 商户订单号，通过此商户订单号撤销当面付的交易状态
         @SerializedName("out_trade_no")

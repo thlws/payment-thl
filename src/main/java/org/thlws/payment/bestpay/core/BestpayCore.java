@@ -22,29 +22,28 @@ import java.util.Map;
  * 电信天翼支付 核心Class，提供支付相关接口
  * 核心参数<br>
  * <ul>
- *     <li>merchantId -商户号</li>
- *     <li>key -商户数据 KEY</li>
- *     <li>merchantPwd 商户密码(又称 交易key),退款和撤销时必须</li>
+ * <li>merchantId -商户号</li>
+ * <li>key -商户数据 KEY</li>
+ * <li>merchantPwd 商户密码(又称 交易key),退款和撤销时必须</li>
  * </ul>
  *
- * @see <a href="https://www.bestpay.com.cn/play/start">https://www.bestpay.com.cn/play/start</a>
- * Created by HanleyTang on 2018/1/5
- *
- * @author Hanley[hanley@thlws.com]
+ * @author Hanley[hanley @thlws.com]
  * @version 1.0
+ * @see <a href="https://www.bestpay.com.cn/play/start">https://www.bestpay.com.cn/play/start</a> Created by HanleyTang on 2018/1/5
  */
 public class BestpayCore implements BestpayApi{
 
 	private static final Log log = LogFactory.get();
 
-	/**
-	 * 天翼支付-付款码支付.
-	 *
-	 * @param request 支付参数对象 {@link BarcodePayRequest}
-	 * @param key   商户数据Key,签名需要
-	 * @return 支付结果对象 {@link OrderResultResponse}
-	 */
-	public static OrderResultResponse barcode(BarcodePayRequest request, String key) throws Exception{
+    /**
+     * 天翼支付-付款码支付.
+     *
+     * @param request 支付参数对象 {@link BarcodePayRequest}
+     * @param key     商户数据Key,签名需要
+     * @return 支付结果对象 {@link OrderResultResponse}
+     * @throws Exception the exception
+     */
+    public static OrderResultResponse barcode(BarcodePayRequest request, String key) throws Exception{
 
 		OrderResultResponse out = null;
 
@@ -73,14 +72,15 @@ public class BestpayCore implements BestpayApi{
 	}
 
 
-	/**
-	 * 查询支付订单
-	 *
-	 * @param request 查询参数对象 {@link QueryOrderRequest}
-	 * @param key   商户数据Key,签名需要
-	 * @return 支付结果对象 {@link OrderResultResponse}
-	 */
-	public static OrderResultResponse query(QueryOrderRequest request, String key) throws Exception {
+    /**
+     * 查询支付订单
+     *
+     * @param request 查询参数对象 {@link QueryOrderRequest}
+     * @param key     商户数据Key,签名需要
+     * @return 支付结果对象 {@link OrderResultResponse}
+     * @throws Exception the exception
+     */
+    public static OrderResultResponse query(QueryOrderRequest request, String key) throws Exception {
 		
 		OrderResultResponse out = null;
 
@@ -108,14 +108,15 @@ public class BestpayCore implements BestpayApi{
 	}
 
 
-	/**
-	 * 商户退款,须商户密码 OrderRefundRequest.merchantPwd
-	 *
-	 * @param request 退款参数对象 {@link OrderRefundRequest}
-	 * @param key   商户数据Key,签名需要
-	 * @return 退款结果对象 {@link OrderRefundResponse}
-	 */
-	public static OrderRefundResponse refund(OrderRefundRequest request, String key)  throws Exception {
+    /**
+     * 商户退款,须商户密码 OrderRefundRequest.merchantPwd
+     *
+     * @param request 退款参数对象 {@link OrderRefundRequest}
+     * @param key     商户数据Key,签名需要
+     * @return 退款结果对象 {@link OrderRefundResponse}
+     * @throws Exception the exception
+     */
+    public static OrderRefundResponse refund(OrderRefundRequest request, String key)  throws Exception {
 		
 		OrderRefundResponse out = null;
 
@@ -147,14 +148,15 @@ public class BestpayCore implements BestpayApi{
 		
 	}
 
-	/**
-	 * 撤销支付,须商户密码 OrderReverseRequest.merchantPwd
-	 *
-	 * @param request 撤销参数对象 {@link OrderReverseRequest}
-	 * @param key   商户数据Key,签名需要
-	 * @return 撤销结果对象 {@link OrderReverseResponse}
-	 */
-	public static OrderReverseResponse reverse(OrderReverseRequest request, String key)  throws Exception {
+    /**
+     * 撤销支付,须商户密码 OrderReverseRequest.merchantPwd
+     *
+     * @param request 撤销参数对象 {@link OrderReverseRequest}
+     * @param key     商户数据Key,签名需要
+     * @return 撤销结果对象 {@link OrderReverseResponse}
+     * @throws Exception the exception
+     */
+    public static OrderReverseResponse reverse(OrderReverseRequest request, String key)  throws Exception {
 		
 		
 		OrderReverseResponse out = null;

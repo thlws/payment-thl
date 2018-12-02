@@ -25,7 +25,8 @@ import java.util.Map;
 /**
  * Created by HanleyTang on 2018/1/22
  * 请配合wechat_pay.jsp 参考公众号支付
- * @author Hanley[hanley@thlws.com]
+ *
+ * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
 public class WechatWebDemo {
@@ -39,6 +40,9 @@ public class WechatWebDemo {
     private static final String test_wechat_apikey="d24a3e612fca66ae28137de28916f875";
 
 
+    /**
+     * Build wechat url.
+     */
     /*此方法不用提供外部访问地址,根据项目业务编码即可*/
     public void buildWechatUrl(){
         try {
@@ -59,6 +63,8 @@ public class WechatWebDemo {
      * 需提供外部访问地址
      * 此处可以是SpringMVC、Struts2、Servlet 请根据项目前端框架编写如下代码.
      * 该方法访问路径应为如上方法 build_wechat_url 中 callback 完整地址
+     * @param request the request
+     * @param response the response
      */
     public void payInWechat(HttpServletRequest request, HttpServletResponse response){
 
@@ -109,11 +115,12 @@ public class WechatWebDemo {
     }
 
 
-
     /***
      * 需提供外部访问地址
      * 此处可以是SpringMVC、Struts2、Servlet 请根据项目前端框架编写如下代码.
      * 调用微信统一下单时，传入 UnifiedOrderRequest.notify_url,应为该放方法的访问路径
+     * @param request the request
+     * @param response the response
      */
     public void notifyWechatPay(HttpServletRequest request, HttpServletResponse response){
 

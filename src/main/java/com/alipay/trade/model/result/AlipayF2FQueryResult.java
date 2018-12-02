@@ -10,22 +10,47 @@ public class AlipayF2FQueryResult implements Result {
     private TradeStatus tradeStatus;
     private AlipayTradeQueryResponse response;
 
+    /**
+     * Instantiates a new Alipay f 2 f query result.
+     *
+     * @param response the response
+     */
     public AlipayF2FQueryResult(AlipayTradeQueryResponse response) {
         this.response = response;
     }
 
+    /**
+     * Sets trade status.
+     *
+     * @param tradeStatus the trade status
+     */
     public void setTradeStatus(TradeStatus tradeStatus) {
         this.tradeStatus = tradeStatus;
     }
 
+    /**
+     * Sets response.
+     *
+     * @param response the response
+     */
     public void setResponse(AlipayTradeQueryResponse response) {
         this.response = response;
     }
 
+    /**
+     * Gets trade status.
+     *
+     * @return the trade status
+     */
     public TradeStatus getTradeStatus() {
         return tradeStatus;
     }
 
+    /**
+     * Gets response.
+     *
+     * @return the response
+     */
     public AlipayTradeQueryResponse getResponse() {
         return response;
     }

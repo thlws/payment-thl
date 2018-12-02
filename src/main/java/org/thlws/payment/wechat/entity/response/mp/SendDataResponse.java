@@ -19,34 +19,74 @@ public class SendDataResponse {
         return JsonUtil.format(this);
     }
 
+    /**
+     * Gets errcode.
+     *
+     * @return the errcode
+     */
     public long getErrcode() {
         return errcode;
     }
 
+    /**
+     * Sets errcode.
+     *
+     * @param errcode the errcode
+     */
     public void setErrcode(long errcode) {
         this.errcode = errcode;
     }
 
+    /**
+     * Gets desc.
+     *
+     * @return the desc
+     */
     public String getDesc() {
         return desc;
     }
 
+    /**
+     * Sets desc.
+     *
+     * @param desc the desc
+     */
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
+    /**
+     * Gets errmsg.
+     *
+     * @return the errmsg
+     */
     public String getErrmsg() {
         return errmsg;
     }
 
+    /**
+     * Sets errmsg.
+     *
+     * @param errmsg the errmsg
+     */
     public void setErrmsg(String errmsg) {
         this.errmsg = errmsg;
     }
 
+    /**
+     * Gets msgid.
+     *
+     * @return the msgid
+     */
     public String getMsgid() {
         return msgid;
     }
 
+    /**
+     * Sets msgid.
+     *
+     * @param msgid the msgid
+     */
     public void setMsgid(String msgid) {
         this.msgid = msgid;
     }

@@ -15,7 +15,7 @@ import org.thlws.payment.bestpay.entity.response.OrderReverseResponse;
  * 翼支付入口Class
  *
  * @author keriezhang
- * @date 2018/11/16
+ *  2018 /11/16
  */
 public class BestPayClient {
 

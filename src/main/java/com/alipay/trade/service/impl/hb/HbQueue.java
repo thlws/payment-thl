@@ -15,9 +15,17 @@ import java.util.concurrent.BlockingQueue;
 public class HbQueue {
     private static Log log = LogFactory.getLog(HbQueue.class);
 
+    /**
+     * The constant QUEUE_SIZE.
+     */
     public static final int QUEUE_SIZE = 300;   // 最多同时保存300条交易记录
     private static final BlockingQueue<SysTradeInfo> queue = new ArrayBlockingQueue<SysTradeInfo>(QUEUE_SIZE);
 
+    /**
+     * Offer.
+     *
+     * @param info the info
+     */
     public synchronized static void offer(SysTradeInfo info) {
         // blockingQueue不需要考虑队列满的情况，生产者会被阻塞直到队列被消耗
         if (info != null) {
@@ -31,6 +39,11 @@ public class HbQueue {
         }
     }
 
+    /**
+     * Poll list.
+     *
+     * @return the list
+     */
     public synchronized static List<SysTradeInfo> poll() {
         if (queue.isEmpty()) {
             // 如果队列为空，则直接返回

@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * 微信订单查询对象
+ *
  * @author Hanley | hanley@thlws.com
  * @version 1.0
  */
@@ -51,50 +52,110 @@ public class OrderQueryRequest {
     public OrderQueryRequest(){}
 
 
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
     public String getAppId() {
         return appId;
     }
 
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
     public void setAppId(String appId) {
         this.appId = appId;
     }
 
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
     public String getMchId() {
         return mchId;
     }
 
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    /**
+     * Gets transaction id.
+     *
+     * @return the transaction id
+     */
     public String getTransactionId() {
         return transactionId;
     }
 
+    /**
+     * Sets transaction id.
+     *
+     * @param transactionId the transaction id
+     */
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
     }
 
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
     public String getOutTradeNo() {
         return outTradeNo;
     }
 
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     */
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    /**
+     * Gets sub app id.
+     *
+     * @return the sub app id
+     */
     public String getSubAppId() {
         return subAppId;
     }
 
+    /**
+     * Sets sub app id.
+     *
+     * @param subAppId the sub app id
+     */
     public void setSubAppId(String subAppId) {
         this.subAppId = subAppId;
     }
 
+    /**
+     * Gets sub mch id.
+     *
+     * @return the sub mch id
+     */
     public String getSubMchId() {
         return subMchId;
     }
 
+    /**
+     * Sets sub mch id.
+     *
+     * @param subMchId the sub mch id
+     */
     public void setSubMchId(String subMchId) {
         this.subMchId = subMchId;
     }

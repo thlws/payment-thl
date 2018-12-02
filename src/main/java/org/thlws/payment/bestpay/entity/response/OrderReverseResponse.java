@@ -5,7 +5,7 @@ package org.thlws.payment.bestpay.entity.response;
  * 查询结果对象.
  * Created by HanleyTang on 2018/1/5
  *
- * @author Hanley[hanley@thlws.com]
+ * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
 public class OrderReverseResponse {
@@ -22,10 +22,10 @@ public class OrderReverseResponse {
 	/**错误描述,success=true，为null，success=false 为错误描述*/
 	private String errorMsg;
 
-	/**
-	 * The type Result.
-	 */
-	public static class Result{
+    /**
+     * The type Result.
+     */
+    public static class Result{
 
 		/**签名串*/
 		private String sign;
@@ -40,75 +40,75 @@ public class OrderReverseResponse {
 		private String transAmt;
 
 
-		/**
-		 * Gets sign.
-		 *
-		 * @return the sign
-		 */
-		public String getSign() {
+        /**
+         * Gets sign.
+         *
+         * @return the sign
+         */
+        public String getSign() {
 			return sign;
 		}
 
-		/**
-		 * Gets refund req no.
-		 *
-		 * @return the refund req no
-		 */
-		public String getRefundReqNo() {
+        /**
+         * Gets refund req no.
+         *
+         * @return the refund req no
+         */
+        public String getRefundReqNo() {
 			return refundReqNo;
 		}
 
-		/**
-		 * Gets old order no.
-		 *
-		 * @return the old order no
-		 */
-		public String getOldOrderNo() {
+        /**
+         * Gets old order no.
+         *
+         * @return the old order no
+         */
+        public String getOldOrderNo() {
 			return oldOrderNo;
 		}
 
-		/**
-		 * Gets trans amt.
-		 *
-		 * @return the trans amt
-		 */
-		public String getTransAmt() {
+        /**
+         * Gets trans amt.
+         *
+         * @return the trans amt
+         */
+        public String getTransAmt() {
 			return transAmt;
 		}
 
-		/**
-		 * Sets sign.
-		 *
-		 * @param sign the sign
-		 */
-		public void setSign(String sign) {
+        /**
+         * Sets sign.
+         *
+         * @param sign the sign
+         */
+        public void setSign(String sign) {
 			this.sign = sign;
 		}
 
-		/**
-		 * Sets refund req no.
-		 *
-		 * @param refundReqNo the refund req no
-		 */
-		public void setRefundReqNo(String refundReqNo) {
+        /**
+         * Sets refund req no.
+         *
+         * @param refundReqNo the refund req no
+         */
+        public void setRefundReqNo(String refundReqNo) {
 			this.refundReqNo = refundReqNo;
 		}
 
-		/**
-		 * Sets old order no.
-		 *
-		 * @param oldOrderNo the old order no
-		 */
-		public void setOldOrderNo(String oldOrderNo) {
+        /**
+         * Sets old order no.
+         *
+         * @param oldOrderNo the old order no
+         */
+        public void setOldOrderNo(String oldOrderNo) {
 			this.oldOrderNo = oldOrderNo;
 		}
 
-		/**
-		 * Sets trans amt.
-		 *
-		 * @param transAmt the trans amt
-		 */
-		public void setTransAmt(String transAmt) {
+        /**
+         * Sets trans amt.
+         *
+         * @param transAmt the trans amt
+         */
+        public void setTransAmt(String transAmt) {
 			this.transAmt = transAmt;
 		}
 		
@@ -119,75 +119,75 @@ public class OrderReverseResponse {
 		}
 	}
 
-	/**
-	 * Is success boolean.
-	 *
-	 * @return the boolean
-	 */
-	public boolean isSuccess() {
+    /**
+     * Is success boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSuccess() {
 		return success;
 	}
 
-	/**
-	 * Gets result.
-	 *
-	 * @return the result
-	 */
-	public Result getResult() {
+    /**
+     * Gets result.
+     *
+     * @return the result
+     */
+    public Result getResult() {
 		return result;
 	}
 
-	/**
-	 * Gets error code.
-	 *
-	 * @return the error code
-	 */
-	public String getErrorCode() {
+    /**
+     * Gets error code.
+     *
+     * @return the error code
+     */
+    public String getErrorCode() {
 		return errorCode;
 	}
 
-	/**
-	 * Gets error msg.
-	 *
-	 * @return the error msg
-	 */
-	public String getErrorMsg() {
+    /**
+     * Gets error msg.
+     *
+     * @return the error msg
+     */
+    public String getErrorMsg() {
 		return errorMsg;
 	}
 
-	/**
-	 * Sets success.
-	 *
-	 * @param success the success
-	 */
-	public void setSuccess(boolean success) {
+    /**
+     * Sets success.
+     *
+     * @param success the success
+     */
+    public void setSuccess(boolean success) {
 		this.success = success;
 	}
 
-	/**
-	 * Sets result.
-	 *
-	 * @param result the result
-	 */
-	public void setResult(Result result) {
+    /**
+     * Sets result.
+     *
+     * @param result the result
+     */
+    public void setResult(Result result) {
 		this.result = result;
 	}
 
-	/**
-	 * Sets error code.
-	 *
-	 * @param errorCode the error code
-	 */
-	public void setErrorCode(String errorCode) {
+    /**
+     * Sets error code.
+     *
+     * @param errorCode the error code
+     */
+    public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
 	}
 
-	/**
-	 * Sets error msg.
-	 *
-	 * @param errorMsg the error msg
-	 */
-	public void setErrorMsg(String errorMsg) {
+    /**
+     * Sets error msg.
+     *
+     * @param errorMsg the error msg
+     */
+    public void setErrorMsg(String errorMsg) {
 		this.errorMsg = errorMsg;
 	}
 

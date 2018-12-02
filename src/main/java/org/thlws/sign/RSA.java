@@ -17,20 +17,20 @@ import javax.crypto.Cipher;
  */
 public class RSA{
 
-	/**
-	 * The constant SIGN_ALGORITHMS.
-	 */
-	public static final String  SIGN_ALGORITHMS = "SHA1WithRSA";
+    /**
+     * The constant SIGN_ALGORITHMS.
+     */
+    public static final String  SIGN_ALGORITHMS = "SHA1WithRSA";
 
-	/**
-	 * RSA签名
-	 *
-	 * @param content       待签名数据
-	 * @param privateKey    商户私钥
-	 * @param input_charset 编码格式
-	 * @return 签名值 string
-	 */
-	public static String sign(String content, String privateKey, String input_charset)
+    /**
+     * RSA签名
+     *
+     * @param content       待签名数据
+     * @param privateKey    商户私钥
+     * @param input_charset 编码格式
+     * @return 签名值 string
+     */
+    public static String sign(String content, String privateKey, String input_charset)
 	{
         try 
         {
@@ -56,16 +56,16 @@ public class RSA{
         return null;
     }
 
-	/**
-	 * RSA验签名检查
-	 *
-	 * @param content        待签名数据
-	 * @param sign           签名值
-	 * @param ali_public_key 支付宝公钥
-	 * @param input_charset  编码格式
-	 * @return 布尔值 boolean
-	 */
-	public static boolean verify(String content, String sign, String ali_public_key, String input_charset)
+    /**
+     * RSA验签名检查
+     *
+     * @param content        待签名数据
+     * @param sign           签名值
+     * @param ali_public_key 支付宝公钥
+     * @param input_charset  编码格式
+     * @return 布尔值 boolean
+     */
+    public static boolean verify(String content, String sign, String ali_public_key, String input_charset)
 	{
 		try 
 		{
@@ -92,16 +92,16 @@ public class RSA{
 		return false;
 	}
 
-	/**
-	 * 解密
-	 *
-	 * @param content       密文
-	 * @param private_key   商户私钥
-	 * @param input_charset 编码格式
-	 * @return 解密后的字符串 string
-	 * @throws Exception the exception
-	 */
-	public static String decrypt(String content, String private_key, String input_charset) throws Exception {
+    /**
+     * 解密
+     *
+     * @param content       密文
+     * @param private_key   商户私钥
+     * @param input_charset 编码格式
+     * @return 解密后的字符串 string
+     * @throws Exception the exception
+     */
+    public static String decrypt(String content, String private_key, String input_charset) throws Exception {
         PrivateKey prikey = getPrivateKey(private_key);
 
         Cipher cipher = Cipher.getInstance("RSA");
@@ -132,14 +132,14 @@ public class RSA{
     }
 
 
-	/**
-	 * 得到私钥
-	 *
-	 * @param key 密钥字符串（经过base64编码）
-	 * @return the private key
-	 * @throws Exception the exception
-	 */
-	public static PrivateKey getPrivateKey(String key) throws Exception {
+    /**
+     * 得到私钥
+     *
+     * @param key 密钥字符串（经过base64编码）
+     * @return the private key
+     * @throws Exception the exception
+     */
+    public static PrivateKey getPrivateKey(String key) throws Exception {
 
 		byte[] keyBytes;
 		

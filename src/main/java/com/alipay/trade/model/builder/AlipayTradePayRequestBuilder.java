@@ -55,6 +55,9 @@ public class AlipayTradePayRequestBuilder extends RequestBuilder {
         return sb.toString();
     }
 
+    /**
+     * Instantiates a new Alipay trade pay request builder.
+     */
     public AlipayTradePayRequestBuilder() {
         // 条码支付，场景为bar_code
         bizContent.scene = "bar_code";
@@ -70,159 +73,349 @@ public class AlipayTradePayRequestBuilder extends RequestBuilder {
         return (AlipayTradePayRequestBuilder) super.setNotifyUrl(notifyUrl);
     }
 
+    /**
+     * Gets scene.
+     *
+     * @return the scene
+     */
     public String getScene() {
         return bizContent.scene;
     }
 
+    /**
+     * Sets scene.
+     *
+     * @param scene the scene
+     * @return the scene
+     */
     public AlipayTradePayRequestBuilder setScene(String scene) {
         bizContent.scene = scene;
         return this;
     }
 
+    /**
+     * Gets auth code.
+     *
+     * @return the auth code
+     */
     public String getAuthCode() {
         return bizContent.authCode;
     }
 
+    /**
+     * Sets auth code.
+     *
+     * @param authCode the auth code
+     * @return the auth code
+     */
     public AlipayTradePayRequestBuilder setAuthCode(String authCode) {
         bizContent.authCode = authCode;
         return this;
     }
 
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
     public String getOutTradeNo() {
         return bizContent.outTradeNo;
     }
 
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     * @return the out trade no
+     */
     public AlipayTradePayRequestBuilder setOutTradeNo(String outTradeNo) {
         bizContent.outTradeNo = outTradeNo;
         return this;
     }
 
+    /**
+     * Gets seller id.
+     *
+     * @return the seller id
+     */
     public String getSellerId() {
         return bizContent.sellerId;
     }
 
+    /**
+     * Sets seller id.
+     *
+     * @param sellerId the seller id
+     * @return the seller id
+     */
     public AlipayTradePayRequestBuilder setSellerId(String sellerId) {
         bizContent.sellerId = sellerId;
         return this;
     }
 
+    /**
+     * Gets total amount.
+     *
+     * @return the total amount
+     */
     public String getTotalAmount() {
         return bizContent.totalAmount;
     }
 
+    /**
+     * Sets total amount.
+     *
+     * @param totalAmount the total amount
+     * @return the total amount
+     */
     public AlipayTradePayRequestBuilder setTotalAmount(String totalAmount) {
         bizContent.totalAmount = totalAmount;
         return this;
     }
 
+    /**
+     * Gets discountable amount.
+     *
+     * @return the discountable amount
+     */
     public String getDiscountableAmount() {
         return bizContent.discountableAmount;
     }
 
+    /**
+     * Sets discountable amount.
+     *
+     * @param discountableAmount the discountable amount
+     * @return the discountable amount
+     */
     public AlipayTradePayRequestBuilder setDiscountableAmount(String discountableAmount) {
         bizContent.discountableAmount = discountableAmount;
         return this;
     }
 
+    /**
+     * Gets undiscountable amount.
+     *
+     * @return the undiscountable amount
+     */
     public String getUndiscountableAmount() {
         return bizContent.undiscountableAmount;
     }
 
+    /**
+     * Sets undiscountable amount.
+     *
+     * @param undiscountableAmount the undiscountable amount
+     * @return the undiscountable amount
+     */
     public AlipayTradePayRequestBuilder setUndiscountableAmount(String undiscountableAmount) {
         bizContent.undiscountableAmount = undiscountableAmount;
         return this;
     }
 
+    /**
+     * Gets subject.
+     *
+     * @return the subject
+     */
     public String getSubject() {
         return bizContent.subject;
     }
 
+    /**
+     * Sets subject.
+     *
+     * @param subject the subject
+     * @return the subject
+     */
     public AlipayTradePayRequestBuilder setSubject(String subject) {
         bizContent.subject = subject;
         return this;
     }
 
+    /**
+     * Gets body.
+     *
+     * @return the body
+     */
     public String getBody() {
         return bizContent.body;
     }
 
+    /**
+     * Sets body.
+     *
+     * @param body the body
+     * @return the body
+     */
     public AlipayTradePayRequestBuilder setBody(String body) {
         bizContent.body = body;
         return this;
     }
 
+    /**
+     * Gets goods detail list.
+     *
+     * @return the goods detail list
+     */
     public List<GoodsDetail> getGoodsDetailList() {
         return bizContent.goodsDetailList;
     }
 
+    /**
+     * Sets goods detail list.
+     *
+     * @param goodsDetailList the goods detail list
+     * @return the goods detail list
+     */
     public AlipayTradePayRequestBuilder setGoodsDetailList(List<GoodsDetail> goodsDetailList) {
         bizContent.goodsDetailList = goodsDetailList;
         return this;
     }
 
+    /**
+     * Gets operator id.
+     *
+     * @return the operator id
+     */
     public String getOperatorId() {
         return bizContent.operatorId;
     }
 
+    /**
+     * Sets operator id.
+     *
+     * @param operatorId the operator id
+     * @return the operator id
+     */
     public AlipayTradePayRequestBuilder setOperatorId(String operatorId) {
         bizContent.operatorId = operatorId;
         return this;
     }
 
+    /**
+     * Gets store id.
+     *
+     * @return the store id
+     */
     public String getStoreId() {
         return bizContent.storeId;
     }
 
+    /**
+     * Sets store id.
+     *
+     * @param storeId the store id
+     * @return the store id
+     */
     public AlipayTradePayRequestBuilder setStoreId(String storeId) {
         bizContent.storeId = storeId;
         return this;
     }
 
+    /**
+     * Gets alipay store id.
+     *
+     * @return the alipay store id
+     */
     public String getAlipayStoreId() {
         return bizContent.alipayStoreId;
     }
 
+    /**
+     * Sets alipay store id.
+     *
+     * @param alipayStoreId the alipay store id
+     * @return the alipay store id
+     */
     public AlipayTradePayRequestBuilder setAlipayStoreId(String alipayStoreId) {
         bizContent.alipayStoreId = alipayStoreId;
         return this;
     }
 
+    /**
+     * Gets terminal id.
+     *
+     * @return the terminal id
+     */
     public String getTerminalId() {
         return bizContent.terminalId;
     }
 
+    /**
+     * Sets terminal id.
+     *
+     * @param terminalId the terminal id
+     * @return the terminal id
+     */
     public AlipayTradePayRequestBuilder setTerminalId(String terminalId) {
         bizContent.terminalId = terminalId;
         return this;
     }
 
+    /**
+     * Gets extend params.
+     *
+     * @return the extend params
+     */
     public ExtendParams getExtendParams() {
         return bizContent.extendParams;
     }
 
+    /**
+     * Sets extend params.
+     *
+     * @param extendParams the extend params
+     * @return the extend params
+     */
     public AlipayTradePayRequestBuilder setExtendParams(ExtendParams extendParams) {
         bizContent.extendParams = extendParams;
         return this;
     }
 
+    /**
+     * Gets time expire.
+     *
+     * @return the time expire
+     */
     public String getTimeExpire() {
         return bizContent.timeExpire;
     }
 
+    /**
+     * Sets time expire.
+     *
+     * @param timeExpire the time expire
+     * @return the time expire
+     */
     public AlipayTradePayRequestBuilder setTimeExpire(String timeExpire) {
         bizContent.timeExpire = timeExpire;
         return this;
     }
 
+    /**
+     * Gets time express.
+     *
+     * @return the time express
+     */
     public String getTimeExpress() {
         return bizContent.timeExpress;
     }
 
+    /**
+     * Sets time express.
+     *
+     * @param timeExpress the time express
+     * @return the time express
+     */
     public AlipayTradePayRequestBuilder setTimeExpress(String timeExpress) {
         bizContent.timeExpress = timeExpress;
         return this;
     }
 
+    /**
+     * The type Biz content.
+     */
     public static class BizContent {
         // 支付场景，条码支付场景为bar_code
         private String scene;

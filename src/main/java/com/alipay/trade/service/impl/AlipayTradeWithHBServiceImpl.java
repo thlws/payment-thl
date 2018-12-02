@@ -24,13 +24,15 @@ import java.net.SocketTimeoutException;
 
 /**
  * Created by liuyangkly on 15/7/29.
- *
- *  一定要在创建AlipayTradeService之前调用Configs.init("alipayrisk10");设置参数
- *
+ * <p>
+ * 一定要在创建AlipayTradeService之前调用Configs.init("alipayrisk10");设置参数
  */
 public class AlipayTradeWithHBServiceImpl extends AbsAlipayTradeService {
     private TradeListener listener;
 
+    /**
+     * The type Client builder.
+     */
     public static class ClientBuilder {
         private String gatewayUrl;
         private String appid;
@@ -40,6 +42,11 @@ public class AlipayTradeWithHBServiceImpl extends AbsAlipayTradeService {
         private String alipayPublicKey;
         private TradeListener listener;
 
+        /**
+         * Build alipay trade with hb service.
+         *
+         * @return the alipay trade with hb service
+         */
         public AlipayTradeWithHBServiceImpl build() {
             if (StringUtils.isEmpty(gatewayUrl)) {
                 gatewayUrl = Constants.open_api_domain; // 与mcloudmonitor网关地址不同
@@ -66,70 +73,152 @@ public class AlipayTradeWithHBServiceImpl extends AbsAlipayTradeService {
             return new AlipayTradeWithHBServiceImpl(this);
         }
 
+        /**
+         * Gets listener.
+         *
+         * @return the listener
+         */
         public TradeListener getListener() {
             return listener;
         }
 
+        /**
+         * Sets listener.
+         *
+         * @param listener the listener
+         * @return the listener
+         */
         public ClientBuilder setListener(TradeListener listener) {
             this.listener = listener;
             return this;
         }
 
+        /**
+         * Sets alipay public key.
+         *
+         * @param alipayPublicKey the alipay public key
+         * @return the alipay public key
+         */
         public ClientBuilder setAlipayPublicKey(String alipayPublicKey) {
             this.alipayPublicKey = alipayPublicKey;
             return this;
         }
 
+        /**
+         * Sets appid.
+         *
+         * @param appid the appid
+         * @return the appid
+         */
         public ClientBuilder setAppid(String appid) {
             this.appid = appid;
             return this;
         }
 
+        /**
+         * Sets charset.
+         *
+         * @param charset the charset
+         * @return the charset
+         */
         public ClientBuilder setCharset(String charset) {
             this.charset = charset;
             return this;
         }
 
+        /**
+         * Sets format.
+         *
+         * @param format the format
+         * @return the format
+         */
         public ClientBuilder setFormat(String format) {
             this.format = format;
             return this;
         }
 
+        /**
+         * Sets gateway url.
+         *
+         * @param gatewayUrl the gateway url
+         * @return the gateway url
+         */
         public ClientBuilder setGatewayUrl(String gatewayUrl) {
             this.gatewayUrl = gatewayUrl;
             return this;
         }
 
+        /**
+         * Sets private key.
+         *
+         * @param privateKey the private key
+         * @return the private key
+         */
         public ClientBuilder setPrivateKey(String privateKey) {
             this.privateKey = privateKey;
             return this;
         }
 
+        /**
+         * Gets alipay public key.
+         *
+         * @return the alipay public key
+         */
         public String getAlipayPublicKey() {
             return alipayPublicKey;
         }
 
+        /**
+         * Gets appid.
+         *
+         * @return the appid
+         */
         public String getAppid() {
             return appid;
         }
 
+        /**
+         * Gets charset.
+         *
+         * @return the charset
+         */
         public String getCharset() {
             return charset;
         }
 
+        /**
+         * Gets format.
+         *
+         * @return the format
+         */
         public String getFormat() {
             return format;
         }
 
+        /**
+         * Gets gateway url.
+         *
+         * @return the gateway url
+         */
         public String getGatewayUrl() {
             return gatewayUrl;
         }
 
+        /**
+         * Gets private key.
+         *
+         * @return the private key
+         */
         public String getPrivateKey() {
             return privateKey;
         }
     }
 
+    /**
+     * Instantiates a new Alipay trade with hb service.
+     *
+     * @param builder the builder
+     */
     public AlipayTradeWithHBServiceImpl(ClientBuilder builder) {
         if (StringUtils.isEmpty(builder.getGatewayUrl())) {
             throw new NullPointerException("gatewayUrl should not be NULL!");

@@ -12,9 +12,17 @@ import org.apache.commons.logging.LogFactory;
  * Created by liuyangkly on 15/10/22.
  */
 abstract class AbsAlipayService {
+    /**
+     * The Log.
+     */
     protected Log log = LogFactory.getLog(getClass());
 
-    // 验证bizContent对象
+    /**
+     * Validate builder.
+     *
+     * @param builder the builder
+     */
+// 验证bizContent对象
     protected void validateBuilder(RequestBuilder builder) {
         if (builder == null) {
             throw new NullPointerException("builder should not be NULL!");
@@ -25,7 +33,14 @@ abstract class AbsAlipayService {
         }
     }
 
-    // 调用AlipayClient的execute方法，进行远程调用
+    /**
+     * Gets response.
+     *
+     * @param client  the client
+     * @param request the request
+     * @return the response
+     */
+// 调用AlipayClient的execute方法，进行远程调用
     @SuppressWarnings({ "rawtypes", "unchecked" })
     protected AlipayResponse getResponse(AlipayClient client, AlipayRequest request) {
         try {

@@ -6,8 +6,9 @@ import org.thlws.payment.alipay.entity.response.*;
 
 /**
  * 支付宝支付入口Class
- * @author hanley@thlws.com
- * @date 2018/11/16
+ *
+ * @author hanley @thlws.com
+ *  2018 /11/16
  */
 public class AlipayClient {
 

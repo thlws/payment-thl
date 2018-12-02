@@ -10,7 +10,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.*;
@@ -28,7 +27,7 @@ public class ThlwsBeanUtil {
 	 * Object to Map (will ignore null properties)
 	 *
 	 * @param o the o
-	 * @return map
+	 * @return map map
 	 * @author HanleyTang
 	 */
 	public static Map<String, Object> ObjectToMap(Object o){
@@ -41,7 +40,7 @@ public class ThlwsBeanUtil {
 	/***
 	 * 去除空值
 	 * @param map the map
-	 * @return map
+	 * @return map map
 	 * @author HanleyTang
 	 */
 	public static Map<String, Object> dataFilter(Map<String, Object> map) {
@@ -85,8 +84,9 @@ public class ThlwsBeanUtil {
 
 	/**
 	 * map数据转换为GET URL后的参数
+	 *
 	 * @param mapData the map data
-	 * @return string
+	 * @return string string
 	 * @author HanleyTang
 	 */
 	public static String mapToParams(Map<String,Object> mapData){
@@ -181,9 +181,9 @@ public class ThlwsBeanUtil {
 
 	/***
 	 * 格式化XML
-	 * @param xml
-	 * @return
-	 * @throws Exception
+	 * @param xml the xml
+	 * @return string
+	 * @throws Exception the exception
 	 */
 	public static String formatXml(String xml) throws Exception {
 		org.dom4j.Document document = DocumentHelper.parseText(xml);
@@ -198,13 +198,12 @@ public class ThlwsBeanUtil {
 	}
 
 
-
 	/***
 	 * bean to xml,调用此方便需在Bean配置相关Annotation
-	 * @param clazz
-	 * @param bean
-	 * @return
-	 * @throws JAXBException
+	 * @param clazz the clazz
+	 * @param bean the bean
+	 * @return string
+	 * @throws JAXBException the jaxb exception
 	 */
 	public static String beanToXml(Class clazz,Object bean) throws JAXBException {
 
@@ -220,12 +219,11 @@ public class ThlwsBeanUtil {
 
 	/***
 	 * xml to bean,调用此方便需在Bean配置相关Annotation
-	 * @param xml
-	 * @param cls
-	 * @param <T>
-	 * @return
-	 * @throws JAXBException
-	 * @throws IOException
+	 * @param <T>  the type parameter
+	 * @param xml the xml
+	 * @param cls the cls
+	 * @return t
+	 * @throws JAXBException the jaxb exception
 	 */
 	public static <T> T xmlToBean(String xml,Class<T> cls) throws JAXBException {
 
@@ -258,7 +256,14 @@ public class ThlwsBeanUtil {
 	}
 
 
-
+	/**
+	 * Json to bean t.
+	 *
+	 * @param <T>  the type parameter
+	 * @param json the json
+	 * @param cls  the cls
+	 * @return the t
+	 */
 	public static <T> T jsonToBean(String json,Class<T> cls){
 
 		Gson gson = new Gson();
@@ -267,6 +272,12 @@ public class ThlwsBeanUtil {
 	}
 
 
+	/**
+	 * Bean to json string.
+	 *
+	 * @param o the o
+	 * @return the string
+	 */
 	public static String beanToJson(Object o){
 		Gson gson = new Gson();;
 		String json = gson.toJson(o);

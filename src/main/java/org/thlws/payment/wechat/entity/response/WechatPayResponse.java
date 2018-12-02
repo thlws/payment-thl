@@ -88,7 +88,7 @@ public class WechatPayResponse extends WechatResponse {
 
 
 
-	/**代金券金额,“代金券”金额<=订单金额，订单金额-“代金券”金额=现金支付金额*/
+	/** 代金券金额,“代金券”金额小于等于订单金额，订单金额 减 “代金券”金额等于现金支付金额*/
 	@XmlElement(name="coupon_fee")
 	private String couponFee;
 
@@ -110,16 +110,16 @@ public class WechatPayResponse extends WechatResponse {
 
 	/**
 	 * 应结订单金额
-	 * 当订单使用了免充值型优惠券后返回该参数，应结订单金额=订单金额-免充值优惠券金额
+	 * 当订单使用了免充值型优惠券后返回该参数，应结订单金额等于订单金额 减 免充值优惠券金额
 	 * */
 	@XmlElement(name="settlement_total_fee")
 	private String settlementTotalFee;
 
 
-	/**
-	 * Instantiates a new Wechat pay response.
-	 */
-	public WechatPayResponse() {
+    /**
+     * Instantiates a new Wechat pay response.
+     */
+    public WechatPayResponse() {
 	}
 
 
@@ -130,187 +130,417 @@ public class WechatPayResponse extends WechatResponse {
 	}
 
 
-	public String getAppId() {
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
+    public String getAppId() {
 		return appId;
 	}
 
-	public void setAppId(String appId) {
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
+    public void setAppId(String appId) {
 		this.appId = appId;
 	}
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getNonceStr() {
+    /**
+     * Gets nonce str.
+     *
+     * @return the nonce str
+     */
+    public String getNonceStr() {
 		return nonceStr;
 	}
 
-	public void setNonceStr(String nonceStr) {
+    /**
+     * Sets nonce str.
+     *
+     * @param nonceStr the nonce str
+     */
+    public void setNonceStr(String nonceStr) {
 		this.nonceStr = nonceStr;
 	}
 
-	public String getSign() {
+    /**
+     * Gets sign.
+     *
+     * @return the sign
+     */
+    public String getSign() {
 		return sign;
 	}
 
-	public void setSign(String sign) {
+    /**
+     * Sets sign.
+     *
+     * @param sign the sign
+     */
+    public void setSign(String sign) {
 		this.sign = sign;
 	}
 
-	public String getTradeType() {
+    /**
+     * Gets trade type.
+     *
+     * @return the trade type
+     */
+    public String getTradeType() {
 		return tradeType;
 	}
 
-	public void setTradeType(String tradeType) {
+    /**
+     * Sets trade type.
+     *
+     * @param tradeType the trade type
+     */
+    public void setTradeType(String tradeType) {
 		this.tradeType = tradeType;
 	}
 
-	public String getOpenId() {
+    /**
+     * Gets open id.
+     *
+     * @return the open id
+     */
+    public String getOpenId() {
 		return openId;
 	}
 
-	public void setOpenId(String openId) {
+    /**
+     * Sets open id.
+     *
+     * @param openId the open id
+     */
+    public void setOpenId(String openId) {
 		this.openId = openId;
 	}
 
-	public String getIsSubscribe() {
+    /**
+     * Gets is subscribe.
+     *
+     * @return the is subscribe
+     */
+    public String getIsSubscribe() {
 		return isSubscribe;
 	}
 
-	public void setIsSubscribe(String isSubscribe) {
+    /**
+     * Sets is subscribe.
+     *
+     * @param isSubscribe the is subscribe
+     */
+    public void setIsSubscribe(String isSubscribe) {
 		this.isSubscribe = isSubscribe;
 	}
 
-	public String getBankType() {
+    /**
+     * Gets bank type.
+     *
+     * @return the bank type
+     */
+    public String getBankType() {
 		return bankType;
 	}
 
-	public void setBankType(String bankType) {
+    /**
+     * Sets bank type.
+     *
+     * @param bankType the bank type
+     */
+    public void setBankType(String bankType) {
 		this.bankType = bankType;
 	}
 
-	public String getFeeType() {
+    /**
+     * Gets fee type.
+     *
+     * @return the fee type
+     */
+    public String getFeeType() {
 		return feeType;
 	}
 
-	public void setFeeType(String feeType) {
+    /**
+     * Sets fee type.
+     *
+     * @param feeType the fee type
+     */
+    public void setFeeType(String feeType) {
 		this.feeType = feeType;
 	}
 
-	public String getTotalFee() {
+    /**
+     * Gets total fee.
+     *
+     * @return the total fee
+     */
+    public String getTotalFee() {
 		return totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+    /**
+     * Sets total fee.
+     *
+     * @param totalFee the total fee
+     */
+    public void setTotalFee(String totalFee) {
 		this.totalFee = totalFee;
 	}
 
-	public String getCashFeeType() {
+    /**
+     * Gets cash fee type.
+     *
+     * @return the cash fee type
+     */
+    public String getCashFeeType() {
 		return cashFeeType;
 	}
 
-	public void setCashFeeType(String cashFeeType) {
+    /**
+     * Sets cash fee type.
+     *
+     * @param cashFeeType the cash fee type
+     */
+    public void setCashFeeType(String cashFeeType) {
 		this.cashFeeType = cashFeeType;
 	}
 
-	public String getCashFee() {
+    /**
+     * Gets cash fee.
+     *
+     * @return the cash fee
+     */
+    public String getCashFee() {
 		return cashFee;
 	}
 
-	public void setCashFee(String cashFee) {
+    /**
+     * Sets cash fee.
+     *
+     * @param cashFee the cash fee
+     */
+    public void setCashFee(String cashFee) {
 		this.cashFee = cashFee;
 	}
 
-	public String getTransactionId() {
+    /**
+     * Gets transaction id.
+     *
+     * @return the transaction id
+     */
+    public String getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(String transactionId) {
+    /**
+     * Sets transaction id.
+     *
+     * @param transactionId the transaction id
+     */
+    public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
 
-	public String getOutTradeNo() {
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
+    public String getOutTradeNo() {
 		return outTradeNo;
 	}
 
-	public void setOutTradeNo(String outTradeNo) {
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     */
+    public void setOutTradeNo(String outTradeNo) {
 		this.outTradeNo = outTradeNo;
 	}
 
-	public String getAttach() {
+    /**
+     * Gets attach.
+     *
+     * @return the attach
+     */
+    public String getAttach() {
 		return attach;
 	}
 
-	public void setAttach(String attach) {
+    /**
+     * Sets attach.
+     *
+     * @param attach the attach
+     */
+    public void setAttach(String attach) {
 		this.attach = attach;
 	}
 
-	public String getTimeEnd() {
+    /**
+     * Gets time end.
+     *
+     * @return the time end
+     */
+    public String getTimeEnd() {
 		return timeEnd;
 	}
 
-	public void setTimeEnd(String timeEnd) {
+    /**
+     * Sets time end.
+     *
+     * @param timeEnd the time end
+     */
+    public void setTimeEnd(String timeEnd) {
 		this.timeEnd = timeEnd;
 	}
 
-	public String getDeviceInfo() {
+    /**
+     * Gets device info.
+     *
+     * @return the device info
+     */
+    public String getDeviceInfo() {
 		return deviceInfo;
 	}
 
-	public void setDeviceInfo(String deviceInfo) {
+    /**
+     * Sets device info.
+     *
+     * @param deviceInfo the device info
+     */
+    public void setDeviceInfo(String deviceInfo) {
 		this.deviceInfo = deviceInfo;
 	}
 
-	public String getCouponFee() {
+    /**
+     * Gets coupon fee.
+     *
+     * @return the coupon fee
+     */
+    public String getCouponFee() {
 		return couponFee;
 	}
 
-	public void setCouponFee(String couponFee) {
+    /**
+     * Sets coupon fee.
+     *
+     * @param couponFee the coupon fee
+     */
+    public void setCouponFee(String couponFee) {
 		this.couponFee = couponFee;
 	}
 
-	public String getSubAppId() {
+    /**
+     * Gets sub app id.
+     *
+     * @return the sub app id
+     */
+    public String getSubAppId() {
 		return subAppId;
 	}
 
-	public void setSubAppId(String subAppId) {
+    /**
+     * Sets sub app id.
+     *
+     * @param subAppId the sub app id
+     */
+    public void setSubAppId(String subAppId) {
 		this.subAppId = subAppId;
 	}
 
-	public String getSubMchId() {
+    /**
+     * Gets sub mch id.
+     *
+     * @return the sub mch id
+     */
+    public String getSubMchId() {
 		return subMchId;
 	}
 
-	public void setSubMchId(String subMchId) {
+    /**
+     * Sets sub mch id.
+     *
+     * @param subMchId the sub mch id
+     */
+    public void setSubMchId(String subMchId) {
 		this.subMchId = subMchId;
 	}
 
-	public String getSubOpenId() {
+    /**
+     * Gets sub open id.
+     *
+     * @return the sub open id
+     */
+    public String getSubOpenId() {
 		return subOpenId;
 	}
 
-	public void setSubOpenId(String subOpenId) {
+    /**
+     * Sets sub open id.
+     *
+     * @param subOpenId the sub open id
+     */
+    public void setSubOpenId(String subOpenId) {
 		this.subOpenId = subOpenId;
 	}
 
-	public String getSubIsSubscribe() {
+    /**
+     * Gets sub is subscribe.
+     *
+     * @return the sub is subscribe
+     */
+    public String getSubIsSubscribe() {
 		return subIsSubscribe;
 	}
 
-	public void setSubIsSubscribe(String subIsSubscribe) {
+    /**
+     * Sets sub is subscribe.
+     *
+     * @param subIsSubscribe the sub is subscribe
+     */
+    public void setSubIsSubscribe(String subIsSubscribe) {
 		this.subIsSubscribe = subIsSubscribe;
 	}
 
-	public String getSettlementTotalFee() {
+    /**
+     * Gets settlement total fee.
+     *
+     * @return the settlement total fee
+     */
+    public String getSettlementTotalFee() {
 		return settlementTotalFee;
 	}
 
-	public void setSettlementTotalFee(String settlementTotalFee) {
+    /**
+     * Sets settlement total fee.
+     *
+     * @param settlementTotalFee the settlement total fee
+     */
+    public void setSettlementTotalFee(String settlementTotalFee) {
 		this.settlementTotalFee = settlementTotalFee;
 	}
 }

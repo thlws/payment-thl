@@ -22,170 +22,170 @@ public class OauthTokenResponse {
 	private String errmsg			;
 	private String desc;
 
-	/**
-	 * Gets desc.
-	 *
-	 * @return the desc
-	 */
-	public String getDesc() {
+    /**
+     * Gets desc.
+     *
+     * @return the desc
+     */
+    public String getDesc() {
 		return desc;
 	}
 
-	/**
-	 * Sets desc.
-	 *
-	 * @param desc the desc
-	 */
-	public void setDesc(String desc) {
+    /**
+     * Sets desc.
+     *
+     * @param desc the desc
+     */
+    public void setDesc(String desc) {
 		this.desc = desc;
 	}
 
-	/**
-	 * Gets errcode.
-	 *
-	 * @return the errcode
-	 */
-	public long getErrcode() {
+    /**
+     * Gets errcode.
+     *
+     * @return the errcode
+     */
+    public long getErrcode() {
 		return errcode;
 	}
 
-	/**
-	 * Sets errcode.
-	 *
-	 * @param errcode the errcode
-	 */
-	public void setErrcode(long errcode) {
+    /**
+     * Sets errcode.
+     *
+     * @param errcode the errcode
+     */
+    public void setErrcode(long errcode) {
 		this.errcode = errcode;
 	}
 
-	/**
-	 * Gets errmsg.
-	 *
-	 * @return the errmsg
-	 */
-	public String getErrmsg() {
+    /**
+     * Gets errmsg.
+     *
+     * @return the errmsg
+     */
+    public String getErrmsg() {
 		return errmsg;
 	}
 
-	/**
-	 * Sets errmsg.
-	 *
-	 * @param errmsg the errmsg
-	 */
-	public void setErrmsg(String errmsg) {
+    /**
+     * Sets errmsg.
+     *
+     * @param errmsg the errmsg
+     */
+    public void setErrmsg(String errmsg) {
 		this.errmsg = errmsg;
 	}
 
-	/**
-	 * Instantiates a new Oauth token response.
-	 */
-	public OauthTokenResponse(){}
+    /**
+     * Instantiates a new Oauth token response.
+     */
+    public OauthTokenResponse(){}
 
-	/**
-	 * Gets access token.
-	 *
-	 * @return the access token
-	 */
-	public String getAccess_token() {
+    /**
+     * Gets access token.
+     *
+     * @return the access token
+     */
+    public String getAccess_token() {
 		return access_token;
 	}
 
-	/**
-	 * Gets expires in.
-	 *
-	 * @return the expires in
-	 */
-	public String getExpires_in() {
+    /**
+     * Gets expires in.
+     *
+     * @return the expires in
+     */
+    public String getExpires_in() {
 		return expires_in;
 	}
 
-	/**
-	 * Gets refresh token.
-	 *
-	 * @return the refresh token
-	 */
-	public String getRefresh_token() {
+    /**
+     * Gets refresh token.
+     *
+     * @return the refresh token
+     */
+    public String getRefresh_token() {
 		return refresh_token;
 	}
 
-	/**
-	 * Gets openid.
-	 *
-	 * @return the openid
-	 */
-	public String getOpenid() {
+    /**
+     * Gets openid.
+     *
+     * @return the openid
+     */
+    public String getOpenid() {
 		return openid;
 	}
 
-	/**
-	 * Gets scope.
-	 *
-	 * @return the scope
-	 */
-	public String getScope() {
+    /**
+     * Gets scope.
+     *
+     * @return the scope
+     */
+    public String getScope() {
 		return scope;
 	}
 
-	/**
-	 * Gets unionid.
-	 *
-	 * @return the unionid
-	 */
-	public String getUnionid() {
+    /**
+     * Gets unionid.
+     *
+     * @return the unionid
+     */
+    public String getUnionid() {
 		return unionid;
 	}
 
-	/**
-	 * Sets access token.
-	 *
-	 * @param access_token the access token
-	 */
-	public void setAccess_token(String access_token) {
+    /**
+     * Sets access token.
+     *
+     * @param access_token the access token
+     */
+    public void setAccess_token(String access_token) {
 		this.access_token = access_token;
 	}
 
-	/**
-	 * Sets expires in.
-	 *
-	 * @param expires_in the expires in
-	 */
-	public void setExpires_in(String expires_in) {
+    /**
+     * Sets expires in.
+     *
+     * @param expires_in the expires in
+     */
+    public void setExpires_in(String expires_in) {
 		this.expires_in = expires_in;
 	}
 
-	/**
-	 * Sets refresh token.
-	 *
-	 * @param refresh_token the refresh token
-	 */
-	public void setRefresh_token(String refresh_token) {
+    /**
+     * Sets refresh token.
+     *
+     * @param refresh_token the refresh token
+     */
+    public void setRefresh_token(String refresh_token) {
 		this.refresh_token = refresh_token;
 	}
 
-	/**
-	 * Sets openid.
-	 *
-	 * @param openid the openid
-	 */
-	public void setOpenid(String openid) {
+    /**
+     * Sets openid.
+     *
+     * @param openid the openid
+     */
+    public void setOpenid(String openid) {
 		this.openid = openid;
 	}
 
-	/**
-	 * Sets scope.
-	 *
-	 * @param scope the scope
-	 */
-	public void setScope(String scope) {
+    /**
+     * Sets scope.
+     *
+     * @param scope the scope
+     */
+    public void setScope(String scope) {
 		this.scope = scope;
 	}
 
-	/**
-	 * Sets unionid.
-	 *
-	 * @param unionid the unionid
-	 */
-	public void setUnionid(String unionid) {
+    /**
+     * Sets unionid.
+     *
+     * @param unionid the unionid
+     */
+    public void setUnionid(String unionid) {
 		this.unionid = unionid;
 	}
 

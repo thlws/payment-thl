@@ -9,16 +9,24 @@ package org.thlws.payment.wechat.config;
  */
 public class WechatConfig {
 
-	/** 编码格式 */
-	public static String INPUT_CHARSET = "UTF-8";
+    /**
+     * 编码格式
+     */
+    public static String INPUT_CHARSET = "UTF-8";
 
-	/** 加密方式 */
-	public static final String SIGN_TYPE = "MD5";
+    /**
+     * 加密方式
+     */
+    public static final String SIGN_TYPE = "MD5";
 
-	/** 数字证书 */
-	public static final String PKCS12 = "PKCS12";
+    /**
+     * 数字证书
+     */
+    public static final String PKCS12 = "PKCS12";
 
-    /** 加密协议 */
+    /**
+     * 加密协议
+     */
     public static final String [] SUPPORTED_PROTOCOLS = new String[] { "TLSv1" };
 
 }

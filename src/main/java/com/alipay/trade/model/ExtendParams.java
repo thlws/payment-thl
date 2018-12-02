@@ -19,10 +19,21 @@ public class ExtendParams {
         return sb.toString();
     }
 
+    /**
+     * Gets sys service provider id.
+     *
+     * @return the sys service provider id
+     */
     public String getSysServiceProviderId() {
         return sysServiceProviderId;
     }
 
+    /**
+     * Sets sys service provider id.
+     *
+     * @param sysServiceProviderId the sys service provider id
+     * @return the sys service provider id
+     */
     public ExtendParams setSysServiceProviderId(String sysServiceProviderId) {
         this.sysServiceProviderId = sysServiceProviderId;
         return this;

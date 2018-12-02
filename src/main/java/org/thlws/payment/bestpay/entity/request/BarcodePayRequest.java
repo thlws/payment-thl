@@ -66,345 +66,345 @@ public class BarcodePayRequest {
 	/**设备终端号*/
 	private String deviceTmNum;
 
-	/**
-	 * Gets merchant id.
-	 *
-	 * @return the merchant id
-	 */
-	public String getMerchantId() {
+    /**
+     * Gets merchant id.
+     *
+     * @return the merchant id
+     */
+    public String getMerchantId() {
 		return merchantId;
 	}
 
-	/**
-	 * Gets sub merchant id.
-	 *
-	 * @return the sub merchant id
-	 */
-	public String getSubMerchantId() {
+    /**
+     * Gets sub merchant id.
+     *
+     * @return the sub merchant id
+     */
+    public String getSubMerchantId() {
 		return subMerchantId;
 	}
 
-	/**
-	 * Gets barcode.
-	 *
-	 * @return the barcode
-	 */
-	public String getBarcode() {
+    /**
+     * Gets barcode.
+     *
+     * @return the barcode
+     */
+    public String getBarcode() {
 		return barcode;
 	}
 
-	/**
-	 * Gets order no.
-	 *
-	 * @return the order no
-	 */
-	public String getOrderNo() {
+    /**
+     * Gets order no.
+     *
+     * @return the order no
+     */
+    public String getOrderNo() {
 		return orderNo;
 	}
 
-	/**
-	 * Gets order req no.
-	 *
-	 * @return the order req no
-	 */
-	public String getOrderReqNo() {
+    /**
+     * Gets order req no.
+     *
+     * @return the order req no
+     */
+    public String getOrderReqNo() {
 		return orderReqNo;
 	}
 
-	/**
-	 * Gets channel.
-	 *
-	 * @return the channel
-	 */
-	public String getChannel() {
+    /**
+     * Gets channel.
+     *
+     * @return the channel
+     */
+    public String getChannel() {
 		return channel;
 	}
 
-	/**
-	 * Gets busi type.
-	 *
-	 * @return the busi type
-	 */
-	public String getBusiType() {
+    /**
+     * Gets busi type.
+     *
+     * @return the busi type
+     */
+    public String getBusiType() {
 		return busiType;
 	}
 
-	/**
-	 * Gets order date.
-	 *
-	 * @return the order date
-	 */
-	public String getOrderDate() {
+    /**
+     * Gets order date.
+     *
+     * @return the order date
+     */
+    public String getOrderDate() {
 		return orderDate;
 	}
 
-	/**
-	 * Gets order amt.
-	 *
-	 * @return the order amt
-	 */
-	public String getOrderAmt() {
+    /**
+     * Gets order amt.
+     *
+     * @return the order amt
+     */
+    public String getOrderAmt() {
 		return orderAmt;
 	}
 
-	/**
-	 * Gets product amt.
-	 *
-	 * @return the product amt
-	 */
-	public String getProductAmt() {
+    /**
+     * Gets product amt.
+     *
+     * @return the product amt
+     */
+    public String getProductAmt() {
 		return productAmt;
 	}
 
-	/**
-	 * Gets attach amt.
-	 *
-	 * @return the attach amt
-	 */
-	public String getAttachAmt() {
+    /**
+     * Gets attach amt.
+     *
+     * @return the attach amt
+     */
+    public String getAttachAmt() {
 		return attachAmt;
 	}
 
-	/**
-	 * Gets goods name.
-	 *
-	 * @return the goods name
-	 */
-	public String getGoodsName() {
+    /**
+     * Gets goods name.
+     *
+     * @return the goods name
+     */
+    public String getGoodsName() {
 		return goodsName;
 	}
 
-	/**
-	 * Gets store id.
-	 *
-	 * @return the store id
-	 */
-	public String getStoreId() {
+    /**
+     * Gets store id.
+     *
+     * @return the store id
+     */
+    public String getStoreId() {
 		return storeId;
 	}
 
-	/**
-	 * Gets back url.
-	 *
-	 * @return the back url
-	 */
-	public String getBackUrl() {
+    /**
+     * Gets back url.
+     *
+     * @return the back url
+     */
+    public String getBackUrl() {
 		return backUrl;
 	}
 
-	/**
-	 * Gets ledger detail.
-	 *
-	 * @return the ledger detail
-	 */
-	public String getLedgerDetail() {
+    /**
+     * Gets ledger detail.
+     *
+     * @return the ledger detail
+     */
+    public String getLedgerDetail() {
 		return ledgerDetail;
 	}
 
-	/**
-	 * Gets attach.
-	 *
-	 * @return the attach
-	 */
-	public String getAttach() {
+    /**
+     * Gets attach.
+     *
+     * @return the attach
+     */
+    public String getAttach() {
 		return attach;
 	}
 
-	/**
-	 * Gets mac.
-	 *
-	 * @return the mac
-	 */
-	public String getMac() {
+    /**
+     * Gets mac.
+     *
+     * @return the mac
+     */
+    public String getMac() {
 		return mac;
 	}
 
-	/**
-	 * Gets mchnt tm num.
-	 *
-	 * @return the mchnt tm num
-	 */
-	public String getMchntTmNum() {
+    /**
+     * Gets mchnt tm num.
+     *
+     * @return the mchnt tm num
+     */
+    public String getMchntTmNum() {
 		return mchntTmNum;
 	}
 
-	/**
-	 * Gets device tm num.
-	 *
-	 * @return the device tm num
-	 */
-	public String getDeviceTmNum() {
+    /**
+     * Gets device tm num.
+     *
+     * @return the device tm num
+     */
+    public String getDeviceTmNum() {
 		return deviceTmNum;
 	}
 
-	/**
-	 * Sets merchant id.
-	 *
-	 * @param merchantId the merchant id
-	 */
-	public void setMerchantId(String merchantId) {
+    /**
+     * Sets merchant id.
+     *
+     * @param merchantId the merchant id
+     */
+    public void setMerchantId(String merchantId) {
 		this.merchantId = merchantId;
 	}
 
-	/**
-	 * Sets sub merchant id.
-	 *
-	 * @param subMerchantId the sub merchant id
-	 */
-	public void setSubMerchantId(String subMerchantId) {
+    /**
+     * Sets sub merchant id.
+     *
+     * @param subMerchantId the sub merchant id
+     */
+    public void setSubMerchantId(String subMerchantId) {
 		this.subMerchantId = subMerchantId;
 	}
 
-	/**
-	 * Sets barcode.
-	 *
-	 * @param barcode the barcode
-	 */
-	public void setBarcode(String barcode) {
+    /**
+     * Sets barcode.
+     *
+     * @param barcode the barcode
+     */
+    public void setBarcode(String barcode) {
 		this.barcode = barcode;
 	}
 
-	/**
-	 * Sets order no.
-	 *
-	 * @param orderNo the order no
-	 */
-	public void setOrderNo(String orderNo) {
+    /**
+     * Sets order no.
+     *
+     * @param orderNo the order no
+     */
+    public void setOrderNo(String orderNo) {
 		this.orderNo = orderNo;
 	}
 
-	/**
-	 * Sets order req no.
-	 *
-	 * @param orderReqNo the order req no
-	 */
-	public void setOrderReqNo(String orderReqNo) {
+    /**
+     * Sets order req no.
+     *
+     * @param orderReqNo the order req no
+     */
+    public void setOrderReqNo(String orderReqNo) {
 		this.orderReqNo = orderReqNo;
 	}
 
-	/**
-	 * Sets channel.
-	 *
-	 * @param channel the channel
-	 */
-	public void setChannel(String channel) {
+    /**
+     * Sets channel.
+     *
+     * @param channel the channel
+     */
+    public void setChannel(String channel) {
 		this.channel = channel;
 	}
 
-	/**
-	 * Sets busi type.
-	 *
-	 * @param busiType the busi type
-	 */
-	public void setBusiType(String busiType) {
+    /**
+     * Sets busi type.
+     *
+     * @param busiType the busi type
+     */
+    public void setBusiType(String busiType) {
 		this.busiType = busiType;
 	}
 
-	/**
-	 * Sets order date.
-	 *
-	 * @param orderDate the order date
-	 */
-	public void setOrderDate(String orderDate) {
+    /**
+     * Sets order date.
+     *
+     * @param orderDate the order date
+     */
+    public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
 
-	/**
-	 * Sets order amt.
-	 *
-	 * @param orderAmt the order amt
-	 */
-	public void setOrderAmt(String orderAmt) {
+    /**
+     * Sets order amt.
+     *
+     * @param orderAmt the order amt
+     */
+    public void setOrderAmt(String orderAmt) {
 		this.orderAmt = orderAmt;
 	}
 
-	/**
-	 * Sets product amt.
-	 *
-	 * @param productAmt the product amt
-	 */
-	public void setProductAmt(String productAmt) {
+    /**
+     * Sets product amt.
+     *
+     * @param productAmt the product amt
+     */
+    public void setProductAmt(String productAmt) {
 		this.productAmt = productAmt;
 	}
 
-	/**
-	 * Sets attach amt.
-	 *
-	 * @param attachAmt the attach amt
-	 */
-	public void setAttachAmt(String attachAmt) {
+    /**
+     * Sets attach amt.
+     *
+     * @param attachAmt the attach amt
+     */
+    public void setAttachAmt(String attachAmt) {
 		this.attachAmt = attachAmt;
 	}
 
-	/**
-	 * Sets goods name.
-	 *
-	 * @param goodsName the goods name
-	 */
-	public void setGoodsName(String goodsName) {
+    /**
+     * Sets goods name.
+     *
+     * @param goodsName the goods name
+     */
+    public void setGoodsName(String goodsName) {
 		this.goodsName = goodsName;
 	}
 
-	/**
-	 * Sets store id.
-	 *
-	 * @param storeId the store id
-	 */
-	public void setStoreId(String storeId) {
+    /**
+     * Sets store id.
+     *
+     * @param storeId the store id
+     */
+    public void setStoreId(String storeId) {
 		this.storeId = storeId;
 	}
 
-	/**
-	 * Sets back url.
-	 *
-	 * @param backUrl the back url
-	 */
-	public void setBackUrl(String backUrl) {
+    /**
+     * Sets back url.
+     *
+     * @param backUrl the back url
+     */
+    public void setBackUrl(String backUrl) {
 		this.backUrl = backUrl;
 	}
 
-	/**
-	 * Sets ledger detail.
-	 *
-	 * @param ledgerDetail the ledger detail
-	 */
-	public void setLedgerDetail(String ledgerDetail) {
+    /**
+     * Sets ledger detail.
+     *
+     * @param ledgerDetail the ledger detail
+     */
+    public void setLedgerDetail(String ledgerDetail) {
 		this.ledgerDetail = ledgerDetail;
 	}
 
-	/**
-	 * Sets attach.
-	 *
-	 * @param attach the attach
-	 */
-	public void setAttach(String attach) {
+    /**
+     * Sets attach.
+     *
+     * @param attach the attach
+     */
+    public void setAttach(String attach) {
 		this.attach = attach;
 	}
 
-	/**
-	 * Sets mac.
-	 *
-	 * @param mac the mac
-	 */
-	public void setMac(String mac) {
+    /**
+     * Sets mac.
+     *
+     * @param mac the mac
+     */
+    public void setMac(String mac) {
 		this.mac = mac;
 	}
 
-	/**
-	 * Sets mchnt tm num.
-	 *
-	 * @param mchntTmNum the mchnt tm num
-	 */
-	public void setMchntTmNum(String mchntTmNum) {
+    /**
+     * Sets mchnt tm num.
+     *
+     * @param mchntTmNum the mchnt tm num
+     */
+    public void setMchntTmNum(String mchntTmNum) {
 		this.mchntTmNum = mchntTmNum;
 	}
 
-	/**
-	 * Sets device tm num.
-	 *
-	 * @param deviceTmNum the device tm num
-	 */
-	public void setDeviceTmNum(String deviceTmNum) {
+    /**
+     * Sets device tm num.
+     *
+     * @param deviceTmNum the device tm num
+     */
+    public void setDeviceTmNum(String deviceTmNum) {
 		this.deviceTmNum = deviceTmNum;
 	}
 	

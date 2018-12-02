@@ -17,12 +17,25 @@ import java.util.concurrent.TimeUnit;
  * Created by liuyangkly on 15/10/23.
  */
 public abstract class AbsHbRunner implements Runnable {
+    /**
+     * The Log.
+     */
     protected Log log = LogFactory.getLog(getClass());
 
-    // 获取交易保障所需的信息
+    /**
+     * Gets builder.
+     *
+     * @return the builder
+     */
+// 获取交易保障所需的信息
     public abstract AlipayHeartbeatSynRequestBuilder getBuilder();
 
-    // 获取商户授权令牌，系统商通过此令牌帮助商户发起请求，完成业务
+    /**
+     * Gets app auth token.
+     *
+     * @return the app auth token
+     */
+// 获取商户授权令牌，系统商通过此令牌帮助商户发起请求，完成业务
     public abstract String getAppAuthToken();
 
     private ScheduledExecutorService scheduledService = Executors.newSingleThreadScheduledExecutor();
@@ -31,6 +44,11 @@ public abstract class AbsHbRunner implements Runnable {
     private long delay = 0;
     private long duration = 0;
 
+    /**
+     * Instantiates a new Abs hb runner.
+     *
+     * @param monitorService the monitor service
+     */
     public AbsHbRunner(AlipayMonitorService monitorService) {
         this.monitorService = monitorService;
     }
@@ -54,6 +72,9 @@ public abstract class AbsHbRunner implements Runnable {
         log.debug(sb.toString());
     }
 
+    /**
+     * Schedule.
+     */
     public void schedule() {
         if (delay == 0) {
             delay = Constants.heartbeat_delay;
@@ -64,22 +85,45 @@ public abstract class AbsHbRunner implements Runnable {
         scheduledService.scheduleAtFixedRate(this, delay, duration, TimeUnit.SECONDS);
     }
 
+    /**
+     * Shutdown.
+     */
     public void shutdown() {
         scheduledService.shutdown();
     }
 
+    /**
+     * Gets delay.
+     *
+     * @return the delay
+     */
     public long getDelay() {
         return delay;
     }
 
+    /**
+     * Sets delay.
+     *
+     * @param delay the delay
+     */
     public void setDelay(long delay) {
         this.delay = delay;
     }
 
+    /**
+     * Gets duration.
+     *
+     * @return the duration
+     */
     public long getDuration() {
         return duration;
     }
 
+    /**
+     * Sets duration.
+     *
+     * @param duration the duration
+     */
     public void setDuration(long duration) {
         this.duration = duration;
     }

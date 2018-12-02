@@ -4,9 +4,19 @@ package com.alipay.trade.model.hb;
  * Created by liuyangkly on 15/9/28.
  */
 public interface TradeInfo {
-    // 获取交易状态
+    /**
+     * Gets status.
+     *
+     * @return the status
+     */
+// 获取交易状态
     public HbStatus getStatus();
 
-    // 获取交易时间
+    /**
+     * Gets time consume.
+     *
+     * @return the time consume
+     */
+// 获取交易时间
     public double getTimeConsume();
 }

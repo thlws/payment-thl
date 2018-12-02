@@ -27,27 +27,57 @@ public class MicroMchResponse extends WechatResponse {
 	private String microMchId ;	//result_code 为 SUCCESS 的时候有返回
 
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getSign() {
+    /**
+     * Gets sign.
+     *
+     * @return the sign
+     */
+    public String getSign() {
 		return sign;
 	}
 
-	public void setSign(String sign) {
+    /**
+     * Sets sign.
+     *
+     * @param sign the sign
+     */
+    public void setSign(String sign) {
 		this.sign = sign;
 	}
 
-	public String getMicroMchId() {
+    /**
+     * Gets micro mch id.
+     *
+     * @return the micro mch id
+     */
+    public String getMicroMchId() {
 		return microMchId;
 	}
 
-	public void setMicroMchId(String microMchId) {
+    /**
+     * Sets micro mch id.
+     *
+     * @param microMchId the micro mch id
+     */
+    public void setMicroMchId(String microMchId) {
 		this.microMchId = microMchId;
 	}
 }

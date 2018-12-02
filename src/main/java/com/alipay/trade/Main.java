@@ -90,6 +90,11 @@ public class Main {
         }  
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Main main = new Main();
 
@@ -115,7 +120,10 @@ public class Main {
         main.test_trade_precreate();
     }
 
-    // 测试系统商交易保障调度
+    /**
+     * Test monitor schedule logic.
+     */
+// 测试系统商交易保障调度
     public void test_monitor_schedule_logic() {
         // 启动交易保障线程
         DemoHbRunner demoRunner = new DemoHbRunner(monitorService);
@@ -133,7 +141,10 @@ public class Main {
         demoRunner.shutdown();
     }
 
-    // 系统商的调用样例，填写了所有系统商商需要填写的字段
+    /**
+     * Test monitor sys.
+     */
+// 系统商的调用样例，填写了所有系统商商需要填写的字段
     public void test_monitor_sys() {
         // 系统商使用的交易信息格式，json字符串类型
         List<SysTradeInfo> sysTradeInfoList = new ArrayList<SysTradeInfo>();
@@ -170,7 +181,10 @@ public class Main {
         dumpResponse(response);
     }
 
-    // POS厂商的调用样例，填写了所有pos厂商需要填写的字段
+    /**
+     * Test monitor pos.
+     */
+// POS厂商的调用样例，填写了所有pos厂商需要填写的字段
     public void test_monitor_pos() {
         // POS厂商使用的交易信息格式，字符串类型
         List<PosTradeInfo> posTradeInfoList = new ArrayList<PosTradeInfo>();
@@ -209,7 +223,12 @@ public class Main {
         dumpResponse(response);
     }
 
-    // 测试当面付2.0支付
+    /**
+     * Test trade pay.
+     *
+     * @param service the service
+     */
+// 测试当面付2.0支付
     public void test_trade_pay(AlipayTradeService service) {
         // (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
         // 需保证商户系统端不能重复，建议通过数据库sequence生成，
@@ -297,7 +316,10 @@ public class Main {
         }
     }
 
-    // 测试当面付2.0查询订单
+    /**
+     * Test trade query.
+     */
+// 测试当面付2.0查询订单
     public void test_trade_query() {
         // (必填) 商户订单号，通过此商户订单号查询当面付的交易状态
         String outTradeNo = "tradepay14817938139942440181";
@@ -336,7 +358,10 @@ public class Main {
         }
     }
 
-    // 测试当面付2.0退款
+    /**
+     * Test trade refund.
+     */
+// 测试当面付2.0退款
     public void test_trade_refund() {
         // (必填) 外部订单号，需要退款交易的商户外部订单号
         String outTradeNo = "tradepay14817938139942440181";
@@ -379,7 +404,10 @@ public class Main {
         }
     }
 
-    // 测试当面付2.0生成支付二维码
+    /**
+     * Test trade precreate.
+     */
+// 测试当面付2.0生成支付二维码
     public void test_trade_precreate() {
         // (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
         // 需保证商户系统端不能重复，建议通过数据库sequence生成，

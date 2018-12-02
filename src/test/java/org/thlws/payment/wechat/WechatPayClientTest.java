@@ -48,7 +48,7 @@ public class WechatPayClientTest {
 
     /***
      * 扫码支付 & 公众支付 时必须调用该接口
-     * @throws Exception
+     * @throws Exception the exception
      */
     @Test
     public  void testUnifiedOrder() throws Exception{
@@ -183,7 +183,6 @@ public class WechatPayClientTest {
     }
 
 
-
     /***
      * 撤销订单
      */
@@ -209,6 +208,9 @@ public class WechatPayClientTest {
         }
     }
 
+    /**
+     * Test close order.
+     */
     @Test
     public void testCloseOrder(){
 
@@ -282,6 +284,9 @@ public class WechatPayClientTest {
     }
 
 
+    /**
+     * Test openid query.
+     */
     @Test
     public void testOpenidQuery(){
 

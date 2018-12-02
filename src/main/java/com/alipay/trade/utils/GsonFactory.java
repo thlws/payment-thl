@@ -25,6 +25,11 @@ public class GsonFactory {
                                 .create();
     }
 
+    /**
+     * Gets gson.
+     *
+     * @return the gson
+     */
     public static Gson getGson() {
         return GsonHolder.gson;
     }

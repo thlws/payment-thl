@@ -62,90 +62,190 @@ public class UnifiedOrderResponse  extends WechatResponse {
 		return JsonUtil.format(this);
 	}
 
-	/**
-	 * Instantiates a new Unified order response.
-	 */
-	public UnifiedOrderResponse() {
+    /**
+     * Instantiates a new Unified order response.
+     */
+    public UnifiedOrderResponse() {
 	}
 
 
-	public String getAppId() {
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
+    public String getAppId() {
 		return appId;
 	}
 
-	public void setAppId(String appId) {
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
+    public void setAppId(String appId) {
 		this.appId = appId;
 	}
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getNonceStr() {
+    /**
+     * Gets nonce str.
+     *
+     * @return the nonce str
+     */
+    public String getNonceStr() {
 		return nonceStr;
 	}
 
-	public void setNonceStr(String nonceStr) {
+    /**
+     * Sets nonce str.
+     *
+     * @param nonceStr the nonce str
+     */
+    public void setNonceStr(String nonceStr) {
 		this.nonceStr = nonceStr;
 	}
 
-	public String getSign() {
+    /**
+     * Gets sign.
+     *
+     * @return the sign
+     */
+    public String getSign() {
 		return sign;
 	}
 
-	public void setSign(String sign) {
+    /**
+     * Sets sign.
+     *
+     * @param sign the sign
+     */
+    public void setSign(String sign) {
 		this.sign = sign;
 	}
 
-	public String getPrepayId() {
+    /**
+     * Gets prepay id.
+     *
+     * @return the prepay id
+     */
+    public String getPrepayId() {
 		return prepayId;
 	}
 
-	public void setPrepayId(String prepayId) {
+    /**
+     * Sets prepay id.
+     *
+     * @param prepayId the prepay id
+     */
+    public void setPrepayId(String prepayId) {
 		this.prepayId = prepayId;
 	}
 
-	public String getTradeType() {
+    /**
+     * Gets trade type.
+     *
+     * @return the trade type
+     */
+    public String getTradeType() {
 		return tradeType;
 	}
 
-	public void setTradeType(String tradeType) {
+    /**
+     * Sets trade type.
+     *
+     * @param tradeType the trade type
+     */
+    public void setTradeType(String tradeType) {
 		this.tradeType = tradeType;
 	}
 
-	public String getDeviceInfo() {
+    /**
+     * Gets device info.
+     *
+     * @return the device info
+     */
+    public String getDeviceInfo() {
 		return deviceInfo;
 	}
 
-	public void setDeviceInfo(String deviceInfo) {
+    /**
+     * Sets device info.
+     *
+     * @param deviceInfo the device info
+     */
+    public void setDeviceInfo(String deviceInfo) {
 		this.deviceInfo = deviceInfo;
 	}
 
-	public String getCodeUrl() {
+    /**
+     * Gets code url.
+     *
+     * @return the code url
+     */
+    public String getCodeUrl() {
 		return codeUrl;
 	}
 
-	public void setCodeUrl(String codeUrl) {
+    /**
+     * Sets code url.
+     *
+     * @param codeUrl the code url
+     */
+    public void setCodeUrl(String codeUrl) {
 		this.codeUrl = codeUrl;
 	}
 
-	public String getSubAppId() {
+    /**
+     * Gets sub app id.
+     *
+     * @return the sub app id
+     */
+    public String getSubAppId() {
 		return subAppId;
 	}
 
-	public void setSubAppId(String subAppId) {
+    /**
+     * Sets sub app id.
+     *
+     * @param subAppId the sub app id
+     */
+    public void setSubAppId(String subAppId) {
 		this.subAppId = subAppId;
 	}
 
-	public String getSubMchId() {
+    /**
+     * Gets sub mch id.
+     *
+     * @return the sub mch id
+     */
+    public String getSubMchId() {
 		return subMchId;
 	}
 
-	public void setSubMchId(String subMchId) {
+    /**
+     * Sets sub mch id.
+     *
+     * @param subMchId the sub mch id
+     */
+    public void setSubMchId(String subMchId) {
 		this.subMchId = subMchId;
 	}
 }

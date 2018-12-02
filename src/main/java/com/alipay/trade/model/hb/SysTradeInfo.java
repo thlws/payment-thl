@@ -19,6 +19,14 @@ public class SysTradeInfo implements TradeInfo {
         // no public constructor.
     }
 
+    /**
+     * New instance sys trade info.
+     *
+     * @param outTradeNo  the out trade no
+     * @param timeConsume the time consume
+     * @param status      the status
+     * @return the sys trade info
+     */
     public static SysTradeInfo newInstance(String outTradeNo, double timeConsume, HbStatus status) {
         SysTradeInfo info = new SysTradeInfo();
         info.setOutTradeNo(outTradeNo);
@@ -30,10 +38,20 @@ public class SysTradeInfo implements TradeInfo {
         return info;
     }
 
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
     public String getOutTradeNo() {
         return outTradeNo;
     }
 
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     */
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
@@ -43,6 +61,11 @@ public class SysTradeInfo implements TradeInfo {
         return status;
     }
 
+    /**
+     * Sets status.
+     *
+     * @param status the status
+     */
     public void setStatus(HbStatus status) {
         this.status = status;
     }
@@ -52,6 +75,11 @@ public class SysTradeInfo implements TradeInfo {
         return timeConsume;
     }
 
+    /**
+     * Sets time consume.
+     *
+     * @param timeConsume the time consume
+     */
     public void setTimeConsume(double timeConsume) {
         this.timeConsume = timeConsume;
     }

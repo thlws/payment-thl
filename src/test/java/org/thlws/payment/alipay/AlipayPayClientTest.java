@@ -18,8 +18,9 @@ import static org.junit.Assert.assertTrue;
  * 支付宝接口测试
  * <h3>特别注意</h3>
  * 项目中提供的微信测试账户，仅用于接口功能测试，请勿用作其他用途。
- * @author hanley@thlws.com
- * @date 2018/11/16
+ *
+ * @author hanley @thlws.com
+ *  2018 /11/16
  */
 public class AlipayPayClientTest {
 
@@ -37,7 +38,9 @@ public class AlipayPayClientTest {
     private final static String alipay_public_key_2 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlpmpIhPr7pqm+v9wHQTd3xD7Wo1Ko7VTkMBgkw/V9jKd8h9vpUSKnx8la4SlJBY2Rcn72YXwMB3fjvh9MhrxY0yGsGJzwcpFjYa9z/ivwxke8uuyT9jVtDGWIMeVPPChaRF5pEyb6kJ6jDsdrp34GnNYthrblWqUKuw7QvRfvpARwl/Gp3pczwcPRWnkHrcnoZzU6YndLSVAqT+gmFia0DJ2H4S27r8igegbfbOpTJc+n+YuN734LLvcaoKINR9CbRPSkF5JOMmuwWThBdKBU5VwT/mrLwbIxdZkLcZ/w/17NZMHy963efhwIqTOEAup6WTD27sJi+MLjIkD9B4/6QIDAQAB";
 
 
-
+    /**
+     * The Alipay core.
+     */
     static AlipayCore alipayCore;
 
     /**
@@ -52,7 +55,6 @@ public class AlipayPayClientTest {
         //signType=rsa2时，必须传 支付宝公钥 alipay_public_key
         alipayCore = clientBuilder.setAlipayPublicKey(alipay_public_key_2).setAppId(appid_2).setPrivateKey(private_key_2).setSignType(AlipayConstants.SIGN_TYPE_RSA2).build();
     }
-
 
 
     /***
@@ -92,8 +94,9 @@ public class AlipayPayClientTest {
     }
 
 
-
-
+    /**
+     * Test refund.
+     */
     @Test
     public void testRefund(){
         try {
@@ -227,7 +230,6 @@ public class AlipayPayClientTest {
            log.error(e);
         }
     }
-
 
 
     /***

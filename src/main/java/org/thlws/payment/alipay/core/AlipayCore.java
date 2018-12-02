@@ -33,8 +33,9 @@ import org.thlws.utils.JsonUtil;
  *  AlipayClient.query("out_trade_no",alipayCore);
  *  AlipayClient.payInMobileSite(request,alipayCore);
  * </pre>
- * @author hanley@thlws.com
- * @date 2018/11/16
+ *
+ * @author hanley @thlws.com
+ *  2018 /11/16
  */
 public class AlipayCore {
 
@@ -88,6 +89,7 @@ public class AlipayCore {
         /***
          * 参数构件第二步,构件supper class instance.
          * Modified by Hanley
+         * @return the alipay core
          */
         public AlipayCore build() {
 
@@ -117,6 +119,12 @@ public class AlipayCore {
             return privateKey;
         }
 
+        /**
+         * Sets private key.
+         *
+         * @param privateKey the private key
+         * @return the private key
+         */
         public ClientBuilder setPrivateKey(String privateKey) {
             this.privateKey = privateKey;
             return this;
@@ -126,24 +134,52 @@ public class AlipayCore {
             return alipayPublicKey;
         }
 
+        /**
+         * Sets alipay public key.
+         *
+         * @param alipayPublicKey the alipay public key
+         * @return the alipay public key
+         */
         public ClientBuilder setAlipayPublicKey(String alipayPublicKey) {
             this.alipayPublicKey = alipayPublicKey;
             return this;
         }
 
+        /**
+         * Gets app id.
+         *
+         * @return the app id
+         */
         public String getAppId() {
             return appId;
         }
 
+        /**
+         * Sets app id.
+         *
+         * @param appId the app id
+         * @return the app id
+         */
         public ClientBuilder setAppId(String appId) {
             this.appId = appId;
             return this;
         }
 
+        /**
+         * Gets sign type.
+         *
+         * @return the sign type
+         */
         public String getSignType() {
             return signType;
         }
 
+        /**
+         * Sets sign type.
+         *
+         * @param signType the sign type
+         * @return the sign type
+         */
         public ClientBuilder setSignType(String signType) {
             this.signType = signType;
             return this;
@@ -153,11 +189,11 @@ public class AlipayCore {
 
     /***
      * 支付宝手机网页支付,支付宝新接口,在手机上可直接调用支付宝APP完成支付宝(有安装支付宝APP情况)<br>
-     * @see <a href="https://docs.open.alipay.com/203/105285">https://docs.open.alipay.com/203/105285</a>
-     * @see <a href="https://docs.open.alipay.com/203/105286">https://docs.open.alipay.com/203/105286</a>
      * @param request the request 新版网页支付参数
      * @return string 支付宝产生用于网页支付的html.
      * @throws Exception the exception
+     * @see  <a href="https://docs.open.alipay.com/203/105285">https://docs.open.alipay.com/203/105285</a>
+     * @see  <a href="https://docs.open.alipay.com/203/105286">https://docs.open.alipay.com/203/105286</a>
      */
     public String payInMobileSite(AlipayMobileSiteRequest request) throws Exception{
 
@@ -189,7 +225,7 @@ public class AlipayCore {
     /***
      * 支付宝电脑网站支付，该操作会跳转到支付宝的支付页面中完成支付动作，以 异步/同步 的形式告知支付结果
      * @param request 支付参数对象
-     * @return 返回支付宝页面,直接输出在页面中
+     * @return 返回支付宝页面, 直接输出在页面中 string
      * @throws Exception 程序异常
      */
     public String payInWebSite(AlipayWebSiteRequest request) throws Exception{
@@ -224,11 +260,10 @@ public class AlipayCore {
      * 当面付.扫码支付，指用户打开支付宝钱包中的“扫一扫”功能，扫描商户针对每个订单实时生成的订单二维码，并在手机端确认支付。
      * 收银员通过收银台或商户后台调用支付宝接口，生成二维码后，展示给用户，由用户扫描二维码完成订单支付。
      *
-     * @see <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
-     *
      * @param request the request 扫码支付所需参数
      * @return the alipay qrcode response 扫码支付结果
      * @throws Exception the exception
+     * @see <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
      */
     public AlipayQrcodeResponse preCreate(AlipayQrcodeRequest request) throws Exception{
 
@@ -288,10 +323,10 @@ public class AlipayCore {
 
     /***
      * 当面付.条码支付,是支付宝给到线下传统行业的一种收款方式。商户使用扫码枪等条码识别设备扫描用户支付宝钱包上的条码/二维码，完成收款。用户仅需出示付款码，所有操作由商户端完成。
-     * @see <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
      * @param request the request 条码支付 所需参数
      * @return alipay trade response 条码支付所需参数
      * @throws Exception the exception
+     * @see  <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
      */
     public AlipayTradeResponse pay(AlipayTradeRequest request) throws Exception{
 
@@ -410,11 +445,11 @@ public class AlipayCore {
     /**
      * 支付宝退款，商户因业务原因需要退款时，可通过成功交易的商户订单号或支付宝交易号进行退款 ，支持部分退款。
      * 退款接口会根据外部请求号out_request_no幂等返回，因此同一笔需要多次部分退款时，必须使用不同的out_request_no
-     * @see <a href="https://docs.open.alipay.com/api_1/alipay.trade.refund">https://docs.open.alipay.com/api_1/alipay.trade.refund</a>
      *
      * @param request the request 退款参数
      * @return 退款结果 alipay refund response
      * @throws Exception the exception
+     * @see <a href="https://docs.open.alipay.com/api_1/alipay.trade.refund">https://docs.open.alipay.com/api_1/alipay.trade.refund</a>
      */
     public AlipayRefundResponse refund(AlipayRefundRequest request) throws Exception{
 

@@ -10,12 +10,24 @@ import com.google.gson.JsonParser;
  */
 public class JsonUtil {
 
+    /**
+     * Format string.
+     *
+     * @param o the o
+     * @return the string
+     */
     public static String format(Object o){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(o);
         return prettyJson;
     }
 
+    /**
+     * Format string.
+     *
+     * @param uglyJson the ugly json
+     * @return the string
+     */
     public static String format(String uglyJson){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonParser jsonParser = new JsonParser();
@@ -25,6 +37,12 @@ public class JsonUtil {
     }
 
 
+    /**
+     * Bean to jsontring string.
+     *
+     * @param bean the bean
+     * @return the string
+     */
     public static String beanToJsontring(Object bean) {
         return new Gson().toJson(bean);
     }

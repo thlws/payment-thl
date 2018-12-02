@@ -381,7 +381,7 @@ abstract class AbsAlipayTradeService extends AbsAlipayService implements AlipayT
      * 查询返回“支付成功”
      * Modified by Hanley 新增查询成功状态 TRADE_CLOSED-[line 310 已注释]
      * @param response the response
-     * @return boolean
+     * @return boolean boolean
      */
     protected boolean querySuccess(AlipayTradeQueryResponse response) {
         return response != null &&

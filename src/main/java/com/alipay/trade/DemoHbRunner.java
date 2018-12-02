@@ -17,13 +17,18 @@ import com.alipay.trade.utils.Utils;
 
 /**
  * Created by liuyangkly on 15/10/23.
- 执行调度，主要任务由两个线程完成，交易线程（调用当面付2.0接口）和交易保障线程（轮询），具体需要做的事情
- 1.当面付程序每执行完一笔交易后将交易结果保存在临时队列
- 2.轮询线程读取临时队列，获取基础采集信息和最多30条trade_info信息，调用支付宝monitor.heartbeat.syn接口
- 示例代码仅封装了如何调用该接口api，采集数据，比如采集网络信息、交易耗时、异常信息等，需要系统商开发者自行完成。
+ * 执行调度，主要任务由两个线程完成，交易线程（调用当面付2.0接口）和交易保障线程（轮询），具体需要做的事情
+ * 1.当面付程序每执行完一笔交易后将交易结果保存在临时队列
+ * 2.轮询线程读取临时队列，获取基础采集信息和最多30条trade_info信息，调用支付宝monitor.heartbeat.syn接口
+ * 示例代码仅封装了如何调用该接口api，采集数据，比如采集网络信息、交易耗时、异常信息等，需要系统商开发者自行完成。
  */
 public class DemoHbRunner extends AbsHbRunner {
 
+    /**
+     * Instantiates a new Demo hb runner.
+     *
+     * @param monitorService the monitor service
+     */
     public DemoHbRunner(AlipayMonitorService monitorService) {
         super(monitorService);
     }

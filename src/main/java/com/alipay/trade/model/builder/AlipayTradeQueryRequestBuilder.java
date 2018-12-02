@@ -43,24 +43,49 @@ public class AlipayTradeQueryRequestBuilder extends RequestBuilder {
         return (AlipayTradeQueryRequestBuilder) super.setNotifyUrl(notifyUrl);
     }
 
+    /**
+     * Gets trade no.
+     *
+     * @return the trade no
+     */
     public String getTradeNo() {
         return bizContent.tradeNo;
     }
 
+    /**
+     * Sets trade no.
+     *
+     * @param tradeNo the trade no
+     * @return the trade no
+     */
     public AlipayTradeQueryRequestBuilder setTradeNo(String tradeNo) {
         bizContent.tradeNo = tradeNo;
         return this;
     }
 
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
     public String getOutTradeNo() {
         return bizContent.outTradeNo;
     }
 
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     * @return the out trade no
+     */
     public AlipayTradeQueryRequestBuilder setOutTradeNo(String outTradeNo) {
         bizContent.outTradeNo = outTradeNo;
         return this;
     }
 
+    /**
+     * The type Biz content.
+     */
     public static class BizContent {
         // 支付宝交易号,和商户订单号不能同时为空, 如果同时存在则通过tradeNo查询支付宝交易
         @SerializedName("trade_no")

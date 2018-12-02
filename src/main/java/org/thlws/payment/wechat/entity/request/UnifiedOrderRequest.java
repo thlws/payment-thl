@@ -41,7 +41,7 @@ public class UnifiedOrderRequest {
 	@XmlElement(name="trade_type")
 	private String tradeType       ;
 
-	/**随机字符串,默认生成,无需设置 <=32*/
+	/**随机字符串,默认生成,无需设置 小于等于32*/
 	@XmlElement(name="nonce_str")
 	private String nonceStr = ThlwsBeanUtil.getRandomString(32);
 
@@ -142,183 +142,408 @@ public class UnifiedOrderRequest {
 	private String sceneInfo;
 
 
-	public String getNonceStr() {
+    /**
+     * Gets nonce str.
+     *
+     * @return the nonce str
+     */
+    public String getNonceStr() {
 		return nonceStr;
 	}
 
-	public String getOpenId() {
+    /**
+     * Gets open id.
+     *
+     * @return the open id
+     */
+    public String getOpenId() {
 		return openId;
 	}
 
-	public void setOpenId(String openId) {
+    /**
+     * Sets open id.
+     *
+     * @param openId the open id
+     */
+    public void setOpenId(String openId) {
 		this.openId = openId;
 	}
 
-	public String getAppId() {
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
+    public String getAppId() {
 		return appId;
 	}
 
-	public void setAppId(String appId) {
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
+    public void setAppId(String appId) {
 		this.appId = appId;
 	}
 
-	public String getMchId() {
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
+    public String getMchId() {
 		return mchId;
 	}
 
-	public void setMchId(String mchId) {
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
+    public void setMchId(String mchId) {
 		this.mchId = mchId;
 	}
 
-	public String getNotifyUrl() {
+    /**
+     * Gets notify url.
+     *
+     * @return the notify url
+     */
+    public String getNotifyUrl() {
 		return notifyUrl;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
+    /**
+     * Sets notify url.
+     *
+     * @param notifyUrl the notify url
+     */
+    public void setNotifyUrl(String notifyUrl) {
 		this.notifyUrl = notifyUrl;
 	}
 
-	public String getTradeType() {
+    /**
+     * Gets trade type.
+     *
+     * @return the trade type
+     */
+    public String getTradeType() {
 		return tradeType;
 	}
 
-	public void setTradeType(String tradeType) {
+    /**
+     * Sets trade type.
+     *
+     * @param tradeType the trade type
+     */
+    public void setTradeType(String tradeType) {
 		this.tradeType = tradeType;
 	}
 
-	public String getBody() {
+    /**
+     * Gets body.
+     *
+     * @return the body
+     */
+    public String getBody() {
 		return body;
 	}
 
-	public void setBody(String body) {
+    /**
+     * Sets body.
+     *
+     * @param body the body
+     */
+    public void setBody(String body) {
 		this.body = body;
 	}
 
-	public String getTotalFee() {
+    /**
+     * Gets total fee.
+     *
+     * @return the total fee
+     */
+    public String getTotalFee() {
 		return totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+    /**
+     * Sets total fee.
+     *
+     * @param totalFee the total fee
+     */
+    public void setTotalFee(String totalFee) {
 		this.totalFee = totalFee;
 	}
 
-	public String getSpbillCreateIp() {
+    /**
+     * Gets spbill create ip.
+     *
+     * @return the spbill create ip
+     */
+    public String getSpbillCreateIp() {
 		return spbillCreateIp;
 	}
 
-	public void setSpbillCreateIp(String spbillCreateIp) {
+    /**
+     * Sets spbill create ip.
+     *
+     * @param spbillCreateIp the spbill create ip
+     */
+    public void setSpbillCreateIp(String spbillCreateIp) {
 		this.spbillCreateIp = spbillCreateIp;
 	}
 
-	public String getOutTradeNo() {
+    /**
+     * Gets out trade no.
+     *
+     * @return the out trade no
+     */
+    public String getOutTradeNo() {
 		return outTradeNo;
 	}
 
-	public void setOutTradeNo(String outTradeNo) {
+    /**
+     * Sets out trade no.
+     *
+     * @param outTradeNo the out trade no
+     */
+    public void setOutTradeNo(String outTradeNo) {
 		this.outTradeNo = outTradeNo;
 	}
 
-	public String getDetail() {
+    /**
+     * Gets detail.
+     *
+     * @return the detail
+     */
+    public String getDetail() {
 		return detail;
 	}
 
-	public void setDetail(String detail) {
+    /**
+     * Sets detail.
+     *
+     * @param detail the detail
+     */
+    public void setDetail(String detail) {
 		this.detail = detail;
 	}
 
-	public String getAttach() {
+    /**
+     * Gets attach.
+     *
+     * @return the attach
+     */
+    public String getAttach() {
 		return attach;
 	}
 
-	public void setAttach(String attach) {
+    /**
+     * Sets attach.
+     *
+     * @param attach the attach
+     */
+    public void setAttach(String attach) {
 		this.attach = attach;
 	}
 
-	public String getFeeType() {
+    /**
+     * Gets fee type.
+     *
+     * @return the fee type
+     */
+    public String getFeeType() {
 		return feeType;
 	}
 
-	public void setFeeType(String feeType) {
+    /**
+     * Sets fee type.
+     *
+     * @param feeType the fee type
+     */
+    public void setFeeType(String feeType) {
 		this.feeType = feeType;
 	}
 
-	public String getTimeStart() {
+    /**
+     * Gets time start.
+     *
+     * @return the time start
+     */
+    public String getTimeStart() {
 		return timeStart;
 	}
 
-	public void setTimeStart(String timeStart) {
+    /**
+     * Sets time start.
+     *
+     * @param timeStart the time start
+     */
+    public void setTimeStart(String timeStart) {
 		this.timeStart = timeStart;
 	}
 
-	public String getTimeExpire() {
+    /**
+     * Gets time expire.
+     *
+     * @return the time expire
+     */
+    public String getTimeExpire() {
 		return timeExpire;
 	}
 
-	public void setTimeExpire(String timeExpire) {
+    /**
+     * Sets time expire.
+     *
+     * @param timeExpire the time expire
+     */
+    public void setTimeExpire(String timeExpire) {
 		this.timeExpire = timeExpire;
 	}
 
-	public String getGoodsTag() {
+    /**
+     * Gets goods tag.
+     *
+     * @return the goods tag
+     */
+    public String getGoodsTag() {
 		return goodsTag;
 	}
 
-	public void setGoodsTag(String goodsTag) {
+    /**
+     * Sets goods tag.
+     *
+     * @param goodsTag the goods tag
+     */
+    public void setGoodsTag(String goodsTag) {
 		this.goodsTag = goodsTag;
 	}
 
-	public String getDeviceInfo() {
+    /**
+     * Gets device info.
+     *
+     * @return the device info
+     */
+    public String getDeviceInfo() {
 		return deviceInfo;
 	}
 
-	public void setDeviceInfo(String deviceInfo) {
+    /**
+     * Sets device info.
+     *
+     * @param deviceInfo the device info
+     */
+    public void setDeviceInfo(String deviceInfo) {
 		this.deviceInfo = deviceInfo;
 	}
 
-	public String getProductId() {
+    /**
+     * Gets product id.
+     *
+     * @return the product id
+     */
+    public String getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+    /**
+     * Sets product id.
+     *
+     * @param productId the product id
+     */
+    public void setProductId(String productId) {
 		this.productId = productId;
 	}
 
-	public String getLimitPay() {
+    /**
+     * Gets limit pay.
+     *
+     * @return the limit pay
+     */
+    public String getLimitPay() {
 		return limitPay;
 	}
 
-	public void setLimitPay(String limitPay) {
+    /**
+     * Sets limit pay.
+     *
+     * @param limitPay the limit pay
+     */
+    public void setLimitPay(String limitPay) {
 		this.limitPay = limitPay;
 	}
 
-	public String getSubAppId() {
+    /**
+     * Gets sub app id.
+     *
+     * @return the sub app id
+     */
+    public String getSubAppId() {
 		return subAppId;
 	}
 
-	public void setSubAppId(String subAppId) {
+    /**
+     * Sets sub app id.
+     *
+     * @param subAppId the sub app id
+     */
+    public void setSubAppId(String subAppId) {
 		this.subAppId = subAppId;
 	}
 
-	public String getSubMchId() {
+    /**
+     * Gets sub mch id.
+     *
+     * @return the sub mch id
+     */
+    public String getSubMchId() {
 		return subMchId;
 	}
 
-	public void setSubMchId(String subMchId) {
+    /**
+     * Sets sub mch id.
+     *
+     * @param subMchId the sub mch id
+     */
+    public void setSubMchId(String subMchId) {
 		this.subMchId = subMchId;
 	}
 
-	public String getSubOpenId() {
+    /**
+     * Gets sub open id.
+     *
+     * @return the sub open id
+     */
+    public String getSubOpenId() {
 		return subOpenId;
 	}
 
-	public void setSubOpenId(String subOpenId) {
+    /**
+     * Sets sub open id.
+     *
+     * @param subOpenId the sub open id
+     */
+    public void setSubOpenId(String subOpenId) {
 		this.subOpenId = subOpenId;
 	}
 
-	public String getSceneInfo() {
+    /**
+     * Gets scene info.
+     *
+     * @return the scene info
+     */
+    public String getSceneInfo() {
 		return sceneInfo;
 	}
 
-	public void setSceneInfo(String sceneInfo) {
+    /**
+     * Sets scene info.
+     *
+     * @param sceneInfo the scene info
+     */
+    public void setSceneInfo(String sceneInfo) {
 		this.sceneInfo = sceneInfo;
 	}
 

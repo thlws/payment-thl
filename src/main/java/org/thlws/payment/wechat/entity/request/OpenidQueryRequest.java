@@ -44,26 +44,56 @@ public class OpenidQueryRequest {
     }
 
 
+    /**
+     * Gets app id.
+     *
+     * @return the app id
+     */
     public String getAppId() {
         return appId;
     }
 
+    /**
+     * Sets app id.
+     *
+     * @param appId the app id
+     */
     public void setAppId(String appId) {
         this.appId = appId;
     }
 
+    /**
+     * Gets mch id.
+     *
+     * @return the mch id
+     */
     public String getMchId() {
         return mchId;
     }
 
+    /**
+     * Sets mch id.
+     *
+     * @param mchId the mch id
+     */
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    /**
+     * Gets auth code.
+     *
+     * @return the auth code
+     */
     public String getAuthCode() {
         return authCode;
     }
 
+    /**
+     * Sets auth code.
+     *
+     * @param authCode the auth code
+     */
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }

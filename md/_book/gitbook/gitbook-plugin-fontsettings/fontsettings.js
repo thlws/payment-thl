@@ -80,7 +80,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
     // Decrease font size
     function reduceFontSize(e) {
         e.preventDefault();
-        if (fontState.size <= MIN_SIZE) return;
+        if (fontState.size 小于等于 MIN_SIZE) return;
 
         fontState.size--;
         saveFontSettings();

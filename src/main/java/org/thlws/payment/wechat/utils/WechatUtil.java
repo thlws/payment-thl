@@ -45,6 +45,7 @@ public class WechatUtil {
      *
      * @param xmlResult the xml result
      * @return notify response
+     * @throws JAXBException the jaxb exception
      */
     public static NotifyResponse parseNotifyMsg(String xmlResult) throws JAXBException {
         NotifyResponse response = ThlwsBeanUtil.xmlToBean(xmlResult, NotifyResponse.class);
@@ -66,6 +67,15 @@ public class WechatUtil {
         return ThlwsBeanUtil.mapToObject(mapData,clz);
     }
 
+    /**
+     * Build xml request string.
+     *
+     * @param o      the o
+     * @param clz    the clz
+     * @param apiKey the api key
+     * @return the string
+     * @throws JAXBException the jaxb exception
+     */
     public static String buildXmlRequest(Object o, Class clz,String apiKey) throws JAXBException {
 
         String originXml = ThlwsBeanUtil.beanToXml(clz,o);

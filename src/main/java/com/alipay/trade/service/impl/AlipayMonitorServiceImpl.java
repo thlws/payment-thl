@@ -16,6 +16,9 @@ import org.apache.commons.lang.StringUtils;
 public class AlipayMonitorServiceImpl extends AbsAlipayService implements AlipayMonitorService {
     private AlipayClient client;
 
+    /**
+     * The type Client builder.
+     */
     public static class ClientBuilder {
         private String gatewayUrl;
         private String appid;
@@ -23,6 +26,11 @@ public class AlipayMonitorServiceImpl extends AbsAlipayService implements Alipay
         private String format;
         private String charset;
 
+        /**
+         * Build alipay monitor service.
+         *
+         * @return the alipay monitor service
+         */
         public AlipayMonitorServiceImpl build() {
             if (StringUtils.isEmpty(gatewayUrl)) {
                 gatewayUrl = Constants.mcloud_api_domain; // 与openapi网关地址不同
@@ -42,52 +50,112 @@ public class AlipayMonitorServiceImpl extends AbsAlipayService implements Alipay
             return new AlipayMonitorServiceImpl(this);
         }
 
+        /**
+         * Sets appid.
+         *
+         * @param appid the appid
+         * @return the appid
+         */
         public ClientBuilder setAppid(String appid) {
             this.appid = appid;
             return this;
         }
 
+        /**
+         * Sets charset.
+         *
+         * @param charset the charset
+         * @return the charset
+         */
         public ClientBuilder setCharset(String charset) {
             this.charset = charset;
             return this;
         }
 
+        /**
+         * Sets format.
+         *
+         * @param format the format
+         * @return the format
+         */
         public ClientBuilder setFormat(String format) {
             this.format = format;
             return this;
         }
 
+        /**
+         * Sets gateway url.
+         *
+         * @param gatewayUrl the gateway url
+         * @return the gateway url
+         */
         public ClientBuilder setGatewayUrl(String gatewayUrl) {
             this.gatewayUrl = gatewayUrl;
             return this;
         }
 
+        /**
+         * Sets private key.
+         *
+         * @param privateKey the private key
+         * @return the private key
+         */
         public ClientBuilder setPrivateKey(String privateKey) {
             this.privateKey = privateKey;
             return this;
         }
 
+        /**
+         * Gets appid.
+         *
+         * @return the appid
+         */
         public String getAppid() {
             return appid;
         }
 
+        /**
+         * Gets charset.
+         *
+         * @return the charset
+         */
         public String getCharset() {
             return charset;
         }
 
+        /**
+         * Gets format.
+         *
+         * @return the format
+         */
         public String getFormat() {
             return format;
         }
 
+        /**
+         * Gets gateway url.
+         *
+         * @return the gateway url
+         */
         public String getGatewayUrl() {
             return gatewayUrl;
         }
 
+        /**
+         * Gets private key.
+         *
+         * @return the private key
+         */
         public String getPrivateKey() {
             return privateKey;
         }
     }
 
+    /**
+     * Instantiates a new Alipay monitor service.
+     *
+     * @param builder the builder
+     */
     public AlipayMonitorServiceImpl(ClientBuilder builder) {
         if (StringUtils.isEmpty(builder.getGatewayUrl())) {
             throw new NullPointerException("gatewayUrl should not be NULL!");

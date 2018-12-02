@@ -20,11 +20,11 @@ import static org.junit.Assert.assertTrue;
  * 电信天翼支付测试
  * <h3>特别注意</h3>
  * 项目中提供的微信测试账户，仅用于接口功能测试，请勿用作其他用途。
+ *
  * @author Hanley[hanley @thlws.com]
- * @date 2018/11/16
  * @version 1.0
+ *  2018 /11/16
  */
-
 public class BestpayTest {
 
 	private static final Log log = LogFactory.get();
@@ -39,10 +39,10 @@ public class BestpayTest {
 	private final  String merchantId = "02450107030126669";
 
 
-	/**
-	 * 支付-测试.
-	 */
-	@Test
+    /**
+     * 支付-测试.
+     */
+    @Test
 	public  void testPay() {
 
 		try {
@@ -71,10 +71,10 @@ public class BestpayTest {
 	}
 
 
-	/**
-	 * 查询交易-测试.
-	 */
-	@Test
+    /**
+     * 查询交易-测试.
+     */
+    @Test
 	public  void testQuery() {
 		try {
 			QueryOrderRequest request = new QueryOrderRequest();
@@ -90,10 +90,10 @@ public class BestpayTest {
 		}
 	}
 
-	/**
-	 * 撤销支付-测试.
-	 */
-	@Test
+    /**
+     * 撤销支付-测试.
+     */
+    @Test
 	public  void testReverse() {
 
 		try {
@@ -114,10 +114,10 @@ public class BestpayTest {
 	}
 
 
-	/**
-	 * 退款-测试.
-	 */
-	@Test
+    /**
+     * 退款-测试.
+     */
+    @Test
 	public  void testRefund() {
 		try {
 			OrderRefundRequest request = new OrderRefundRequest();

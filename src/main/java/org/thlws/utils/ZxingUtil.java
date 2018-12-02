@@ -17,13 +17,33 @@ import com.google.zxing.common.BitMatrix;
  */
 public class ZxingUtil {
 
-	static int qrcode_default_width = 250;
-	static int qrcode_default_height = 250;
+    /**
+     * The Qrcode default width.
+     */
+    static int qrcode_default_width = 250;
+    /**
+     * The Qrcode default height.
+     */
+    static int qrcode_default_height = 250;
 
-	static int barcode_default_width = 700;
-	static int barcode_default_height = 200;
+    /**
+     * The Barcode default width.
+     */
+    static int barcode_default_width = 700;
+    /**
+     * The Barcode default height.
+     */
+    static int barcode_default_height = 200;
 	private static final Log log = LogFactory.get();
 
+    /**
+     * Bar code.
+     *
+     * @param contents the contents
+     * @param imgPath  the img path
+     * @param width    the width
+     * @param height   the height
+     */
     public static void barCode(String contents,String imgPath,int width, int height) {
         int codeWidth = 3 + // start guard
                 (7 * 6) + // left bars
@@ -41,6 +61,15 @@ public class ZxingUtil {
         }
     }
 
+    /**
+     * Qr code.
+     *
+     * @param width   the width
+     * @param height  the height
+     * @param content the content
+     * @param suffix  the suffix
+     * @param imgPath the img path
+     */
     public static void qrCode(int width,int height,String content,String suffix,String imgPath){
     	Hashtable<EncodeHintType, String> hints= new Hashtable<EncodeHintType, String>();
     	hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
@@ -55,19 +84,36 @@ public class ZxingUtil {
     	}
     }
 
-	public static void barCode(String contents,String imgPath) {
+    /**
+     * Bar code.
+     *
+     * @param contents the contents
+     * @param imgPath  the img path
+     */
+    public static void barCode(String contents,String imgPath) {
 		barCode(contents,imgPath,barcode_default_width,barcode_default_height);
 	}
 
 
-
-	public static void qrCode(String content,String suffix,String imgPath){
+    /**
+     * Qr code.
+     *
+     * @param content the content
+     * @param suffix  the suffix
+     * @param imgPath the img path
+     */
+    public static void qrCode(String content,String suffix,String imgPath){
 		qrCode(qrcode_default_width,qrcode_default_height,content,suffix,imgPath);
 	}
 
 
-
-	public static BitMatrix deleteWhite(BitMatrix matrix){
+    /**
+     * Delete white bit matrix.
+     *
+     * @param matrix the matrix
+     * @return the bit matrix
+     */
+    public static BitMatrix deleteWhite(BitMatrix matrix){
 		int[] rec = matrix.getEnclosingRectangle();
 		int resWidth = rec[2] + 1;
 		int resHeight = rec[3] + 1;
@@ -84,6 +130,11 @@ public class ZxingUtil {
 	}
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
     	qrCode(250,250,"18650002030j0803151618030","png","/zone/test.png");
     	barCode("18650002030j0803151618030","/zone/barcode.png",700,200);

@@ -2,10 +2,10 @@ package org.thlws.payment.bestpay.api;
 
 /**
  * 天翼支付相关API
- *
+ * <p>
  * Created by HanleyTang on 2018/1/5
  *
- * @author Hanley[hanley@thlws.com]
+ * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
 public interface BestpayApi {

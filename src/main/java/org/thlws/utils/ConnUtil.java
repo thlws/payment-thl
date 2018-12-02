@@ -27,15 +27,15 @@ public final class ConnUtil {
 
 	private static final int CONNECTION_REQUEST_TIMEOUT = 1000 * 30;
 
-	/**
-	 * Conn remote string.
-	 *
-	 * @param request the request
-	 * @param url     the url
-	 * @return the string
-	 * @throws Exception the exception
-	 */
-	public static String connRemote(String request,String url) throws Exception {
+    /**
+     * Conn remote string.
+     *
+     * @param request the request
+     * @param url     the url
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String connRemote(String request,String url) throws Exception {
 		String result = "";
 		try {
 			result = connRemoteWithJson(result,url);
@@ -47,15 +47,15 @@ public final class ConnUtil {
 	}
 
 
-	/**
-	 * Conn remote with json string.
-	 *
-	 * @param json the json
-	 * @param url  the url
-	 * @return the string
-	 * @throws Exception the exception
-	 */
-	public static String connRemoteWithJson(String json,String url) throws Exception {
+    /**
+     * Conn remote with json string.
+     *
+     * @param json the json
+     * @param url  the url
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String connRemoteWithJson(String json,String url) throws Exception {
 
 		String result = "";
 		try {
@@ -72,15 +72,15 @@ public final class ConnUtil {
 	}
 
 
-	/**
-	 * Conn remote with xml string.
-	 *
-	 * @param xml the xml
-	 * @param url the url
-	 * @return the string
-	 * @throws Exception the exception
-	 */
-	public static String connRemoteWithXml(String xml,String url) throws Exception {
+    /**
+     * Conn remote with xml string.
+     *
+     * @param xml the xml
+     * @param url the url
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String connRemoteWithXml(String xml,String url) throws Exception {
 
 		String result;
 		try {
@@ -96,16 +96,16 @@ public final class ConnUtil {
 	}
 
 
-	/**
-	 * Encrypt post string.
-	 *
-	 * @param data         the data
-	 * @param url          the url
-	 * @param pwd          the pwd
-	 * @param absoluteFile the absolute file
-	 * @return the string
-	 */
-	public static String encryptPost(String data,String url,String pwd,String absoluteFile){
+    /**
+     * Encrypt post string.
+     *
+     * @param data         the data
+     * @param url          the url
+     * @param pwd          the pwd
+     * @param absoluteFile the absolute file
+     * @return the string
+     */
+    public static String encryptPost(String data,String url,String pwd,String absoluteFile){
 
 		log.debug("请求网关："+url);
 		log.debug("证书号："+pwd);
@@ -150,9 +150,16 @@ public final class ConnUtil {
 		
 		return result;
 	}
-	
-	
-	public static String connURL(String url) throws Exception {
+
+
+    /**
+     * Conn url string.
+     *
+     * @param url the url
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String connURL(String url) throws Exception {
 		String result;
 		try {
 			result =  HttpUtil.get(url);
