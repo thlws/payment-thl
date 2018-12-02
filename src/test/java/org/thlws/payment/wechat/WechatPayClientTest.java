@@ -53,9 +53,9 @@ public class WechatPayClientTest {
     @Test
     public  void testUnifiedOrder() throws Exception{
 
-        UnifiedOrderRequest input = new UnifiedOrderRequest();
-        input.setAppId(test_wechat_appid);
-        input.setMchId(test_wechat_mchid);
+        UnifiedOrderRequest request = new UnifiedOrderRequest();
+        request.setAppId(test_wechat_appid);
+        request.setMchId(test_wechat_mchid);
 
         /*普通模式无需设置,子商户需设置子商户号,小微模式固定填1000077001*/
         //request.setSub_mch_id("1396726602");
@@ -66,14 +66,14 @@ public class WechatPayClientTest {
         /*open_id 与 sub_openid 择其一即可,具体传值方式以参数说明为准*/
         //request.setSub_openid("用户在sub_appid下用户标识");
         String body = "动态二维码支付测试";
-        input.setBody(body);
-        input.setOutTradeNo(System.currentTimeMillis()+"");
-        input.setTotalFee("1");
-        input.setTradeType("NATIVE");
-        input.setNotifyUrl("http://www.thlws.com/notify4Wechat.html");
-        input.setSpbillCreateIp(NetUtil.getLocalhostStr());
+        request.setBody(body);
+        request.setOutTradeNo(System.currentTimeMillis()+"");
+        request.setTotalFee("1");
+        request.setTradeType("NATIVE");
+        request.setNotifyUrl("http://www.thlws.com/notify4Wechat.html");
+        request.setSpbillCreateIp(NetUtil.getLocalhostStr());
 
-        UnifiedOrderResponse response = WechatPayClient.unifiedOrder(input,test_wechat_apikey);
+        UnifiedOrderResponse response = WechatPayClient.unifiedOrder(request,test_wechat_apikey);
         boolean flag = response.isSuccess();
         String  message = response.getMessage();
         log.debug("isSuccess="+flag+", message="+message);
@@ -81,7 +81,7 @@ public class WechatPayClientTest {
         assertNotNull(qrcode);
        
         //生成支付二维码，供用户扫码支付
-        //ZxingUtil.qrCode(qrcode,"png","/zone/qrcode/"+input.getOut_trade_no()+".png");
+        //ZxingUtil.qrCode(qrcode,"png","/zone/qrcode/"+request.getOut_trade_no()+".png");
         //TODO 调用查询接口，检测用户是否完成支付
     }
 
@@ -213,12 +213,12 @@ public class WechatPayClientTest {
     public void testCloseOrder(){
 
         try {
-            CloseOrderRequest input = new CloseOrderRequest();
-            input.setAppId(test_wechat_appid);
-            input.setMchId(test_wechat_mchid);
+            CloseOrderRequest request = new CloseOrderRequest();
+            request.setAppId(test_wechat_appid);
+            request.setMchId(test_wechat_mchid);
             //request.setSub_mch_id("1396726602");//若为子商户退款需设置该参数
-            input.setOutTradeNo("20160902224757");
-            CloseOrderResponse response = WechatPayClient.closeOrder(input,test_wechat_apikey);
+            request.setOutTradeNo("20160902224757");
+            CloseOrderResponse response = WechatPayClient.closeOrder(request,test_wechat_apikey);
             boolean flag = response.isSuccess();
             String  message = response.getMessage();
             log.debug("isSuccess="+flag+", message="+message);
@@ -286,12 +286,12 @@ public class WechatPayClientTest {
     public void testOpenidQuery(){
 
         try {
-            OpenidQueryRequest input = new OpenidQueryRequest();
-            input.setAppId(test_wechat_appid);
-            input.setMchId(test_wechat_mchid);
-            input.setAuthCode("134599863674410654");
+            OpenidQueryRequest request = new OpenidQueryRequest();
+            request.setAppId(test_wechat_appid);
+            request.setMchId(test_wechat_mchid);
+            request.setAuthCode("134599863674410654");
 
-            OpenidQueryResponse response = WechatPayClient.openidQuery(input, test_wechat_apikey);
+            OpenidQueryResponse response = WechatPayClient.openidQuery(request, test_wechat_apikey);
             boolean flag = response.isSuccess();
             String  message = response.getMessage();
             log.debug("isSuccess="+flag+", message="+message);
