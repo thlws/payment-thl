@@ -1,10 +1,19 @@
 糖葫芦支付
 ============
+[![](https://img.shields.io/badge/release-v1.0.0-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.0.0-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.0.0/jar) 
+[![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
 > 基于Java实现的 多平台支付（支付宝，微信，翼支付） 依赖库。
+
 
 ### 适用人群
 未接触过支付，觉得官方文档复杂, 但又需要快速接入支付功能的小白程序员，这个项目一定会让你省下不少力气，如果你是之前接入过各种支付的老鸟,这对你可能没什么吸引力，这个项目主要面向刚接触或未接触过支付的小伙伴，无论你是小白还是老鸟，喜欢的话帮忙star下，感谢。
 
+### 在线文档
+- [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
+
+### 示例项目
+- [https://gitee.com/thlws/payment-simple](https://gitee.com/thlws/payment-simple)
 
 ### 接口列表
 **支付宝**
