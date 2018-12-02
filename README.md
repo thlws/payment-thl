@@ -10,7 +10,7 @@
 未接触过支付，觉得官方文档复杂, 但又需要快速接入支付功能的小白程序员，这个项目一定会让你省下不少力气，如果你是之前接入过各种支付的老鸟,这对你可能没什么吸引力，这个项目主要面向刚接触或未接触过支付的小伙伴，无论你是小白还是老鸟，喜欢的话帮忙star下，感谢。
 
 ### 在线文档
-- [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
+- [https://thlws.gitee.io/payment-thl](https://thlws.gitee.io/payment-thl)
 
 ### 示例项目
 - [https://gitee.com/thlws/payment-simple](https://gitee.com/thlws/payment-simple)
