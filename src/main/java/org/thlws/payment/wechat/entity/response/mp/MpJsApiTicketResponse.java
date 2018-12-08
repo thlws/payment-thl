@@ -7,19 +7,13 @@ import java.io.Serializable;
 /**
  * Created by HanleyTang on 2016/11/15.
  */
-public class TokenResponse implements Serializable{
+public class MpJsApiTicketResponse implements Serializable {
 
-    private String access_token;
-    private String expires_in;
     private long errcode;
     private String errmsg;
+    private String ticket;
+    private String expires_in;
     private String desc;
-
-    /**
-     * Instantiates a new Token response.
-     */
-    public TokenResponse() {
-    }
 
     /**
      * Gets desc.
@@ -37,6 +31,12 @@ public class TokenResponse implements Serializable{
      */
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    /**
+     * Instantiates a new Js api ticket response.
+     */
+    public MpJsApiTicketResponse() {
     }
 
     /**
@@ -75,9 +75,22 @@ public class TokenResponse implements Serializable{
         this.errmsg = errmsg;
     }
 
-    @Override
-    public String toString() {
-        return JsonUtil.format(this);
+    /**
+     * Gets ticket.
+     *
+     * @return the ticket
+     */
+    public String getTicket() {
+        return ticket;
+    }
+
+    /**
+     * Sets ticket.
+     *
+     * @param ticket the ticket
+     */
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
     }
 
     /**
@@ -98,21 +111,8 @@ public class TokenResponse implements Serializable{
         this.expires_in = expires_in;
     }
 
-    /**
-     * Gets access token.
-     *
-     * @return the access token
-     */
-    public String getAccess_token() {
-        return access_token;
-    }
-
-    /**
-     * Sets access token.
-     *
-     * @param access_token the access token
-     */
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
+    @Override
+    public String toString() {
+        return JsonUtil.format(this);
     }
 }

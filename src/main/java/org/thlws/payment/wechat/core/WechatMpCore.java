@@ -33,15 +33,15 @@ public class WechatMpCore implements WechatMpApi {
      * @throws Exception the exception
      * @author HanleyTang
      */
-    public static OauthTokenResponse obtainOauthAccessToken(Map<String, Object> mapToken) throws  Exception{
+    public static MpOauthTokenResponse obtainOauthAccessToken(Map<String, Object> mapToken) throws  Exception{
 
-		OauthTokenResponse resp;
+		MpOauthTokenResponse resp;
 		String params = ThlwsBeanUtil.mapToParams(mapToken);
 		StringBuilder sb = new StringBuilder(oauth2_access_token);
 		sb.append("?").append(params);
 		System.out.print(sb.toString());
 		try {
-			resp = ThlwsBeanUtil.jsonToBean(ConnUtil.connURL(sb.toString()), OauthTokenResponse.class);
+			resp = ThlwsBeanUtil.jsonToBean(ConnUtil.connURL(sb.toString()), MpOauthTokenResponse.class);
 		} catch (Exception e) {
 			log.error(e);
 			throw e;
@@ -63,14 +63,14 @@ public class WechatMpCore implements WechatMpApi {
      * @throws Exception the exception
      * @author HanleyTang
      */
-    public static OauthTokenResponse refreshOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
+    public static MpOauthTokenResponse refreshOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
 
-		OauthTokenResponse resp;
+		MpOauthTokenResponse resp;
 		String params = ThlwsBeanUtil.mapToParams(mapToken);
 		StringBuilder sb = new StringBuilder(oauth2_refresh_token);
 		sb.append("?").append(params);
 		try {
-			resp = ThlwsBeanUtil.jsonToBean( ConnUtil.connURL(sb.toString()), OauthTokenResponse.class);
+			resp = ThlwsBeanUtil.jsonToBean( ConnUtil.connURL(sb.toString()), MpOauthTokenResponse.class);
 		} catch (Exception e) {
 			log.error(e);
 			throw e;
@@ -113,15 +113,15 @@ public class WechatMpCore implements WechatMpApi {
      * @return user info response
      * @throws Exception the exception
      */
-    public static UserInfoResponse obtainUserInfo(Map<String, Object> userInfoMap)throws  Exception{
+    public static MpUserInfoResponse obtainUserInfo(Map<String, Object> userInfoMap)throws  Exception{
 
-		UserInfoResponse resp;
+		MpUserInfoResponse resp;
 		String params = ThlwsBeanUtil.mapToParams(userInfoMap);
 		StringBuilder sb = new StringBuilder(sns_userinfo);
 		sb.append("?").append(params);
 		try {
 			String json = ConnUtil.connURL(sb.toString());
-			resp = ThlwsBeanUtil.jsonToBean(json, UserInfoResponse.class);
+			resp = ThlwsBeanUtil.jsonToBean(json, MpUserInfoResponse.class);
 		} catch (Exception e) {
 			log.error(e);
 			throw e;
@@ -173,15 +173,15 @@ public class WechatMpCore implements WechatMpApi {
      * @return token response
      * @throws Exception the exception
      */
-    public static TokenResponse obtainAccessToken(String appid, String secret)throws  Exception{
+    public static MpTokenResponse obtainAccessToken(String appid, String secret)throws  Exception{
 
-		TokenResponse resp;
+		MpTokenResponse resp;
 		try {
 			StringBuilder sb = new StringBuilder();
 			sb.append(cgibin_token).append("?");
 			sb.append("grant_type=client_credential").append("&").append("appid=").append(appid).append("&").append("secret=").append(secret);
 			String json = ConnUtil.connURL(sb.toString());
-			resp = ThlwsBeanUtil.jsonToBean(json, TokenResponse.class);
+			resp = ThlwsBeanUtil.jsonToBean(json, MpTokenResponse.class);
 		} catch (Exception e) {
 			log.error(e);
 			throw e;
@@ -199,8 +199,8 @@ public class WechatMpCore implements WechatMpApi {
      * @return js api ticket response
      * @throws Exception the exception
      */
-    public static JsApiTicketResponse obtainJsApiTicket(String token)throws  Exception{
-		JsApiTicketResponse resp;
+    public static MpJsApiTicketResponse obtainJsApiTicket(String token)throws  Exception{
+		MpJsApiTicketResponse resp;
 		try {
 
 		/* String eg = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=giPthFJplKI1fux6WxFqelRdqAa317wlC4zWRsnUUHVse20nm2dYpL5w0h-HJGFiAoZ8Mk3aCr0f7rLRGRn2ifZjzyrg_cHKCbvrozdEeCGO617WESe8f1g1UCX2BzSfCWOjAJAWQI&type=jsapi"; */
@@ -208,7 +208,7 @@ public class WechatMpCore implements WechatMpApi {
 			sb.append(cgi_bin_ticket_getticket).append("?");
 			sb.append("access_token=").append(token).append("&type=jsapi");
 			String json = ConnUtil.connURL(sb.toString());
-			resp = ThlwsBeanUtil.jsonToBean(json, JsApiTicketResponse.class);
+			resp = ThlwsBeanUtil.jsonToBean(json, MpJsApiTicketResponse.class);
 		} catch (Exception e) {
 			log.error(e);
 			throw e;
@@ -224,11 +224,11 @@ public class WechatMpCore implements WechatMpApi {
      * @return js api ticket response
      * @throws Exception the exception
      */
-    public static JsApiTicketResponse obtainJsApiTicket(String appid, String secret)throws  Exception{
+    public static MpJsApiTicketResponse obtainJsApiTicket(String appid, String secret)throws  Exception{
 
-		TokenResponse tokenResp = obtainAccessToken(appid,secret);
+		MpTokenResponse tokenResp = obtainAccessToken(appid,secret);
 		String token = tokenResp.getAccess_token();
-		JsApiTicketResponse resp = obtainJsApiTicket(token);
+		MpJsApiTicketResponse resp = obtainJsApiTicket(token);
 		return resp;
 	}
 
@@ -240,9 +240,9 @@ public class WechatMpCore implements WechatMpApi {
      * @return template response
      * @throws Exception the exception
      */
-    public static TemplateResponse obtainTemplateId(String accessToken, String templateIdShort)throws  Exception{
+    public static MpTemplateResponse obtainTemplateId(String accessToken, String templateIdShort)throws  Exception{
 
-		TemplateResponse response;
+		MpTemplateResponse response;
 
 		try{
 			StringBuilder sb = new StringBuilder();
@@ -254,7 +254,7 @@ public class WechatMpCore implements WechatMpApi {
 			mapData.put("template_id_short", templateIdShort);
 
 			String result = ConnUtil.connRemoteWithJson(ThlwsBeanUtil.beanToJson(mapData),sb.toString());
-			response = ThlwsBeanUtil.jsonToBean(result, TemplateResponse.class);
+			response = ThlwsBeanUtil.jsonToBean(result, MpTemplateResponse.class);
 
 		}catch (Exception e){
 			log.error(e);
@@ -273,9 +273,9 @@ public class WechatMpCore implements WechatMpApi {
      * @return industry response
      * @throws Exception the exception
      */
-    public static IndustryResponse setupIndustry(String accessToken, String industryId1, String industryId2)throws  Exception{
+    public static MpIndustryResponse setupIndustry(String accessToken, String industryId1, String industryId2)throws  Exception{
 
-		IndustryResponse response;
+		MpIndustryResponse response;
 
 		try {
 			StringBuffer sb = new StringBuffer();
@@ -288,7 +288,7 @@ public class WechatMpCore implements WechatMpApi {
 			mapData.put("industry_id2", industryId2);
 			String result = ConnUtil.connRemoteWithJson(ThlwsBeanUtil.beanToJson(mapData),sb.toString());
 			log.debug("setupIndustry result={}",result);
-			response = ThlwsBeanUtil.jsonToBean(result, IndustryResponse.class);
+			response = ThlwsBeanUtil.jsonToBean(result, MpIndustryResponse.class);
 		}catch (Exception e){
 			log.error(e);
 			throw e;
@@ -300,13 +300,13 @@ public class WechatMpCore implements WechatMpApi {
     /***
      * 发送数据至于用户公微信所关注的微信公账号
      * @param accessToken the access token
-     * @param data json格式数据
+     * @param data json格式数据，这里是JSON数据，是的{@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON格式
      * @return send data response
      * @throws Exception the exception
      */
-    public static SendDataResponse sendMsgToUser(String accessToken, String data)throws  Exception{
+    public static MpSendDataResponse sendMsgToUser(String accessToken, String data)throws  Exception{
 
-		SendDataResponse response;
+		MpSendDataResponse response;
 
 		try {
 			StringBuffer sb = new StringBuffer();
@@ -314,7 +314,7 @@ public class WechatMpCore implements WechatMpApi {
 			sb.append("?access_token=");
 			sb.append(accessToken);
 			String result = ConnUtil.connRemoteWithJson(data, sb.toString());
-			response = ThlwsBeanUtil.jsonToBean(result, SendDataResponse.class);
+			response = ThlwsBeanUtil.jsonToBean(result, MpSendDataResponse.class);
 			log.debug("send data result:{}",result);
 		}catch (Exception e){
 			log.error(e);

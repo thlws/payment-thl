@@ -9,7 +9,7 @@ import org.thlws.payment.WechatPayClient;
 import org.thlws.payment.wechat.entity.request.UnifiedOrderRequest;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
-import org.thlws.payment.wechat.entity.response.mp.OauthTokenResponse;
+import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
 import org.thlws.payment.wechat.utils.WechatUtil;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -78,7 +78,7 @@ public class WechatWebDemo {
             codeMap.put("code", code);
             codeMap.put("grant_type", "authorization_code");
             //得到openid及其token相关数据
-            OauthTokenResponse oauthTokenOutput = WechatMpClient.obtainOauthAccessToken(codeMap);
+            MpOauthTokenResponse oauthTokenOutput = WechatMpClient.obtainOauthAccessToken(codeMap);
             //实际应用中，最好记录appid 与 openid 关系，无需每次获取
             String openId = oauthTokenOutput.getOpenid();
 

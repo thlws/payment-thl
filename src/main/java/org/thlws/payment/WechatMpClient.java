@@ -3,7 +3,12 @@ package org.thlws.payment;
 import cn.hutool.core.util.StrUtil;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.core.WechatMpCore;
+import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
 import org.thlws.payment.wechat.entity.response.mp.*;
+import org.thlws.utils.ThlwsBeanUtil;
 
 import java.util.Map;
 
@@ -26,13 +31,31 @@ public class WechatMpClient implements WechatMpApi {
      * @throws Exception the exception
      * @author HanleyTang
      */
-    public static OauthTokenResponse obtainOauthAccessToken(Map<String, Object> mapToken) throws  Exception{
+    public static MpOauthTokenResponse obtainOauthAccessToken(Map<String, Object> mapToken) throws  Exception{
 		
 		if (null == mapToken){
 			throw new Exception("mapToken can not be null");
 		}
 
 		return WechatMpCore.obtainOauthAccessToken(mapToken);
+
+	}
+
+
+	/**
+	 * Obtain oauth access token mp oauth token response.
+	 *
+	 * @param request the request
+	 * @return the mp oauth token response
+	 * @throws Exception the exception
+	 */
+	public static MpOauthTokenResponse obtainOauthAccessToken(MpObtainOauthTokenRequest request) throws  Exception{
+
+		if (null == request){
+			throw new Exception("request can not be null");
+		}
+
+		return WechatMpCore.obtainOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 
 	}
 
@@ -44,14 +67,30 @@ public class WechatMpClient implements WechatMpApi {
      * @throws Exception the exception
      * @author HanleyTang
      */
-    public static OauthTokenResponse refreshOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
+    public static MpOauthTokenResponse refreshOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
 
 		if (null == mapToken){
 			throw new Exception("mapToken can not be null");
 		}
 
 		return WechatMpCore.refreshOauthAccessToken(mapToken);
-		
+
+	}
+
+
+	/**
+	 * Refresh oauth access token mp oauth token response.
+	 *
+	 * @param request the request
+	 * @return the mp oauth token response
+	 * @throws Exception the exception
+	 */
+	public static MpOauthTokenResponse refreshOauthAccessToken(MpRefreshOauthTokenRequest request)throws  Exception{
+
+		if (null == request){
+			throw new Exception("request can not be null");
+		}
+		return WechatMpCore.refreshOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 	}
 
 
@@ -84,7 +123,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return user info response
      * @throws Exception the exception
      */
-    public static UserInfoResponse obtainUserInfo(Map<String, Object> userInfoMap)throws  Exception{
+    public static MpUserInfoResponse obtainUserInfo(Map<String, Object> userInfoMap)throws  Exception{
 		 
 		if (null == userInfoMap){
 			throw new Exception("mapToken can not be null");
@@ -92,6 +131,24 @@ public class WechatMpClient implements WechatMpApi {
 
 		return WechatMpCore.obtainUserInfo(userInfoMap);
 		
+	}
+
+
+	/**
+	 * Obtain user info mp user info response.
+	 *
+	 * @param request the request
+	 * @return the mp user info response
+	 * @throws Exception the exception
+	 */
+	public static MpUserInfoResponse obtainUserInfo(MpUserInfoRequest request)throws  Exception{
+
+		if (null == request){
+			throw new Exception("request can not be null");
+		}
+
+		return WechatMpCore.obtainUserInfo(ThlwsBeanUtil.objectToMap(request));
+
 	}
 
 
@@ -107,8 +164,25 @@ public class WechatMpClient implements WechatMpApi {
 		if (null == mapToken){
 			throw new Exception("mapToken can not be null");
 		}
-
 		return WechatMpCore.isvalidOauthAccessToken(mapToken);
+
+	}
+
+
+	/**
+	 * Isvalid oauth access token boolean.
+	 *
+	 * @param request the request
+	 * @return the boolean
+	 * @throws Exception the exception
+	 */
+	public static boolean isvalidOauthAccessToken(MpValidOauthTokenRequest request)throws  Exception{
+
+		if (null == request){
+			throw new Exception("request can not be null");
+		}
+
+		return WechatMpCore.isvalidOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 
 	}
 
@@ -120,7 +194,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return token response
      * @throws Exception the exception
      */
-    public static TokenResponse obtainAccessToken(String appid, String secret)throws  Exception{
+    public static MpTokenResponse obtainAccessToken(String appid, String secret)throws  Exception{
 
 		if (StrUtil.isEmpty(appid) || StrUtil.isEmpty(secret)){
 			throw new Exception("appid,secret can not be null");
@@ -137,7 +211,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return js api ticket response
      * @throws Exception the exception
      */
-    public static JsApiTicketResponse obtainJsApiTicket(String token)throws  Exception{
+    public static MpJsApiTicketResponse obtainJsApiTicket(String token)throws  Exception{
 
 
 		if (StrUtil.isEmpty(token)){
@@ -156,7 +230,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return js api ticket response
      * @throws Exception the exception
      */
-    public static JsApiTicketResponse obtainJsApiTicket(String appid, String secret)throws  Exception{
+    public static MpJsApiTicketResponse obtainJsApiTicket(String appid, String secret)throws  Exception{
 
 
 		if (StrUtil.isEmpty(appid) || StrUtil.isEmpty(secret)){
@@ -175,7 +249,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return template response
      * @throws Exception the exception
      */
-    public static TemplateResponse obtainTemplateId(String access_token, String template_id_short)throws  Exception{
+    public static MpTemplateResponse obtainTemplateId(String access_token, String template_id_short)throws  Exception{
 
 		if (StrUtil.isEmpty(access_token) || StrUtil.isEmpty(template_id_short)){
 			throw new Exception("access_token,template_id_short can not be null");
@@ -193,7 +267,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return industry response
      * @throws Exception the exception
      */
-    public static IndustryResponse setupIndustry(String access_token, String industry_id1, String industry_id2)throws  Exception{
+    public static MpIndustryResponse setupIndustry(String access_token, String industry_id1, String industry_id2)throws  Exception{
 
 
 		if (StrUtil.isEmpty(access_token)
@@ -209,11 +283,11 @@ public class WechatMpClient implements WechatMpApi {
     /***
      * {@link WechatMpCore#sendMsgToUser}
      * @param access_token the access token
-     * @param data json格式数据
+     * @param data json格式数据,是 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JOSN
      * @return send data response
      * @throws Exception the exception
      */
-    public static SendDataResponse sendMsgToUser(String access_token, String data)throws  Exception{
+    public static MpSendDataResponse sendMsgToUser(String access_token, String data)throws  Exception{
 
 		if (StrUtil.isEmpty(access_token)
 				|| StrUtil.isEmpty(data)){

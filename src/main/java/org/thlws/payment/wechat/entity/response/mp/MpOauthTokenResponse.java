@@ -9,7 +9,7 @@ import org.thlws.utils.JsonUtil;
  * @author Hanley Tang | hanley@thlws.com
  * @version 1.0
  */
-public class OauthTokenResponse {
+public class MpOauthTokenResponse {
 
 	private String access_token    ;
 	private String expires_in      ;//access_token接口调用凭证超时时间，单位（秒）
@@ -79,7 +79,7 @@ public class OauthTokenResponse {
     /**
      * Instantiates a new Oauth token response.
      */
-    public OauthTokenResponse(){}
+    public MpOauthTokenResponse(){}
 
     /**
      * Gets access token.

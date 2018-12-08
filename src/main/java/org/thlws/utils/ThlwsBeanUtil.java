@@ -30,7 +30,7 @@ public class ThlwsBeanUtil {
 	 * @return map map
 	 * @author HanleyTang
 	 */
-	public static Map<String, Object> ObjectToMap(Object o){
+	public static Map<String, Object> objectToMap(Object o){
 
 		Map<String, Object> map = BeanUtil.beanToMap(o,false,true);
 		return map;

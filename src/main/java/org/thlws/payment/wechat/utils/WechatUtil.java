@@ -61,7 +61,7 @@ public class WechatUtil {
      * @return the object
      */
     public static Object buildRequest(Object o, Class clz,String apiKey){
-        Map<String, Object> mapData = ThlwsBeanUtil.ObjectToMap(o);
+        Map<String, Object> mapData = ThlwsBeanUtil.objectToMap(o);
         String sign = WechatUtil.sign(mapData,apiKey);
         mapData.put("sign", sign);
         return ThlwsBeanUtil.mapToObject(mapData,clz);

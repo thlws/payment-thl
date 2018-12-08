@@ -9,7 +9,7 @@ import java.util.List;
  * @author Hanley Tang | hanley@hanley.cn
  * @version 1.0
  */
-public class UserInfoResponse {
+public class MpUserInfoResponse {
 
 	private String openid         ;
 	private String nickname       ;
@@ -87,7 +87,7 @@ public class UserInfoResponse {
     /**
      * Instantiates a new User info response.
      */
-    public UserInfoResponse(){}
+    public MpUserInfoResponse(){}
 
     /**
      * Gets openid.

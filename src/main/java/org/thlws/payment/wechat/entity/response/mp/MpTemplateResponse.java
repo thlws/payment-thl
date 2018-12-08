@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by HanleyTang on 2016/11/18.
  */
-public class TemplateResponse implements Serializable{
+public class MpTemplateResponse implements Serializable{
 
     private long errcode;//0 表示成功
     private String errmsg;

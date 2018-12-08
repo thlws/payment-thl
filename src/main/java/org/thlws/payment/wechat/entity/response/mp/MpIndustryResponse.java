@@ -2,17 +2,13 @@ package org.thlws.payment.wechat.entity.response.mp;
 
 import org.thlws.utils.JsonUtil;
 
-import java.io.Serializable;
-
 /**
- * Created by HanleyTang on 2016/11/15.
+ * Created by HanleyTang on 2016/11/18.
  */
-public class JsApiTicketResponse implements Serializable {
+public class MpIndustryResponse {
 
-    private long errcode;
-    private String errmsg;
-    private String ticket;
-    private String expires_in;
+    private long errcode; // 0
+    private String errmsg; // ok
     private String desc;
 
     /**
@@ -31,12 +27,6 @@ public class JsApiTicketResponse implements Serializable {
      */
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    /**
-     * Instantiates a new Js api ticket response.
-     */
-    public JsApiTicketResponse() {
     }
 
     /**
@@ -73,42 +63,6 @@ public class JsApiTicketResponse implements Serializable {
      */
     public void setErrmsg(String errmsg) {
         this.errmsg = errmsg;
-    }
-
-    /**
-     * Gets ticket.
-     *
-     * @return the ticket
-     */
-    public String getTicket() {
-        return ticket;
-    }
-
-    /**
-     * Sets ticket.
-     *
-     * @param ticket the ticket
-     */
-    public void setTicket(String ticket) {
-        this.ticket = ticket;
-    }
-
-    /**
-     * Gets expires in.
-     *
-     * @return the expires in
-     */
-    public String getExpires_in() {
-        return expires_in;
-    }
-
-    /**
-     * Sets expires in.
-     *
-     * @param expires_in the expires in
-     */
-    public void setExpires_in(String expires_in) {
-        this.expires_in = expires_in;
     }
 
     @Override

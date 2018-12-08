@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * 微信通知(模板消息)
  */
-public class SendDataRequest {
+public class MpSendDataRequest {
 
     private String url;
     private String touser;
@@ -38,7 +38,7 @@ public class SendDataRequest {
      */
     static public class Node implements Serializable {
 
-        /**long SendDataRequest.java**/
+        /**long MpSendDataRequest.java**/
         private static final long serialVersionUID = -4831188890640769259L;
         private String value;
         private String color;

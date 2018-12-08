@@ -5,7 +5,7 @@ import org.thlws.utils.JsonUtil;
 /**
  * Created by HanleyTang on 2016/11/18.
  */
-public class SendDataResponse {
+public class MpSendDataResponse {
 
     //{"errcode":0,"errmsg":"ok","msgid":414569352}
 

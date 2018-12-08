@@ -3,9 +3,13 @@ package org.thlws.payment.wechat;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import org.thlws.payment.WechatMpClient;
+import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
+import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
-import org.thlws.payment.wechat.entity.response.mp.OauthTokenResponse;
-import org.thlws.payment.wechat.entity.response.mp.UserInfoResponse;
+import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
+import org.thlws.payment.wechat.entity.response.mp.MpTokenResponse;
 import org.thlws.payment.wechat.utils.WechatUtil;
 
 import javax.xml.bind.JAXBException;
@@ -36,7 +40,14 @@ public class WechatMpClientTest {
             mapToken.put("secret", appSecret);
             mapToken.put("code", code);
             mapToken.put("grant_type", "authorization_code");
-            OauthTokenResponse response = WechatMpClient.obtainOauthAccessToken(mapToken);
+
+            //同时支持Map和Bean request
+            //MpOauthTokenResponse response = WechatMpClient.obtainOauthAccessToken(mapToken);
+
+            MpObtainOauthTokenRequest request = new MpObtainOauthTokenRequest("","","");
+            MpOauthTokenResponse response = WechatMpClient.obtainOauthAccessToken(request);
+
+
             System.out.println("openid="+response.getOpenid());
             assertNotNull(response.getOpenid());
         } catch (Exception e) {
@@ -54,8 +65,15 @@ public class WechatMpClientTest {
             mapToken.put("appid", appId);
             mapToken.put("refresh_token", "填写通过access_token获取到的refresh_token参数");
             mapToken.put("grant_type", "refresh_token");
-            OauthTokenResponse response = WechatMpClient.refreshOauthAccessToken(mapToken);
-            assertNotNull(response.getAccess_token());
+
+            //同时支持Map和Bean request
+            //MpOauthTokenResponse response = WechatMpClient.refreshOauthAccessToken(mapToken);
+            //assertNotNull(response.getAccess_token());
+
+
+            MpRefreshOauthTokenRequest request = new MpRefreshOauthTokenRequest("","");
+            MpOauthTokenResponse response = WechatMpClient.refreshOauthAccessToken(request);
+
         } catch (Exception e) {
             log.error(e);
         }
@@ -72,8 +90,13 @@ public class WechatMpClientTest {
             userInfoMap.put("access_token", accessToken);
             userInfoMap.put("openid", openId);
             userInfoMap.put("lang", "zh_CN");
-            UserInfoResponse response = WechatMpClient.obtainUserInfo(userInfoMap);
-            assertNotNull(response.getOpenid());
+
+            //map bean 同时支持
+            MpUserInfoRequest request = new MpUserInfoRequest("", "");
+            WechatMpClient.obtainUserInfo(userInfoMap);
+
+//            MpUserInfoResponse response = WechatMpClient.obtainUserInfo(userInfoMap);
+//            assertNotNull(response.getOpenid());
         } catch (Exception e) {
             log.error(e);
         }
@@ -110,10 +133,76 @@ public class WechatMpClientTest {
             String open_id = "your openid";
             mapToken.put("access_token", access_token);
             mapToken.put("openid", "");
-            boolean flag = WechatMpClient.isvalidOauthAccessToken(mapToken);
+
+            //boolean flag = WechatMpClient.isvalidOauthAccessToken(mapToken);
+
+            MpValidOauthTokenRequest request = new MpValidOauthTokenRequest("","");
+            boolean flag = WechatMpClient.isvalidOauthAccessToken(request);
+
+
             assertTrue(flag);
         } catch (Exception e) {
             log.error(e);
+        }
+    }
+
+    /***
+     * 获取普通access_token
+     */
+    public void testObtainAccessToken(){
+        try {
+            MpTokenResponse response = WechatMpClient.obtainAccessToken("","");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /***
+     * 测试获取JS API Ticket
+     */
+    public void testObtainJsApiTicket(){
+        try {
+            //功能一样
+            WechatMpClient.obtainJsApiTicket("");
+            WechatMpClient.obtainJsApiTicket("","");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /***
+     * 测试 模板ID获取
+     */
+    public void testObtainTemplateId(){
+        try {
+            WechatMpClient.obtainTemplateId("","");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /***
+     * 测试设置 行业属性
+     */
+    public void testSetupIndustry(){
+        try {
+            WechatMpClient.setupIndustry("","","");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 测试消息发送
+     */
+    public void testSendMsgToUser(){
+        try {
+            WechatMpClient.sendMsgToUser("","");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
