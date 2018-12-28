@@ -90,4 +90,14 @@ public class MpTemplateResponse implements Serializable{
     public void setTemplate_id(String template_id) {
         this.template_id = template_id;
     }
+
+
+    /**
+     * Is success boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSuccess(){
+        return errcode == 0 ? true : false;
+    }
 }

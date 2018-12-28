@@ -3,6 +3,7 @@ package org.thlws.payment;
 import cn.hutool.core.util.StrUtil;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.core.WechatMpCore;
+import org.thlws.payment.wechat.entity.extra.AuthorizeType;
 import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
@@ -103,17 +104,17 @@ public class WechatMpClient implements WechatMpApi {
      * @return string string
      * @throws Exception the exception
      */
-    public static  String generateWechatUrl(String appId, String scope, String callback, String bizData) throws Exception {
+    public static  String generateWechatUrl(String appId, AuthorizeType scope, String callback, String bizData) throws Exception {
 
 
 		if (StrUtil.isEmpty(appId)
-		|| StrUtil.isEmpty(scope)
+		|| StrUtil.isEmpty(scope.value)
 		|| StrUtil.isEmpty(callback)
 		|| StrUtil.isEmpty(bizData)){
 			throw new Exception("appId,scope,callback,bizData both can not be null");
 		}
 
-		return WechatMpCore.generateWechatUrl(appId,scope,callback,bizData);
+		return WechatMpCore.generateWechatUrl(appId,scope.value,callback,bizData);
 	}
 
 
@@ -267,7 +268,7 @@ public class WechatMpClient implements WechatMpApi {
      * @return industry response
      * @throws Exception the exception
      */
-    public static MpIndustryResponse setupIndustry(String access_token, String industry_id1, String industry_id2)throws  Exception{
+    public static MpSetIndustryResponse setupIndustry(String access_token, String industry_id1, String industry_id2)throws  Exception{
 
 
 		if (StrUtil.isEmpty(access_token)
@@ -278,6 +279,15 @@ public class WechatMpClient implements WechatMpApi {
 
 		return WechatMpCore.setupIndustry(access_token,industry_id1,industry_id2);
 
+	}
+
+	public static MpGetIndustryResponse getIndustry(String accessToken)throws  Exception{
+
+		if (StrUtil.isEmpty(accessToken)){
+			throw new Exception("access_token can not be null");
+		}
+
+		return WechatMpCore.getIndustry(accessToken);
 	}
 
     /***

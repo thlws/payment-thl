@@ -37,12 +37,21 @@ public class OpenidQueryRequest {
     @XmlElement(name="auth_code")
     private String authCode;
 
+    @XmlElement(name="sub_mch_id")
+    private String subMchId;
 
     @Override
     public String toString() {
         return JsonUtil.format(this);
     }
 
+    public String getSubMchId() {
+        return subMchId;
+    }
+
+    public void setSubMchId(String subMchId) {
+        this.subMchId = subMchId;
+    }
 
     /**
      * Gets app id.

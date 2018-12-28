@@ -292,14 +292,16 @@ public class WechatPayClientTest {
 
         try {
             OpenidQueryRequest request = new OpenidQueryRequest();
-            request.setAppId(test_wechat_appid);
-            request.setMchId(test_wechat_mchid);
-            request.setAuthCode("134599863674410654");
+            request.setAppId(sp_ci_wechat_appid);
+            request.setMchId(sp_ci_wechat_mchid);
+            request.setSubMchId(sp_ci_wechat_sub_mchid);
+            request.setAuthCode("134653648160290430");
 
-            OpenidQueryResponse response = WechatPayClient.openidQuery(request, test_wechat_apikey);
+            OpenidQueryResponse response = WechatPayClient.openidQuery(request, sp_ci_wechat_apikey);
             boolean flag = response.isSuccess();
             String  message = response.getMessage();
             log.debug("isSuccess="+flag+", message="+message);
+            System.out.println(response.toString());
             assertEquals(flag,true);
         } catch (Exception e) {
             log.error(e);

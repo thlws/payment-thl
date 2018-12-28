@@ -6,6 +6,7 @@ import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import org.thlws.payment.WechatMpClient;
 import org.thlws.payment.WechatPayClient;
+import org.thlws.payment.wechat.entity.extra.AuthorizeType;
 import org.thlws.payment.wechat.entity.request.UnifiedOrderRequest;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
@@ -50,7 +51,7 @@ public class WechatWebDemo {
             String scope = "snsapi_base";
             String callback = "http://www.x.com/wechat/pay_in_wechat.html"; //示例URL,请按照实际情况填写
             String bizData = "";//对应微信state参数，微信会原样返回
-            String url = WechatMpClient.generateWechatUrl(test_wechat_appid, scope, callback, bizData);
+            String url = WechatMpClient.generateWechatUrl(test_wechat_appid, AuthorizeType.snsapi_base, callback, bizData);
 
             //其他步骤请参看 pay_in_wechat  代码示例
         } catch (Exception e) {

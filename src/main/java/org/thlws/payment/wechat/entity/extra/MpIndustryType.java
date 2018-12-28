@@ -5,7 +5,7 @@ package org.thlws.payment.wechat.entity.extra;
  *
  * Created by  HanleyTang on 2018-12-24
  */
-public enum MpIndustryInfo {
+public enum MpIndustryType {
 
     it_internet("1", "IT科技","互联网|电子商务"),
     it_sw_service("2","IT科技","IT软件与服务"),
@@ -68,12 +68,11 @@ public enum MpIndustryInfo {
     public final String primary;
     public final String secondary;
 
-    MpIndustryInfo(String code, String primary, String secondary) {
+    MpIndustryType(String code, String primary, String secondary) {
         this.code = code;
         this.primary = primary;
         this.secondary = secondary;
     }
-
 
     /**
      * 根据主副业务,返回业务编码
@@ -82,12 +81,14 @@ public enum MpIndustryInfo {
      * @param secondary the secondary
      * @return the mp industry info
      */
-    public MpIndustryInfo getMpIndustryInfo(String primary,String secondary) {
-        for (MpIndustryInfo mpIndustryInfo : MpIndustryInfo.values()){
+    public static MpIndustryType getMpIndustryInfo(String primary, String secondary) {
+
+        for (MpIndustryType mpIndustryInfo : MpIndustryType.values()){
             if (mpIndustryInfo.primary.equalsIgnoreCase(primary) && mpIndustryInfo.secondary.equalsIgnoreCase(secondary)) {
                 return mpIndustryInfo;
             }
         }
         return null;
     }
+
 }

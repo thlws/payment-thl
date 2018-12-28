@@ -90,4 +90,13 @@ public class MpSendDataResponse {
     public void setMsgid(String msgid) {
         this.msgid = msgid;
     }
+
+    /**
+     * Is success boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSuccess(){
+        return errcode == 0 ? true : false;
+    }
 }

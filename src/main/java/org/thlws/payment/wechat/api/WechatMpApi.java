@@ -53,6 +53,11 @@ public interface WechatMpApi {
     String cgibin_set_industry = "https://api.weixin.qq.com/cgi-bin/template/api_set_industry";
 
     /***
+     * 获取行业属性
+     */
+    String cgibin_get_industry = "https://api.weixin.qq.com/cgi-bin/template/get_industry";
+
+    /***
      * 发送微信推送通知
      */
     String cgibin_send_data = "https://api.weixin.qq.com/cgi-bin/message/template/send";

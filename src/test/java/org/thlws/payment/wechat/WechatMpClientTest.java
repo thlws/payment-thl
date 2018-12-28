@@ -2,12 +2,15 @@ package org.thlws.payment.wechat;
 
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
+import org.junit.Test;
 import org.thlws.payment.WechatMpClient;
+import org.thlws.payment.wechat.entity.extra.AuthorizeType;
 import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
+import org.thlws.payment.wechat.entity.response.mp.MpGetIndustryResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpTokenResponse;
 import org.thlws.payment.wechat.utils.WechatUtil;
@@ -30,6 +33,7 @@ public class WechatMpClientTest {
     /***
      * 获取OauthaccessToken
      */
+    @Test
     public void testObtainOauthToken() {
         try {
             Map<String, Object> mapToken = new HashMap<String, Object>();
@@ -58,6 +62,7 @@ public class WechatMpClientTest {
     /***
      * 刷新OauthToken
      */
+    @Test
     public void testRefreshOauthToken() {
         try {
             Map<String, Object> mapToken = new HashMap<String, Object>();
@@ -82,6 +87,7 @@ public class WechatMpClientTest {
     /***
      * 获取微信用户信息
      */
+    @Test
     public void testObtainUserInfo() {
         try {
             Map<String, Object> userInfoMap = new HashMap<String, Object>();
@@ -106,6 +112,7 @@ public class WechatMpClientTest {
      * 生成微信URL[包含回调地址]
      * 生成URL后，引导用户点击，微信会向回调地址中返回code，可用于获取用户OpenId
      */
+    @Test
     public void testBuildWechatURL() {
         try {
             String appId = "wx5f22a16d8c94dba4";
@@ -116,7 +123,7 @@ public class WechatMpClientTest {
              */
             String callback = "http://www.thlws.com/wechat/callback/getcode.html";
             String bizData = "";//对应微信state参数，微信会原样返回
-            String url = WechatMpClient.generateWechatUrl(appId, scope, callback, bizData);
+            String url = WechatMpClient.generateWechatUrl(appId, AuthorizeType.snsapi_base, callback, bizData);
             assertNotNull(url);
         } catch (Exception e) {
             log.error(e);
@@ -126,6 +133,7 @@ public class WechatMpClientTest {
     /***
      * 检测token是否有效
      */
+    @Test
     public void testIsvalidOauthToken() {
         try {
             Map<String, Object> mapToken = new HashMap<String, Object>();
@@ -149,9 +157,11 @@ public class WechatMpClientTest {
     /***
      * 获取普通access_token
      */
+    @Test
     public void testObtainAccessToken(){
         try {
-            MpTokenResponse response = WechatMpClient.obtainAccessToken("","");
+            MpTokenResponse response = WechatMpClient.obtainAccessToken("wxa3f3406c0b04a601","04303a8acc9786ddac6458d401ca764f");
+            System.out.println(response.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -160,6 +170,7 @@ public class WechatMpClientTest {
     /***
      * 测试获取JS API Ticket
      */
+    @Test
     public void testObtainJsApiTicket(){
         try {
             //功能一样
@@ -174,6 +185,7 @@ public class WechatMpClientTest {
     /***
      * 测试 模板ID获取
      */
+    @Test
     public void testObtainTemplateId(){
         try {
             WechatMpClient.obtainTemplateId("","");
@@ -186,6 +198,7 @@ public class WechatMpClientTest {
     /***
      * 测试设置 行业属性
      */
+    @Test
     public void testSetupIndustry(){
         try {
             WechatMpClient.setupIndustry("","","");
@@ -195,9 +208,21 @@ public class WechatMpClientTest {
     }
 
 
+    @Test
+    public void testGetIndustry(){
+        try {
+            MpGetIndustryResponse response = WechatMpClient.getIndustry("16_f2KiZdoAtfYhadyTKvhkkqGRwcH6UMOKqFqD3pt79--k8C9V5cIauw5ZXFRjkp2YXVi42RvvtG1WXLr_Nz1-EjRDTbssntdhCPEInej8Qqyv531QqgkrYsRarZEa5eWyDsLP5Qn__74bteKvUHEgABALYV");
+            System.out.println(response.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /**
      * 测试消息发送
      */
+    @Test
     public void testSendMsgToUser(){
         try {
             WechatMpClient.sendMsgToUser("","");
@@ -209,7 +234,8 @@ public class WechatMpClientTest {
     /***
      * 测试微信异步通知 数据处理
      */
-    public static void testParseNotifyMsg() {
+    @Test
+    public  void testParseNotifyMsg() {
         try {
             String notifyXmlResult = "<xml><appid><![CDATA[wx5f22a16d8c94dba4]]></appid><attach><![CDATA[69a8ef0cb3c742779c438e92bbc33118]]></attach><bank_type><![CDATA[CFT]]></bank_type><cash_fee><![CDATA[1]]></cash_fee><device_info><![CDATA[hanley@1025@cust_test]]></device_info><fee_type><![CDATA[CNY]]></fee_type><is_subscribe><![CDATA[Y]]></is_subscribe><mch_id><![CDATA[1336236101]]></mch_id><nonce_str><![CDATA[txjam10ant72jxl5umsl2hbl2nrb0kzr]]></nonce_str><openid><![CDATA[o2nMlwuj_cHFBcNDfPkpufta80KU]]></openid><out_trade_no><![CDATA[20170224052028]]></out_trade_no><result_code><![CDATA[SUCCESS]]></result_code><return_code><![CDATA[SUCCESS]]></return_code><sign><![CDATA[D8D69790FB5416AF86070B4DAD673E89]]></sign><time_end><![CDATA[20170224052134]]></time_end><total_fee>1</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><transaction_id><![CDATA[4005332001201702241084568187]]></transaction_id></xml>";
             NotifyResponse response = WechatUtil.parseNotifyMsg(notifyXmlResult);

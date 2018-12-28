@@ -5,7 +5,7 @@ import org.thlws.utils.JsonUtil;
 /**
  * Created by HanleyTang on 2016/11/18.
  */
-public class MpIndustryResponse {
+public class MpSetIndustryResponse {
 
     private long errcode; // 0
     private String errmsg; // ok

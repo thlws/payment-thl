@@ -115,4 +115,13 @@ public class MpTokenResponse implements Serializable{
     public void setAccess_token(String access_token) {
         this.access_token = access_token;
     }
+
+    /**
+     * Is success boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isSuccess(){
+        return errcode == 0 ? true : false;
+    }
 }

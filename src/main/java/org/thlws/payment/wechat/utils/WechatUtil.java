@@ -9,9 +9,10 @@
 package org.thlws.payment.wechat.utils;
 
 import cn.hutool.core.util.XmlUtil;
-import org.thlws.utils.ThlwsBeanUtil;
+import org.thlws.payment.wechat.entity.extra.MpIndustryType;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
+import org.thlws.utils.ThlwsBeanUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
@@ -119,4 +120,6 @@ public class WechatUtil {
         request.setAttribute("paySign", paySign);
         request.setAttribute("outTradeNo", outTradeNo);
     }
+
+
 }

@@ -144,7 +144,7 @@ boolean isSuccess = response.isPaySuccess();
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 
@@ -169,3 +169,9 @@ System.out.println("isSuccess="+flag+", message="+message);
 - [https://github.com/thlws/payment-thl](https://github.com/thlws/payment-thl)
 
 
+### 更版记录
+- 1.0.0 整合多种支付平台
+- 1.0.1 公众号模块代码规范
+- 1.0.2 微信公众号返回新增isSuccess()
+- 1.0.3 新增行业属性获取接口
+- 1.0.4 行业属性汇总,代码优化

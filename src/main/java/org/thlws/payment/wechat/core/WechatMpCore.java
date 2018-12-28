@@ -1,5 +1,6 @@
 package org.thlws.payment.wechat.core;
 
+import cn.hutool.core.util.URLUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.google.gson.JsonObject;
@@ -96,7 +97,7 @@ public class WechatMpCore implements WechatMpApi {
 		StringBuilder sb = new StringBuilder();
 		sb.append("https://open.weixin.qq.com/connect/oauth2/authorize?");
 		sb.append("appid=").append(appId);
-		sb.append("&redirect_uri=").append(callback).append("&response_type=code&");
+		sb.append("&redirect_uri=").append(URLUtil.encode(callback)).append("&response_type=code&");
 		sb.append("scope=").append(scope);
 		sb.append("&state=").append(bizData).append("#wechat_redirect");
 
@@ -273,9 +274,9 @@ public class WechatMpCore implements WechatMpApi {
      * @return industry response
      * @throws Exception the exception
      */
-    public static MpIndustryResponse setupIndustry(String accessToken, String industryId1, String industryId2)throws  Exception{
+    public static MpSetIndustryResponse setupIndustry(String accessToken, String industryId1, String industryId2)throws  Exception{
 
-		MpIndustryResponse response;
+		MpSetIndustryResponse response;
 
 		try {
 			StringBuffer sb = new StringBuffer();
@@ -288,7 +289,7 @@ public class WechatMpCore implements WechatMpApi {
 			mapData.put("industry_id2", industryId2);
 			String result = ConnUtil.connRemoteWithJson(ThlwsBeanUtil.beanToJson(mapData),sb.toString());
 			log.debug("setupIndustry result={}",result);
-			response = ThlwsBeanUtil.jsonToBean(result, MpIndustryResponse.class);
+			response = ThlwsBeanUtil.jsonToBean(result, MpSetIndustryResponse.class);
 		}catch (Exception e){
 			log.error(e);
 			throw e;
@@ -296,6 +297,37 @@ public class WechatMpCore implements WechatMpApi {
 
 		return response;
 	}
+
+
+	/**
+	 * 获取行业属性.
+	 *
+	 * @param accessToken the access token
+	 * @return the industry
+	 * @throws Exception the exception
+	 */
+	public static MpGetIndustryResponse getIndustry(String accessToken)throws  Exception{
+
+		MpGetIndustryResponse response;
+
+		try {
+			StringBuffer sb = new StringBuffer();
+			sb.append(cgibin_get_industry);
+			sb.append("?access_token=");
+			sb.append(accessToken);
+			String result = ConnUtil.connURL(sb.toString());
+
+			log.debug("getupIndustry result={}",result);
+			response = ThlwsBeanUtil.jsonToBean(result, MpGetIndustryResponse.class);
+		}catch (Exception e){
+			log.error(e);
+			throw e;
+		}
+
+		return response;
+	}
+
+
 
     /***
      * 发送数据至于用户公微信所关注的微信公账号

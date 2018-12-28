@@ -193,4 +193,13 @@ public class MpOauthTokenResponse {
 	public String toString() {
 		return JsonUtil.format(this);
 	}
+
+	/**
+	 * Is success boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isSuccess(){
+		return errcode == 0 ? true : false;
+	}
 }

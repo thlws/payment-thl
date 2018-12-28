@@ -250,7 +250,14 @@ public class MpUserInfoResponse {
     public void setPrivilege(List<String> privilege) {
 		this.privilege = privilege;
 	}
-	
-	
+
+	/**
+	 * Is success boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isSuccess(){
+		return errcode == 0 ? true : false;
+	}
 	
 }

@@ -1,73 +1,33 @@
 package org.thlws.payment.wechat.entity.response.mp;
 
+import cn.hutool.core.util.ObjectUtil;
+import org.thlws.payment.wechat.entity.extra.IndustryInfo;
 import org.thlws.utils.JsonUtil;
+
+import java.io.Serializable;
 
 /**
  * Created by HanleyTang on 2016/11/18.
  */
-public class MpSetIndustryResponse {
+public class MpGetIndustryResponse implements Serializable {
 
-    private long errcode; // 0
-    private String errmsg; // ok
-    private String desc;
+    private IndustryInfo primary_industry;
+    private IndustryInfo secondary_industry;
 
-    /**
-     * Gets desc.
-     *
-     * @return the desc
-     */
-    public String getDesc() {
-        return desc;
+    public IndustryInfo getPrimary_industry() {
+        return primary_industry;
     }
 
-    /**
-     * Sets desc.
-     *
-     * @param desc the desc
-     */
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setPrimary_industry(IndustryInfo primary_industry) {
+        this.primary_industry = primary_industry;
     }
 
-    /**
-     * Gets errcode.
-     *
-     * @return the errcode
-     */
-    public long getErrcode() {
-        return errcode;
+    public IndustryInfo getSecondary_industry() {
+        return secondary_industry;
     }
 
-    /**
-     * Sets errcode.
-     *
-     * @param errcode the errcode
-     */
-    public void setErrcode(long errcode) {
-        this.errcode = errcode;
-    }
-
-    /**
-     * Gets errmsg.
-     *
-     * @return the errmsg
-     */
-    public String getErrmsg() {
-        return errmsg;
-    }
-
-    /**
-     * Sets errmsg.
-     *
-     * @param errmsg the errmsg
-     */
-    public void setErrmsg(String errmsg) {
-        this.errmsg = errmsg;
-    }
-
-    @Override
-    public String toString() {
-        return JsonUtil.format(this);
+    public void setSecondary_industry(IndustryInfo secondary_industry) {
+        this.secondary_industry = secondary_industry;
     }
 
     /**
@@ -76,6 +36,11 @@ public class MpSetIndustryResponse {
      * @return the boolean
      */
     public boolean isSuccess(){
-        return errcode == 0 ? true : false;
+        return (ObjectUtil.isNotNull(primary_industry) && ObjectUtil.isNotNull(secondary_industry)) ? true : false;
+    }
+
+    @Override
+    public String toString() {
+        return JsonUtil.beanToJsontring(this);
     }
 }
