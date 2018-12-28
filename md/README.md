@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
@@ -30,6 +30,9 @@
 
 ### 更新日志
 - v1.0.0 三合一支付整合(微信，支付宝，翼支付).
+- v1.0.1 公众号模块代码规范.
+- v1.0.2 微信公众号返回新增isSuccess().
+- v1.0.3 新增行业属性获取接口
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
