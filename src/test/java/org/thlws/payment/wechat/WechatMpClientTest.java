@@ -231,6 +231,13 @@ public class WechatMpClientTest {
         }
     }
 
+
+    @Test
+    public void testIsFromWechat(){
+        WechatMpClient.isFromWechat(null);
+    }
+
+
     /***
      * 测试微信异步通知 数据处理
      */

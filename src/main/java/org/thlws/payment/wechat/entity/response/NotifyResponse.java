@@ -583,4 +583,5 @@ public class NotifyResponse  extends WechatResponse {
 	public String toString() {
 		return JsonUtil.format(this);
 	}
+
 }

@@ -11,6 +11,7 @@ import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ThlwsBeanUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 
@@ -293,7 +294,7 @@ public class WechatMpClient implements WechatMpApi {
     /***
      * {@link WechatMpCore#sendMsgToUser}
      * @param access_token the access token
-     * @param data json格式数据,是 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JOSN
+     * @param data json格式数据,是 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON
      * @return send data response
      * @throws Exception the exception
      */
@@ -306,6 +307,16 @@ public class WechatMpClient implements WechatMpApi {
 
 		return WechatMpCore.sendMsgToUser(access_token,data);
 
+	}
+
+	/**
+	 * {@link WechatMpCore#isFromWechat}
+	 *
+	 * @param request the request
+	 * @return the boolean
+	 */
+	public static boolean isFromWechat(HttpServletRequest request) {
+		return WechatMpCore.isFromWechat(request);
 	}
 
 }

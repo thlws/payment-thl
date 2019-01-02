@@ -1,6 +1,6 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.0.4-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.0.4-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.0.4/jar) 
+[![](https://img.shields.io/badge/release-v1.0.6-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.0.6-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.0.6/jar) 
 [![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 > 基于Java实现的 多平台支付（支付宝，微信，翼支付） 依赖库。
@@ -144,7 +144,7 @@ boolean isSuccess = response.isPaySuccess();
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.6</version>
 </dependency>
 ```
 
@@ -175,3 +175,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.2 微信公众号返回新增isSuccess()
 - 1.0.3 新增行业属性获取接口
 - 1.0.4 行业属性汇总,代码优化
+- 1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
+- 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsg(HttpServletRequest request)

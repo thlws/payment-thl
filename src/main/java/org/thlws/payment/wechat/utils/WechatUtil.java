@@ -9,13 +9,16 @@
 package org.thlws.payment.wechat.utils;
 
 import cn.hutool.core.util.XmlUtil;
-import org.thlws.payment.wechat.entity.extra.MpIndustryType;
+import org.thlws.payment.wechat.entity.dto.MpPayment;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
 import org.thlws.utils.ThlwsBeanUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +43,12 @@ public class WechatUtil {
         return mysign;
     }
 
+    public static String sign(MpPayment mPayment, String key){
+
+        Map<String, Object> params = ThlwsBeanUtil.objectToMap(mPayment);
+        return sign(params, key);
+    }
+
 
     /**
      * 微信支付异步通知结果解析为Object
@@ -52,6 +61,27 @@ public class WechatUtil {
         NotifyResponse response = ThlwsBeanUtil.xmlToBean(xmlResult, NotifyResponse.class);
         return response;
     }
+
+    /***
+     * 微信支付异步通知结果解析为Object
+     * @param request HttpServletRequest
+     * @return  notify response
+     * @throws Exception exception
+     */
+    public static NotifyResponse parseNotifyMsg(HttpServletRequest request) throws Exception{
+
+        StringBuffer notifyResult = new StringBuffer();
+        try(InputStream is = request.getInputStream()){
+            BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            String buffer = null;
+            while ((buffer = br.readLine()) != null){
+                notifyResult.append(buffer);
+            }
+        }
+       return parseNotifyMsg(notifyResult.toString());
+
+    }
+
 
     /**
      * Build request object.
@@ -105,7 +135,7 @@ public class WechatUtil {
         String appId = response.getAppId();
         String nonceStr = response.getNonceStr();
         String _package = "prepay_id=" + response.getPrepayId();
-        Map<String, Object> sParam = new HashMap<String, Object>();
+        Map<String, Object> sParam = new HashMap<>();
         sParam.put("appId", appId);
         sParam.put("timeStamp",timeStamp);
         sParam.put("nonceStr", nonceStr);

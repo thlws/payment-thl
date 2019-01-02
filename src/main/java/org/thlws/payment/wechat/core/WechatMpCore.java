@@ -5,13 +5,18 @@ import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ConnUtil;
 import org.thlws.utils.ThlwsBeanUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -355,5 +360,29 @@ public class WechatMpCore implements WechatMpApi {
 
 		return response;
 	}
+
+
+	/**
+	 * 验证请求是否来自微信
+	 *
+	 * @param request the request
+	 * @return the boolean
+	 */
+	public static boolean isFromWechat(HttpServletRequest request) {
+
+		String userAgent = request.getHeader("User-Agent");
+		if (StringUtils.isNotBlank(userAgent)) {
+			Pattern p = Pattern.compile("MicroMessenger/(\\d+).+");
+			Matcher m = p.matcher(userAgent);
+			if (m.find()) {
+				String version = m.group(1);
+				if (null != version && NumberUtils.toInt(version) >= 5) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 
 }
