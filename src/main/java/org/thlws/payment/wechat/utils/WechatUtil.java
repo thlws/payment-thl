@@ -19,8 +19,6 @@ import org.thlws.utils.ThlwsBeanUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.security.MessageDigest;
 import java.util.Formatter;
 import java.util.HashMap;
@@ -114,7 +112,7 @@ public class WechatUtil {
      * @return notify response
      * @throws JAXBException the jaxb exception
      */
-    public static NotifyResponse parseNotifyMsg(String xmlResult) throws JAXBException {
+    public static NotifyResponse parseNotifyMsgToBean(String xmlResult) throws JAXBException {
         NotifyResponse response = ThlwsBeanUtil.xmlToBean(xmlResult, NotifyResponse.class);
         return response;
     }
@@ -125,19 +123,31 @@ public class WechatUtil {
      * @return notify response
      * @throws Exception exception
      */
-    public static NotifyResponse parseNotifyMsg(HttpServletRequest request) throws Exception{
+    public static NotifyResponse parseNotifyMsgToBean(HttpServletRequest request) throws Exception{
+       return parseNotifyMsgToBean(parseNotifyMsgToXml(request));
+    }
+
+
+    /**
+     * 微信支付异步通知结果解析为XML
+     *
+     * @param request the request
+     * @return the string
+     * @throws Exception the exception
+     */
+    public static String parseNotifyMsgToXml(HttpServletRequest request) throws Exception{
 
         StringBuffer notifyResult = new StringBuffer();
-        try(InputStream is = request.getInputStream()){
-            BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            String buffer = null;
-            while ((buffer = br.readLine()) != null){
-                notifyResult.append(buffer);
+        try(BufferedReader reader = request.getReader()){
+            String inputLine = "";
+            while ((inputLine = reader.readLine()) != null){
+                notifyResult.append(inputLine);
             }
         }
-       return parseNotifyMsg(notifyResult.toString());
+        return notifyResult.toString();
 
     }
+
 
 
     /**

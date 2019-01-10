@@ -36,7 +36,7 @@
 - v1.0.4 行业属性汇总,代码优化
 - v1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
 - v1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsg(HttpServletRequest request)
-- v1.0.7 修正公众号支付签名问题
+- v1.0.7 修正公众号支付签名问题,异步数据通知处理优化
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)

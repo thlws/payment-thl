@@ -137,7 +137,7 @@ public class WechatWebDemo {
                 xmlResult.append(buffer);
             }
             log.debug("微信异步返回信息："+ ThlwsBeanUtil.formatXml(xmlResult.toString()));
-            NotifyResponse notifyOutput = WechatUtil.parseNotifyMsg(xmlResult.toString());
+            NotifyResponse notifyOutput = WechatUtil.parseNotifyMsgToBean(xmlResult.toString());
             //notifyOutput 是微信推送数据转换为Java对象，直接从该对象取值并进行相关业务操作
             //TODO 业务逻辑
         } catch (Exception e) {

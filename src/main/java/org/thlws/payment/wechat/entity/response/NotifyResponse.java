@@ -3,12 +3,18 @@ package org.thlws.payment.wechat.entity.response;
 import org.thlws.payment.wechat.entity.WechatResponse;
 import org.thlws.utils.JsonUtil;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * 微信支付异步通知返回POJO
  *
  * @author Hanley Tang | hanley@thlws.com
  * @version 1.0
  */
+@XmlRootElement(name="xml")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class NotifyResponse  extends WechatResponse {
 
 	private String appid           ;

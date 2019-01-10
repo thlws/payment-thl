@@ -15,6 +15,7 @@ import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpTokenResponse;
 import org.thlws.payment.wechat.utils.WechatUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 import java.util.HashMap;
 import java.util.Map;
@@ -245,9 +246,15 @@ public class WechatMpClientTest {
     public  void testParseNotifyMsg() {
         try {
             String notifyXmlResult = "<xml><appid><![CDATA[wx5f22a16d8c94dba4]]></appid><attach><![CDATA[69a8ef0cb3c742779c438e92bbc33118]]></attach><bank_type><![CDATA[CFT]]></bank_type><cash_fee><![CDATA[1]]></cash_fee><device_info><![CDATA[hanley@1025@cust_test]]></device_info><fee_type><![CDATA[CNY]]></fee_type><is_subscribe><![CDATA[Y]]></is_subscribe><mch_id><![CDATA[1336236101]]></mch_id><nonce_str><![CDATA[txjam10ant72jxl5umsl2hbl2nrb0kzr]]></nonce_str><openid><![CDATA[o2nMlwuj_cHFBcNDfPkpufta80KU]]></openid><out_trade_no><![CDATA[20170224052028]]></out_trade_no><result_code><![CDATA[SUCCESS]]></result_code><return_code><![CDATA[SUCCESS]]></return_code><sign><![CDATA[D8D69790FB5416AF86070B4DAD673E89]]></sign><time_end><![CDATA[20170224052134]]></time_end><total_fee>1</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><transaction_id><![CDATA[4005332001201702241084568187]]></transaction_id></xml>";
-            NotifyResponse response = WechatUtil.parseNotifyMsg(notifyXmlResult);
+
+            //方式一
+            NotifyResponse response = WechatUtil.parseNotifyMsgToBean(notifyXmlResult);
+            HttpServletRequest request = null;//Controller中传入
+
+            //方式二
+            WechatUtil.parseNotifyMsgToBean(request);
             assertTrue(null != response);
-        } catch (JAXBException e) {
+        } catch (Exception e) {
             log.error(e);
         }
     }
@@ -278,6 +285,18 @@ public class WechatMpClientTest {
         } catch (Exception e) {
             log.error(e);
         }
+    }
+
+    @Test
+    public void testXML0(){
+        try {
+            String xml = "<xml><appid><![CDATA[wxa3f3406c0b04a601]]></appid><bank_type><![CDATA[CFT]]></bank_type><cash_fee><![CDATA[1]]></cash_fee><fee_type><![CDATA[CNY]]></fee_type><is_subscribe><![CDATA[Y]]></is_subscribe><mch_id><![CDATA[1511132631]]></mch_id><nonce_str><![CDATA[un3q6fwci0cxaqebv5ybmrzjzxz3or2i]]></nonce_str><openid><![CDATA[ofSpd1T-jkJ0UNzmHzDAd5Q2V_EM]]></openid><out_trade_no><![CDATA[80fbc69ff768432da508276cc0969504]]></out_trade_no><result_code><![CDATA[SUCCESS]]></result_code><return_code><![CDATA[SUCCESS]]></return_code><sign><![CDATA[0F9628659144CE571B9F685312843101]]></sign><sub_mch_id><![CDATA[1517927831]]></sub_mch_id><time_end><![CDATA[20190110134719]]></time_end><total_fee>1</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><transaction_id><![CDATA[4200000251201901109450527881]]></transaction_id></xml>";
+            NotifyResponse response = WechatUtil.parseNotifyMsgToBean(xml);
+            System.out.println(response);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
