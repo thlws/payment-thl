@@ -31,3 +31,5 @@
 | obtainTemplateId | 获取微信消息模板ID |
 | setupIndustry | 设置行业属性 |
 | sendMsgToUser | 发送微信通知 |
+
+#### 公众号开发会涉及Token,Ticket等时效性参数，建议程序中使用Redis进行存储.

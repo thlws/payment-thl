@@ -2,11 +2,11 @@
 
 * [项目介绍](README.md)
 * [支付宝支付](alipay/alipay.md)
-    * [参数获取](alipay/params.md)
+    * [参数及配置](alipay/params.md)
     * [接口列表](alipay/interfaces.md)
     * [快速上手](alipay/starter.md)
 * [微信支付](wechat/wechat.md)
-    * [参数获取](wechat/params.md)
+    * [参数及配置](wechat/params.md)
     * [接口列表](wechat/interfaces.md)
     * [快速上手](wechat/starter.md)
 * [翼支付](bestpay/bestpay.md)

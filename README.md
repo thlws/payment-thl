@@ -66,6 +66,8 @@
 | setupIndustry | 设置行业属性 |
 | sendMsgToUser | 发送微信通知 |
 
+#### 公众号开发会涉及Token,Ticket等时效性参数，建议程序中使用Redis进行存储.
+
 **翼支付**
 [org.thlws.payment.BestPayClient](src/main/java/org/thlws/payment/BestPayClient.java) 
 
@@ -144,7 +146,7 @@ boolean isSuccess = response.isPaySuccess();
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 </dependency>
 ```
 
@@ -177,3 +179,4 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.4 行业属性汇总,代码优化
 - 1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
 - 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsg(HttpServletRequest request)
+- 1.0.7 修正公众号支付签名问题,新增JS Ticket签名功能

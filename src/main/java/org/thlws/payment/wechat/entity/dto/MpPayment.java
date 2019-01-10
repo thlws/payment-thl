@@ -14,6 +14,15 @@ public class MpPayment implements Serializable {
    private  String packageStr;
    private  String signType = "MD5";
    private  String paySign;
+   private  String outTradeNo;
+
+    public String getOutTradeNo() {
+        return outTradeNo;
+    }
+
+    public void setOutTradeNo(String outTradeNo) {
+        this.outTradeNo = outTradeNo;
+    }
 
     public String getAppId() {
         return appId;

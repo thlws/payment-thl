@@ -8,8 +8,10 @@
 
 package org.thlws.payment.wechat.utils;
 
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.XmlUtil;
 import org.thlws.payment.wechat.entity.dto.MpPayment;
+import org.thlws.payment.wechat.entity.dto.MpTicket;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
 import org.thlws.utils.ThlwsBeanUtil;
@@ -19,6 +21,8 @@ import javax.xml.bind.JAXBException;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.MessageDigest;
+import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +32,7 @@ import java.util.Map;
 public class WechatUtil {
 
     /**
-     * sign wechat request data
+     * 普通签名,用户微信支付相关接口
      *
      * @param params the params
      * @param key    the key
@@ -39,14 +43,67 @@ public class WechatUtil {
 
         String prestr = ThlwsBeanUtil.createLinkString(params);
         prestr +="&key="+key;
-        String mysign = ThlwsBeanUtil.getMD5(prestr).toUpperCase();
-        return mysign;
+        return ThlwsBeanUtil.getMD5(prestr).toUpperCase();
     }
 
+    /**
+     * 普通签名,用户微信支付相关接口
+     *
+     * @param mPayment the m payment
+     * @param key      the key
+     * @return the string
+     */
     public static String sign(MpPayment mPayment, String key){
 
-        Map<String, Object> params = ThlwsBeanUtil.objectToMap(mPayment);
+        Map<String, Object> params = new HashMap<>();
+        params.put("appId", mPayment.getAppId());
+        params.put("timeStamp",mPayment.getTimeStamp());
+        params.put("nonceStr", mPayment.getNonceStr());
+        params.put("package", mPayment.getPackageStr());
+        params.put("signType", "MD5");
         return sign(params, key);
+    }
+
+
+    /**
+     * JS Ticket 签名,用于微信页面分享，扫一扫等功能.
+     *
+     * @param appId  the app id
+     * @param ticket the ticket
+     * @param url    网页端URL,用户实际看到的页面地址
+     * @return the mp ticket
+     * @throws Exception the exception
+     */
+    public static MpTicket jsTicketSign(String appId,String ticket,String url) throws Exception{
+
+        String nonce_str = IdUtil.fastSimpleUUID();
+        String timestamp = Long.toString(System.currentTimeMillis() / 1000);
+
+        String string1 = "jsapi_ticket=" + ticket +
+                "&noncestr=" + nonce_str +
+                "&timestamp=" + timestamp +
+                "&url=" + url;
+        MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+        crypt.reset();
+        crypt.update(string1.getBytes("UTF-8"));
+        String signature = byteToHex(crypt.digest());
+        MpTicket mpTicket = new MpTicket();
+        mpTicket.setAppId(appId);
+        mpTicket.setNonceStr(nonce_str);
+        mpTicket.setSignature(signature);
+        mpTicket.setTimestamp(timestamp);
+
+        return mpTicket;
+    }
+
+
+    private static String byteToHex(final byte[] hash) {
+        try( Formatter formatter = new Formatter()){
+            for (byte b : hash){
+                formatter.format("%02x", b);
+            }
+           return formatter.toString();
+        }
     }
 
 
@@ -65,7 +122,7 @@ public class WechatUtil {
     /***
      * 微信支付异步通知结果解析为Object
      * @param request HttpServletRequest
-     * @return  notify response
+     * @return notify response
      * @throws Exception exception
      */
     public static NotifyResponse parseNotifyMsg(HttpServletRequest request) throws Exception{

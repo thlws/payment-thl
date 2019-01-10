@@ -252,4 +252,32 @@ public class WechatMpClientTest {
         }
     }
 
+
+    @Test
+    public void testJsApiTicket(){
+
+        try {
+            //直接使用appId secret,SDK 会自动回去token后再获取Ticket
+            WechatMpClient.obtainJsApiTicket("", "");
+
+            //手动获取token后再获取Ticket
+            WechatMpClient.obtainJsApiTicket("");
+        } catch (Exception e) {
+            log.error(e);
+        }
+    }
+
+
+    @Test
+    public void testJsApiTicketSign(){
+
+        try {
+            //使用 testJsApiTicket 方式得到的ticket ，页面url获取ticket sign
+            WechatUtil.jsTicketSign("", "", "");
+
+        } catch (Exception e) {
+            log.error(e);
+        }
+    }
+
 }
