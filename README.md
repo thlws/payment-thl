@@ -180,5 +180,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.3 新增行业属性获取接口
 - 1.0.4 行业属性汇总,代码优化
 - 1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
-- 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsg(HttpServletRequest request)
+- 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsgToBean(HttpServletRequest request)
 - 1.0.7 修正公众号支付签名问题,异步数据通知处理优化
