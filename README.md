@@ -5,6 +5,7 @@
 
 > 基于Java实现的 多平台支付（支付宝，微信，翼支付） 依赖库。
 
+![](img/thl.png)
 
 ### 适用人群
 未接触过支付，觉得官方文档复杂, 但又需要快速接入支付功能的小白程序员，这个项目一定会让你省下不少力气，如果你是之前接入过各种支付的老鸟,这对你可能没什么吸引力，这个项目主要面向刚接触或未接触过支付的小伙伴，无论你是小白还是老鸟，喜欢的话帮忙star下，感谢。
@@ -18,7 +19,7 @@
 
 
 ### 示例项目
-- [https://gitee.com/thlws/payment-simple 【未完成】](https://gitee.com/thlws/payment-simple)
+- [https://gitee.com/thlws/payment-simple 【待完善】](https://gitee.com/thlws/payment-simple)
 
 ### 接口列表
 **支付宝**
