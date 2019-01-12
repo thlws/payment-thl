@@ -148,7 +148,7 @@ boolean isSuccess = response.isPaySuccess();
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
 </dependency>
 ```
 
@@ -182,3 +182,4 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
 - 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsgToBean(HttpServletRequest request)
 - 1.0.7 修正公众号支付签名问题,异步数据通知处理优化
+- 1.0.8 修正微信网页授权问题，新增公众号入口类部分注释

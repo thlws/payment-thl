@@ -7,7 +7,7 @@ package org.thlws.payment.wechat.entity.extra;
 public enum AuthorizeType {
 
     snsapi_base("snsapi_base"),
-    userinfo("userinfo");
+    userinfo("snsapi_userinfo");
 
     public final String value;
 

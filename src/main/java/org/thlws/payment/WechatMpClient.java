@@ -27,6 +27,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 通过code换取网页授权access_token
      * {@link WechatMpCore#obtainOauthAccessToken}
      * @param mapToken the map token
      * @return the oauth token response
@@ -45,8 +46,8 @@ public class WechatMpClient implements WechatMpApi {
 
 
 	/**
-	 * Obtain oauth access token mp oauth token response.
-	 *
+	 * 通过code换取网页授权access_token
+	 * {@link WechatMpCore#obtainOauthAccessToken}
 	 * @param request the request
 	 * @return the mp oauth token response
 	 * @throws Exception the exception
@@ -62,6 +63,7 @@ public class WechatMpClient implements WechatMpApi {
 	}
 
     /**
+	 * 刷新access_token（如果需要）
      * {@link WechatMpCore#refreshOauthAccessToken}
      *
      * @param mapToken the map token
@@ -81,8 +83,8 @@ public class WechatMpClient implements WechatMpApi {
 
 
 	/**
-	 * Refresh oauth access token mp oauth token response.
-	 *
+	 * 刷新access_token（如果需要）
+	 * {@link WechatMpCore#refreshOauthAccessToken}
 	 * @param request the request
 	 * @return the mp oauth token response
 	 * @throws Exception the exception
@@ -97,6 +99,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 微信公众号 URL链接生成，
      * {@link WechatMpCore#generateWechatUrl}
      * @param appId the app id
      * @param scope the scope
@@ -120,6 +123,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 获取微信用户个人信息
      * {@link WechatMpCore#obtainUserInfo}
      * @param userInfoMap the user info map
      * @return user info response
@@ -137,8 +141,8 @@ public class WechatMpClient implements WechatMpApi {
 
 
 	/**
-	 * Obtain user info mp user info response.
-	 *
+	 * 获取微信用户个人信息
+	 * {@link WechatMpCore#obtainUserInfo}
 	 * @param request the request
 	 * @return the mp user info response
 	 * @throws Exception the exception
@@ -155,6 +159,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 检验授权凭证（access_token）是否有效
      * {@link WechatMpCore#isvalidOauthAccessToken}
      * @param mapToken the map token
      * @return boolean boolean
@@ -172,8 +177,8 @@ public class WechatMpClient implements WechatMpApi {
 
 
 	/**
-	 * Isvalid oauth access token boolean.
-	 *
+	 * 检验授权凭证（access_token）是否有效
+	 * {@link WechatMpCore#isvalidOauthAccessToken}
 	 * @param request the request
 	 * @return the boolean
 	 * @throws Exception the exception
@@ -190,6 +195,9 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。
+	 * 开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。
+	 * access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
      * {@link WechatMpCore#obtainAccessToken}
      * @param appid the appid
      * @param secret the secret
@@ -208,6 +216,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 获取jsapi_ticket
      * {@link WechatMpCore#obtainJsApiTicket}
      * @param token 普通token
      * @return js api ticket response
@@ -226,6 +235,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 功能同上，但不建议使用,token需要中控服务器维护,建立存储于Redis
      * {@link WechatMpCore#obtainJsApiTicket}
      * @param appid the appid
      * @param secret the secret
@@ -245,6 +255,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 获取微信消息模板ID
      * {@link WechatMpCore#obtainTemplateId}
      * @param access_token the access token
      * @param template_id_short the template id short
@@ -262,6 +273,7 @@ public class WechatMpClient implements WechatMpApi {
 
 
     /***
+	 * 设置行业属性
      * {@link WechatMpCore#setupIndustry}
      * @param access_token the access token
      * @param industry_id1 the industry id 1
@@ -282,6 +294,13 @@ public class WechatMpClient implements WechatMpApi {
 
 	}
 
+	/***
+	 * 获取行业属性
+	 * {@link WechatMpCore#getIndustry}
+	 * @param accessToken the access token
+	 * @return industry
+	 * @throws Exception the exception
+	 */
 	public static MpGetIndustryResponse getIndustry(String accessToken)throws  Exception{
 
 		if (StrUtil.isEmpty(accessToken)){
@@ -292,6 +311,7 @@ public class WechatMpClient implements WechatMpApi {
 	}
 
     /***
+	 * 发送数据至于用户公微信所关注的微信公账号
      * {@link WechatMpCore#sendMsgToUser}
      * @param access_token the access token
      * @param data json格式数据,是 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON
@@ -310,6 +330,8 @@ public class WechatMpClient implements WechatMpApi {
 	}
 
 	/**
+	 *
+	 * 验证请求是否来自微信
 	 * {@link WechatMpCore#isFromWechat}
 	 *
 	 * @param request the request
