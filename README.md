@@ -3,16 +3,19 @@
 [![](https://img.shields.io/badge/release-v1.0.8-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.0.8-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.0.8/jar) 
 [![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-> 基于Java实现的 多平台支付（支付宝，微信，翼支付） 依赖库。
 
 ![](img/thl.png)
 - 在线Demo [http://39.105.94.70:7171/](http://39.105.94.70:7171/)
+
+### 源码托管
+- [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
+- [https://github.com/thlws/payment-thl](https://github.com/thlws/payment-thl)
 
 ### 适用人群
 未接触过支付，觉得官方文档复杂, 但又需要快速接入支付功能的小白程序员，这个项目一定会让你省下不少力气，如果你是之前接入过各种支付的老鸟,这对你可能没什么吸引力，这个项目主要面向刚接触或未接触过支付的小伙伴，无论你是小白还是老鸟，喜欢的话帮忙star下，感谢。
 
 ### 在线文档
-- [https://thlws.gitee.io/payment-thl](https://thlws.gitee.io/payment-thl)
+- [https://pay.thlws.org](https://pay.thlws.org)
 
 ### 在线交流
 - 邮箱：hanley@thlws.com 
@@ -167,11 +170,6 @@ System.out.println("isSuccess="+flag+", message="+message);
 **支持Android App吗**
 
 不支持Android App，有这方面需求的请至 [微信APP支付](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_4) 或 [支付宝APP支付](https://b.alipay.com/signing/productDetail.htm?productId=I1011000290000001002) .
-
-### 源码托管
-- [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
-- [https://github.com/thlws/payment-thl](https://github.com/thlws/payment-thl)
-
 
 ### 更版记录
 - 1.0.0 整合多种支付平台

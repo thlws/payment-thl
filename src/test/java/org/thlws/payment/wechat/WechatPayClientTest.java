@@ -96,13 +96,13 @@ public class WechatPayClientTest {
             String apiKey = test_wechat_apikey;
             WechatPayRequest request = new WechatPayRequest();
             request.setAppId(test_wechat_appid);
-            request.setMchId(test_wechat_mchid);
+            request.setMchId("1511132631");
 
             /*普通模式无需设置,子商户需设置子商户号*/
-//        request.setSub_mch_id(sp_wechat_sub_mchid);
+        //request.setSub_mch_id("1517927831");
 
             request.setSpbillCreateIp(NetUtil.getLocalhostStr());
-            request.setTotalFee("1");
+            request.setTotalFee("1");// 元 角 分  10
             request.setAttach("00001025104487");
             request.setOutTradeNo(ThlwsBeanUtil.getRandomString(32));
             request.setAuthCode("134593261103056527");
