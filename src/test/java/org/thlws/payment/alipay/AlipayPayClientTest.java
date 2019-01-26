@@ -18,9 +18,9 @@ import static org.junit.Assert.assertTrue;
  * 支付宝接口测试
  * <h3>特别注意</h3>
  * 项目中提供的微信测试账户，仅用于接口功能测试，请勿用作其他用途。
- *
+ * 如下提供的支付宝参数并未开通全部接口功能，部分功能用提供的账户无法测试通过.
  * @author hanley @thlws.com
- *  2018 /11/16
+ * 2018 /11/16
  */
 public class AlipayPayClientTest {
 
