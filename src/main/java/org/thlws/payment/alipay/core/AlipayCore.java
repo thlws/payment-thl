@@ -206,7 +206,7 @@ public class AlipayCore {
             }
             String bizContent = JsonUtil.beanToJsontring(request.getBizContent());
             AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do",
-                    builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey());
+                    builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey(),builder.getSignType());
             AlipayTradeWapPayRequest alipayRequest = new AlipayTradeWapPayRequest();
             alipayRequest.setReturnUrl(request.getReturnUrl());
             alipayRequest.setNotifyUrl(request.getNotifyUrl());
@@ -239,7 +239,7 @@ public class AlipayCore {
             }
             String bizContent = JsonUtil.beanToJsontring(request.getBizContent());
             AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do",
-                    builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey());
+                    builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey(),builder.getSignType());
             AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
             alipayRequest.setReturnUrl(request.getReturnUrl());
             alipayRequest.setNotifyUrl(request.getNotifyUrl());
