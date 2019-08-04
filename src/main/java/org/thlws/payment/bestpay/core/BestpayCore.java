@@ -29,7 +29,7 @@ import java.util.Map;
  *
  * @author Hanley[hanley @thlws.com]
  * @version 1.0
- * @see <a href="https://www.bestpay.com.cn/play/start">https://www.bestpay.com.cn/play/start</a> Created by HanleyTang on 2018/1/5
+ * Created by HanleyTang on 2018/1/5
  */
 public class BestpayCore implements BestpayApi{
 

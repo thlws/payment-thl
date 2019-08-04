@@ -1,5 +1,6 @@
 package org.thlws.payment.alipay.entity.request;
 
+import com.google.gson.annotations.SerializedName;
 import org.thlws.utils.JsonUtil;
 
 
@@ -79,10 +80,15 @@ public class AlipayWebSiteRequest {
      */
     public static class BizContent{
 
+        @SerializedName(value = "out_trade_no")
         private String outTradeNo  ;
+
+        @SerializedName(value = "total_amount")
         private String totalAmount  ;
         private String subject       ;
         private String body          ;
+
+        @SerializedName(value = "product_code")
         private String productCode  ;
 
         /**

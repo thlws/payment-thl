@@ -2,7 +2,6 @@ package org.thlws.payment.wechat.entity.request.mp;
 
 /**
  * @author HanleyTang
- * @date 2018-12-08
  */
 public class MpUserInfoRequest {
 

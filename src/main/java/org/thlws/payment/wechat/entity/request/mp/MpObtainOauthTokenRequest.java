@@ -3,7 +3,6 @@ package org.thlws.payment.wechat.entity.request.mp;
 /**
  * 获取AccessToken请求对象
  * @author HanleyTang
- * @date 2018-12-08
  */
 public class MpObtainOauthTokenRequest {
 

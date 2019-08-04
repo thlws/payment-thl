@@ -1,5 +1,6 @@
 package org.thlws.payment.alipay.core;
 
+import cn.hutool.core.lang.Assert;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.alipay.api.AlipayClient;
@@ -14,7 +15,6 @@ import com.alipay.trade.service.AlipayTradeService;
 import com.alipay.trade.service.impl.AlipayTradeServiceImpl;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.lang.StringUtils;
-
 import org.thlws.payment.alipay.entity.request.*;
 import org.thlws.payment.alipay.entity.response.*;
 import org.thlws.utils.JsonUtil;
@@ -170,7 +170,7 @@ public class AlipayCore {
          *
          * @return the sign type
          */
-        public String getSignType() {
+        String getSignType() {
             return signType;
         }
 
@@ -197,21 +197,24 @@ public class AlipayCore {
      */
     public String payInMobileSite(AlipayMobileSiteRequest request) throws Exception{
 
-       log.debug("payInMobileSite request=\n" + request.toString());
+        if (log.isDebugEnabled()) {
+            log.debug("payInMobileSite request={}" , request.toString());
+        }
+
         String form = "<font style='color: red'>请求支付宝超时,请稍后再试!</font>";
 
         try {
-            if (null == builder){
-                throw new Exception("Please set AlipayCore.ClientBuider first.");
-            }
+            Assert.notNull(builder, " payInMobileSite -> Please set AlipayCore.ClientBuider first.");
+
             String bizContent = JsonUtil.beanToJsontring(request.getBizContent());
             AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do",
                     builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey(),builder.getSignType());
-            AlipayTradeWapPayRequest alipayRequest = new AlipayTradeWapPayRequest();
-            alipayRequest.setReturnUrl(request.getReturnUrl());
-            alipayRequest.setNotifyUrl(request.getNotifyUrl());
-            alipayRequest.setBizContent(bizContent);
-            form = alipayClient.pageExecute(alipayRequest).getBody();
+
+            AlipayTradeWapPayRequest alipayTradeWapPayRequest = new AlipayTradeWapPayRequest();
+            alipayTradeWapPayRequest.setReturnUrl(request.getReturnUrl());
+            alipayTradeWapPayRequest.setNotifyUrl(request.getNotifyUrl());
+            alipayTradeWapPayRequest.setBizContent(bizContent);
+            form = alipayClient.pageExecute(alipayTradeWapPayRequest).getBody();
         } catch (Exception e) {
            log.error(e);
            throw e;
@@ -234,17 +237,17 @@ public class AlipayCore {
         String form = "<font style='color: red'>请求支付宝超时,请稍后再试!</font>";
 
         try {
-            if (null == builder){
-                throw new Exception("Please set AlipayCore.ClientBuider first.");
-            }
+
+            Assert.notNull(builder, "payInWebSite-> Please set AlipayCore.ClientBuider first.");
+
             String bizContent = JsonUtil.beanToJsontring(request.getBizContent());
             AlipayClient alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do",
                     builder.getAppId(), builder.getPrivateKey(), "json", "utf-8", builder.getAlipayPublicKey(),builder.getSignType());
-            AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
-            alipayRequest.setReturnUrl(request.getReturnUrl());
-            alipayRequest.setNotifyUrl(request.getNotifyUrl());
-            alipayRequest.setBizContent(bizContent);
-            form = alipayClient.pageExecute(alipayRequest).getBody();
+            AlipayTradePagePayRequest alipayTradePagePayRequest = new AlipayTradePagePayRequest();
+            alipayTradePagePayRequest.setReturnUrl(request.getReturnUrl());
+            alipayTradePagePayRequest.setNotifyUrl(request.getNotifyUrl());
+            alipayTradePagePayRequest.setBizContent(bizContent);
+            form = alipayClient.pageExecute(alipayTradePagePayRequest).getBody();
         } catch (Exception e) {
             log.error(e);
             throw e;
