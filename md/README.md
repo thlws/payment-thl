@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.8</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -38,6 +38,8 @@
 - v1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsg(HttpServletRequest request)
 - v1.0.7 修正公众号支付签名问题,异步数据通知处理优化
 - v1.0.8 修正微信网页授权问题，新增公众号入口类部分注释
+- v1.0.9 修复issues-I1047Y，感谢 alterem 反馈
+- v1.1.0 修正支付宝网页网页支付宝参数格式问题
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
