@@ -1,6 +1,6 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.0.8-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.0.8-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.0.8/jar) 
+[![](https://img.shields.io/badge/release-v1.1.0-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.0-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.0/jar) 
 [![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 
@@ -181,3 +181,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsgToBean(HttpServletRequest request)
 - 1.0.7 修正公众号支付签名问题,异步数据通知处理优化
 - 1.0.8 修正微信网页授权问题，新增公众号入口类部分注释
+- 1.0.9 修复issues-I1047Y，感谢 alterem 反馈
+- 1.1.0 修正支付宝网页网页支付宝参数格式问题
