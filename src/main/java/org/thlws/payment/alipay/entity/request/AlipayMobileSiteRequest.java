@@ -85,6 +85,7 @@ public class AlipayMobileSiteRequest {
         @SerializedName("total_amount")
         private String totalAmount  ;
         private String subject       ;
+        @SerializedName("seller_id")
         private String sellerId     ;
 
         @SerializedName("product_code")
