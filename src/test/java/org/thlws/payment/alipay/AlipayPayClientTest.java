@@ -196,7 +196,7 @@ public class AlipayPayClientTest {
 			bizContent.setTotalAmount("0.01");
 			bizContent.setSubject("测试H5(手机网页)支付");
 			// bizContent.setSeller_id(partner_id);
-			// 网站支付应该是固定 'QUICK_WAP_WAY'
+			// 手机网站支付应该是固定 'QUICK_WAP_WAY'
 			bizContent.setProductCode("QUICK_WAP_WAY");
 			bizContent.setOutTradeNo(System.currentTimeMillis() + "");
 			request.setBizContent(bizContent);
@@ -229,6 +229,7 @@ public class AlipayPayClientTest {
 			// 电脑网站支付应该是常量值'FAST_INSTANT_TRADE_PAY'
 			bizContent.setProductCode("FAST_INSTANT_TRADE_PAY");
 			bizContent.setOutTradeNo(System.currentTimeMillis() + "");
+			request.setBizContent(bizContent);
 			String html = AlipayClient.payInWebSite(request, alipayCore);
 			assertNotNull(html);
 			//html结果直接显示在页面即可
