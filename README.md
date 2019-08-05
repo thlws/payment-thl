@@ -1,11 +1,20 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.1.1-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.1-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.1/jar) 
+[![](https://img.shields.io/badge/release-v1.1.2-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.2-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.2/jar) 
 [![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 
 ![](img/thl.png)
 - 在线Demo [http://39.105.94.70:7171/](http://39.105.94.70:7171/)
+
+### 依赖安装
+```
+<dependency>
+    <groupId>org.thlws</groupId>
+    <artifactId>payment-thl</artifactId>
+    <version>1.1.2</version>
+</dependency>
+```
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
@@ -146,14 +155,7 @@ boolean isSuccess = response.isPaySuccess();
 ![](img/client.png) ![](img/test.png)
 
 
-### 依赖安装
-```
-<dependency>
-    <groupId>org.thlws</groupId>
-    <artifactId>payment-thl</artifactId>
-    <version>1.1.1</version>
-</dependency>
-```
+
 
 
 ### 详见问题
@@ -184,3 +186,4 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.9 修复issues-I1047Y，感谢 alterem 反馈
 - 1.1.0 修正支付宝网页支付宝参数格式问题
 - 1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
+- 1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple

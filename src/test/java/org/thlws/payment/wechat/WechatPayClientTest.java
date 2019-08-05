@@ -1,7 +1,7 @@
 package org.thlws.payment.wechat;
 
+import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.IdUtil;
-import cn.hutool.core.util.NetUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import org.junit.Test;

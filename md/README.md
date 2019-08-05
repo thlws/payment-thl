@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
 </dependency>
 ```
 
@@ -41,6 +41,7 @@
 - v1.0.9 修复issues-I1047Y，感谢 alterem 反馈
 - v1.1.0 修正支付宝网页网页支付宝参数格式问题
 - v1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
+- v1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)

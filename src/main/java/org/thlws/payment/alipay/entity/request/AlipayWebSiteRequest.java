@@ -88,8 +88,12 @@ public class AlipayWebSiteRequest {
         private String subject       ;
         private String body          ;
 
+        /***
+         * 电脑网站支付应该是常量值'FAST_INSTANT_TRADE_PAY'
+         * @see <a href="https://docs.open.alipay.com/api_1/alipay.trade.page.pay">https://docs.open.alipay.com/api_1/alipay.trade.page.pay</a>
+         */
         @SerializedName(value = "product_code")
-        private String productCode  ;
+        private String productCode = "FAST_INSTANT_TRADE_PAY"  ;
 
         /**
          * Gets out trade no.
@@ -172,14 +176,6 @@ public class AlipayWebSiteRequest {
             return productCode;
         }
 
-        /**
-         * Sets product code.
-         *
-         * @param productCode the product code
-         */
-        public void setProductCode(String productCode) {
-            this.productCode = productCode;
-        }
     }
 
     @Override

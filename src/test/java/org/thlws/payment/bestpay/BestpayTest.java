@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * 电信天翼支付测试
  * <h3>特别注意</h3>
- * 项目中提供的微信测试账户，仅用于接口功能测试，请勿用作其他用途。
+ * 项目中提供的测试账户，仅用于接口功能测试，请勿用作其他用途。
  *
  * @author Hanley[hanley @thlws.com]
  * @version 1.0

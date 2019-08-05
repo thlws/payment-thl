@@ -88,8 +88,12 @@ public class AlipayMobileSiteRequest {
         @SerializedName("seller_id")
         private String sellerId     ;
 
+        /***
+         * 手机网站支付应该是固定 'QUICK_WAP_WAY'
+         * @see <a href="https://docs.open.alipay.com/api_1/alipay.trade.wap.pay">https://docs.open.alipay.com/api_1/alipay.trade.wap.pay</a>
+         */
         @SerializedName("product_code")
-        private String productCode  ;
+        private String productCode = "QUICK_WAP_WAY"  ;
 
 
         /**
@@ -173,14 +177,6 @@ public class AlipayMobileSiteRequest {
             return productCode;
         }
 
-        /**
-         * Sets product code.
-         *
-         * @param productCode the product code
-         */
-        public void setProductCode(String productCode) {
-            this.productCode = productCode;
-        }
     }
 
     @Override
