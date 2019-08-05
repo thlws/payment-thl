@@ -1,6 +1,6 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.1.0-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.0-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.0/jar) 
+[![](https://img.shields.io/badge/release-v1.1.1-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.1-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.1/jar) 
 [![](https://img.shields.io/badge/jdk-1.7%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 
@@ -20,7 +20,7 @@
 ### 在线交流
 - 邮箱：hanley@thlws.com 
 - QQ群：  [![](https://img.shields.io/badge/chat-on%20qq-red.svg)](//shang.qq.com/wpa/qunwpa?idkey=521df1fba7ef96db15c898e48feb26b6a82f6c2a60612154181b301febb30494) 693169203
-
+- 欢迎有意愿的小伙伴加入持续维护(邮件或码云私信我)
 
 ### 示例项目
 - [https://gitee.com/thlws/payment-simple 【待完善】](https://gitee.com/thlws/payment-simple)
@@ -151,7 +151,7 @@ boolean isSuccess = response.isPaySuccess();
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.0.8</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
@@ -182,4 +182,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.0.7 修正公众号支付签名问题,异步数据通知处理优化
 - 1.0.8 修正微信网页授权问题，新增公众号入口类部分注释
 - 1.0.9 修复issues-I1047Y，感谢 alterem 反馈
-- 1.1.0 修正支付宝网页网页支付宝参数格式问题
+- 1.1.0 修正支付宝网页支付宝参数格式问题
+- 1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
