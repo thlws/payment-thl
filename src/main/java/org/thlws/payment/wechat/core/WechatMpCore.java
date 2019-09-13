@@ -1,6 +1,7 @@
 package org.thlws.payment.wechat.core;
 
 import cn.hutool.core.util.URLUtil;
+import cn.hutool.http.HttpUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.google.gson.JsonObject;
@@ -8,6 +9,7 @@ import com.google.gson.JsonParser;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 import org.thlws.payment.wechat.api.WechatMpApi;
+import org.thlws.payment.wechat.entity.response.mini.Code2SessionResponse;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ConnUtil;
 import org.thlws.utils.ThlwsBeanUtil;
@@ -382,6 +384,14 @@ public class WechatMpCore implements WechatMpApi {
 			}
 		}
 		return false;
+	}
+
+
+	public static Code2SessionResponse code2Session(String url) throws  Exception {
+
+		String json = HttpUtil.get(url);
+		return ThlwsBeanUtil.jsonToBean(json, Code2SessionResponse.class);
+
 	}
 
 
