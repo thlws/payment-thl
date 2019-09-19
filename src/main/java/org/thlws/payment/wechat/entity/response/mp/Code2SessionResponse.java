@@ -1,4 +1,4 @@
-package org.thlws.payment.wechat.entity.response.mini;
+package org.thlws.payment.wechat.entity.response.mp;
 
 import com.google.gson.annotations.SerializedName;
 import org.thlws.utils.JsonUtil;
@@ -19,6 +19,9 @@ public class Code2SessionResponse {
 
     @SerializedName("session_key")
     private String sessionKey;
+
+    @SerializedName("unionid")
+    private String unionId;
 
     @SerializedName("errcode")
     private Integer errCode;
@@ -56,6 +59,18 @@ public class Code2SessionResponse {
 
     public void setErrMsg(String errMsg) {
         this.errMsg = errMsg;
+    }
+
+    public String getUnionId() {
+        return unionId;
+    }
+
+    public void setUnionId(String unionId) {
+        this.unionId = unionId;
+    }
+
+    public boolean isSuccess(){
+        return errCode == 0;
     }
 
     @Override

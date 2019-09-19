@@ -4,15 +4,18 @@ import cn.hutool.core.util.StrUtil;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.core.WechatMpCore;
 import org.thlws.payment.wechat.entity.extra.AuthorizeType;
+import org.thlws.payment.wechat.entity.request.mp.Code2SessionRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
 import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
+import org.thlws.payment.wechat.entity.response.mp.Code2SessionResponse;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ThlwsBeanUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
+import java.util.Objects;
 
 
 /**
@@ -339,6 +342,30 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static boolean isFromWechat(HttpServletRequest request) {
 		return WechatMpCore.isFromWechat(request);
+	}
+
+	/***
+	 * 通过code换取网页授权access_token
+	 * {@link WechatMpCore#obtainOauthAccessToken}
+	 * @param request the map token
+	 * @return the oauth token response
+	 * @throws Exception the exception
+	 * @author HanleyTang
+	 */
+	public static Code2SessionResponse code2Session(Code2SessionRequest request) throws  Exception{
+
+		if (Objects.isNull(request)){
+			throw new Exception("request can not be null");
+		}
+
+		//GET https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
+
+		StringBuilder sb = new StringBuilder(code2session);
+		sb.append("appid=").append(request.getAppId()).append("&secret=").append(request.getSecret())
+				.append("&js_code=").append(request.getJsCode()).append("&grant_type=authorization_code");
+
+		return WechatMpCore.code2Session(sb.toString());
+
 	}
 
 }

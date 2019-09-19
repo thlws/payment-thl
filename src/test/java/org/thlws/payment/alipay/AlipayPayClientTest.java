@@ -71,7 +71,7 @@ public class AlipayPayClientTest {
 			request.setTotalAmount("0.01");
 			request.setStoreId("00001025104487");
 			request.setOperatorId("hanley001");
-			request.setAuthCode("288609492126942746");
+			request.setAuthCode("289071713598089978");
 			request.setOutTradeNo(System.currentTimeMillis() + "");
 			request.setSubject("CI测试买单001");
 

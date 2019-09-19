@@ -9,7 +9,7 @@ import com.google.gson.JsonParser;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 import org.thlws.payment.wechat.api.WechatMpApi;
-import org.thlws.payment.wechat.entity.response.mini.Code2SessionResponse;
+import org.thlws.payment.wechat.entity.response.mp.Code2SessionResponse;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ConnUtil;
 import org.thlws.utils.ThlwsBeanUtil;

@@ -193,3 +193,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - 1.1.0 修正支付宝网页支付宝参数格式问题
 - 1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
 - 1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
+- v1.1.3 新增code2session接口,修正 [github#1](https://github.com/thlws/payment-thl/issues/1), [gitee#I12BOM](https://gitee.com/thlws/payment-thl/issues/I12BOM)
+

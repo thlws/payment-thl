@@ -12,6 +12,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -32,8 +33,7 @@ public class ThlwsBeanUtil {
 	 */
 	public static Map<String, Object> objectToMap(Object o){
 
-		Map<String, Object> map = BeanUtil.beanToMap(o,false,true);
-		return map;
+		return BeanUtil.beanToMap(o,false,true);
 	}
 
 
@@ -45,13 +45,15 @@ public class ThlwsBeanUtil {
 	 */
 	public static Map<String, Object> dataFilter(Map<String, Object> map) {
 
-		Map<String, Object> result = new HashMap<String, Object>();
-		if (map == null || map.size() <= 0)
+		Map<String, Object> result = new HashMap<>();
+		if (map == null || map.size() <= 0) {
 			return result;
+		}
 		for (String key : map.keySet()) {
 			Object value = map.get(key);
-			if (value == null || value.equals(""))
+			if (value == null || "".equals(value)) {
 				continue;
+			}
 			result.put(key, value);
 		}
 
@@ -66,13 +68,14 @@ public class ThlwsBeanUtil {
 	 * @return 拼接后字符串 string
 	 */
 	public static String createLinkString(Map<String, Object> params) {
-        List<String> keys = new ArrayList<String>(params.keySet());
+        List<String> keys = new ArrayList<>(params.keySet());
         Collections.sort(keys);
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < keys.size(); i++) {
             String key = keys.get(i);
             Object value = params.get(key);
-            if (i == keys.size() - 1) {//拼接时，不包括最后一个&字符
+			//拼接时，不包括最后一个&字符
+            if (i == keys.size() - 1) {
                 sb.append(key).append("=").append(value);
             } else {
                 sb.append(key).append("=").append(value).append("&");
@@ -90,7 +93,7 @@ public class ThlwsBeanUtil {
 	 * @author HanleyTang
 	 */
 	public static String mapToParams(Map<String,Object> mapData){
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if(mapData.isEmpty()){
             return "" ;
         }else{
@@ -116,8 +119,7 @@ public class ThlwsBeanUtil {
 	 */
 	public static Object mapToObject(Map<String, Object> map, Class<?> beanClass){
 
-		Object obj = BeanUtil.mapToBean(map,beanClass,true);
-		return obj;
+		return BeanUtil.mapToBean(map,beanClass,true);
 	}
 
 
@@ -129,12 +131,14 @@ public class ThlwsBeanUtil {
 	 */
 	public static String getMD5(String data) {
   	   String s = null;
-  	   char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };// 用来将字节转换成16进制表示的字符
+		// 用来将字节转换成16进制表示的字符
+  	   char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
   	   try {
-  		   byte[] source = data.getBytes("UTF-8");
+  		   byte[] source = data.getBytes(StandardCharsets.UTF_8);
   		   java.security.MessageDigest md = java.security.MessageDigest .getInstance("MD5");
   		   md.update(source);
-  		   byte tmp[] = md.digest();// MD5 的计算结果是一个 128 位的长整数，
+		   // MD5 的计算结果是一个 128 位的长整数，
+  		   byte tmp[] = md.digest();
   		   // 用字节表示就是 16 个字节
   		   char str[] = new char[16 * 2];
   		   // 每个字节用 16 进制表示的话，使用两个字符， 所以表示成 16
@@ -267,8 +271,7 @@ public class ThlwsBeanUtil {
 	public static <T> T jsonToBean(String json,Class<T> cls){
 
 		Gson gson = new Gson();
-		T t = gson.fromJson(json, cls);
-		return t;
+		return gson.fromJson(json, cls);
 	}
 
 
@@ -279,9 +282,7 @@ public class ThlwsBeanUtil {
 	 * @return the string
 	 */
 	public static String beanToJson(Object o){
-		Gson gson = new Gson();;
-		String json = gson.toJson(o);
-		return json;
+		return new Gson().toJson(o);
 	}
 
 }

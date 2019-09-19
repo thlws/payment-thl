@@ -1,5 +1,6 @@
 package org.thlws.payment.alipay.core;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
@@ -13,7 +14,6 @@ import com.alipay.trade.model.builder.*;
 import com.alipay.trade.model.result.*;
 import com.alipay.trade.service.AlipayTradeService;
 import com.alipay.trade.service.impl.AlipayTradeServiceImpl;
-import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.lang.StringUtils;
 import org.thlws.payment.alipay.entity.request.*;
 import org.thlws.payment.alipay.entity.response.*;
@@ -365,8 +365,7 @@ public class AlipayCore {
 
             switch (result.getTradeStatus()) {
                 case SUCCESS:
-                    BeanUtilsBean copyBean = BeanUtilsBean.getInstance();
-                    copyBean.copyProperties(response, result.getResponse());
+                    BeanUtil.copyProperties(result.getResponse(),response);
                     response.setDesc("支付宝支付成功");
                     break;
                 case FAILED:
@@ -419,8 +418,7 @@ public class AlipayCore {
 
             switch (result.getTradeStatus()) {
                 case SUCCESS:
-                    BeanUtilsBean copyBean = BeanUtilsBean.getInstance();
-                    copyBean.copyProperties(response, result.getResponse());
+                    BeanUtil.copyProperties(result.getResponse(),response);
                     response.setDesc("查询返回该订单信息成功");
                     response.setCode(result.getResponse().getCode());
                     response.setMsg(result.getResponse().getMsg());
@@ -504,8 +502,7 @@ public class AlipayCore {
 
             switch (result.getTradeStatus()) {
                 case SUCCESS:
-                    BeanUtilsBean copyBean = BeanUtilsBean.getInstance();
-                    copyBean.copyProperties(response, result.getResponse());
+                    BeanUtil.copyProperties(result.getResponse(),response);
                     response.setDesc("支付宝退款成功");
                     break;
                 case FAILED:
@@ -546,8 +543,7 @@ public class AlipayCore {
             response.setSuccess(result.isTradeSuccess());
             switch (result.getTradeStatus()) {
                 case SUCCESS:
-                    BeanUtilsBean copyBean = BeanUtilsBean.getInstance();
-                    copyBean.copyProperties(response, result.getResponse());
+                    BeanUtil.copyProperties(result.getResponse(),response);
                     response.setDesc("支付宝撤销成功");
                     response.setCode(result.getResponse().getCode());
                     response.setMsg(result.getResponse().getMsg());
