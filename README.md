@@ -180,18 +180,18 @@ System.out.println("isSuccess="+flag+", message="+message);
 不支持Android App，有这方面需求的请至 [微信APP支付](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_4) 或 [支付宝APP支付](https://b.alipay.com/signing/productDetail.htm?productId=I1011000290000001002) .
 
 ### 更版记录
-- 1.0.0 整合多种支付平台
-- 1.0.1 公众号模块代码规范
-- 1.0.2 微信公众号返回新增isSuccess()
-- 1.0.3 新增行业属性获取接口
-- 1.0.4 行业属性汇总,代码优化
-- 1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
-- 1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsgToBean(HttpServletRequest request)
-- 1.0.7 修正公众号支付签名问题,异步数据通知处理优化
-- 1.0.8 修正微信网页授权问题，新增公众号入口类部分注释
-- 1.0.9 修复issues-I1047Y，感谢 alterem 反馈
-- 1.1.0 修正支付宝网页支付宝参数格式问题
-- 1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
-- 1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
+- v1.0.0 整合多种支付平台
+- v1.0.1 公众号模块代码规范
+- v1.0.2 微信公众号返回新增isSuccess()
+- v1.0.3 新增行业属性获取接口
+- v1.0.4 行业属性汇总,代码优化
+- v1.0.5 新增请求是否来自微信(WechatMpClient.isFromWechat)
+- v1.0.6 新增微信异步通知数据处理 WechatUtil.parseNotifyMsgToBean(HttpServletRequest request)
+- v1.0.7 修正公众号支付签名问题,异步数据通知处理优化
+- v1.0.8 修正微信网页授权问题，新增公众号入口类部分注释
+- v1.0.9 修复issues-I1047Y，感谢 alterem 反馈
+- v1.1.0 修正支付宝网页支付宝参数格式问题
+- v1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
+- v1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
 - v1.1.3 新增code2session接口,修正 [github#1](https://github.com/thlws/payment-thl/issues/1), [gitee#I12BOM](https://gitee.com/thlws/payment-thl/issues/I12BOM)
 
