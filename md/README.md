@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.3</version>
+    <version>1.1.4</version>
 </dependency>
 ```
 
@@ -43,6 +43,7 @@
 - v1.1.1 升级支付宝SDK，修改 支付宝支付中productCode的赋值
 - v1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
 - v1.1.3 新增code2session接口,修正 [github#1](https://github.com/thlws/payment-thl/issues/1), [gitee#I12BOM](https://gitee.com/thlws/payment-thl/issues/I12BOM)
+- v1.1.4 支付宝SDK升级，JDK最低版本要求1.8+，接口优化等。
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)

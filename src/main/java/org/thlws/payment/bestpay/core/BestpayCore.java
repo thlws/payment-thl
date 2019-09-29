@@ -41,22 +41,20 @@ public class BestpayCore implements BestpayApi{
      * @param request 支付参数对象 {@link BarcodePayRequest}
      * @param key     商户数据Key,签名需要
      * @return 支付结果对象 {@link OrderResultResponse}
-     * @throws Exception the exception
-     */
-    public static OrderResultResponse barcode(BarcodePayRequest request, String key) throws Exception{
+	 */
+    public static OrderResultResponse barcode(BarcodePayRequest request, String key) {
 
-		OrderResultResponse out = null;
+		OrderResultResponse out;
 
 		try {
-			StringBuilder sb = new StringBuilder();
-			sb.append("MERCHANTID=").append(request.getMerchantId());
-			sb.append("&ORDERNO=").append(request.getOrderNo());
-			sb.append("&ORDERREQNO=").append(request.getOrderReqNo());
-			sb.append("&ORDERDATE=").append(request.getOrderDate());
-			sb.append("&BARCODE=").append(request.getBarcode());
-			sb.append("&ORDERAMT=").append(request.getOrderAmt());
-			sb.append("&KEY=").append(key);
-			String mac = MD5.sign(sb.toString());
+			String sb = "MERCHANTID=" + request.getMerchantId() +
+					"&ORDERNO=" + request.getOrderNo() +
+					"&ORDERREQNO=" + request.getOrderReqNo() +
+					"&ORDERDATE=" + request.getOrderDate() +
+					"&BARCODE=" + request.getBarcode() +
+					"&ORDERAMT=" + request.getOrderAmt() +
+					"&KEY=" + key;
+			String mac = MD5.sign(sb);
 
 			Map<String, Object> map = BeanUtil.beanToMap(request,false,true);
 			map.put("mac", mac);
@@ -78,21 +76,19 @@ public class BestpayCore implements BestpayApi{
      * @param request 查询参数对象 {@link QueryOrderRequest}
      * @param key     商户数据Key,签名需要
      * @return 支付结果对象 {@link OrderResultResponse}
-     * @throws Exception the exception
-     */
-    public static OrderResultResponse query(QueryOrderRequest request, String key) throws Exception {
+	 */
+    public static OrderResultResponse query(QueryOrderRequest request, String key) {
 		
-		OrderResultResponse out = null;
+		OrderResultResponse out;
 
 		try {
-			StringBuilder sb = new StringBuilder();
-			sb.append("MERCHANTID=").append(request.getMerchantId());
-			sb.append("&ORDERNO=").append(request.getOrderNo());
-			sb.append("&ORDERREQNO=").append(request.getOrderReqNo());
-			sb.append("&ORDERDATE=").append(request.getOrderDate());
-			sb.append("&KEY=").append(key);
 
-			String mac = MD5.sign(sb.toString());
+			String sb = "MERCHANTID=" + request.getMerchantId() +
+					"&ORDERNO=" + request.getOrderNo() +
+					"&ORDERREQNO=" + request.getOrderReqNo() +
+					"&ORDERDATE=" + request.getOrderDate() +
+					"&KEY=" + key;
+			String mac = MD5.sign(sb);
 			Map<String, Object> map = BeanUtil.beanToMap(request,false,true);
 			map.put("mac", mac);
 			log.debug("翼支付查询请求数据[query]->request:\n {}", ThlwsBeanUtil.formatJson(map));
@@ -114,25 +110,23 @@ public class BestpayCore implements BestpayApi{
      * @param request 退款参数对象 {@link OrderRefundRequest}
      * @param key     商户数据Key,签名需要
      * @return 退款结果对象 {@link OrderRefundResponse}
-     * @throws Exception the exception
-     */
-    public static OrderRefundResponse refund(OrderRefundRequest request, String key)  throws Exception {
+	 */
+    public static OrderRefundResponse refund(OrderRefundRequest request, String key) {
 		
-		OrderRefundResponse out = null;
+		OrderRefundResponse out;
 
 		try {
-			StringBuilder sb = new StringBuilder();
-			sb.append("MERCHANTID=").append(request.getMerchantId());
-			sb.append("&MERCHANTPWD=").append(request.getMerchantPwd());
-			sb.append("&OLDORDERNO=").append(request.getOldOrderNo());
-			sb.append("&OLDORDERREQNO=").append(request.getOldOrderReqNo());
-			sb.append("&REFUNDREQNO=").append(request.getRefundReqNo());
-			sb.append("&REFUNDREQDATE=").append(request.getRefundReqDate() );
-			sb.append("&TRANSAMT=").append(request.getTransAmt());
-			sb.append("&LEDGERDETAIL=").append(request.getLedgerDetail());
-			sb.append("&KEY=").append(key);
 
-			String mac = MD5.sign(sb.toString());
+			String sb = "MERCHANTID=" + request.getMerchantId() +
+					"&MERCHANTPWD=" + request.getMerchantPwd() +
+					"&OLDORDERNO=" + request.getOldOrderNo() +
+					"&OLDORDERREQNO=" + request.getOldOrderReqNo() +
+					"&REFUNDREQNO=" + request.getRefundReqNo() +
+					"&REFUNDREQDATE=" + request.getRefundReqDate() +
+					"&TRANSAMT=" + request.getTransAmt() +
+					"&LEDGERDETAIL=" + request.getLedgerDetail() +
+					"&KEY=" + key;
+			String mac = MD5.sign(sb);
 			Map<String, Object> map = BeanUtil.beanToMap(request,false,true);
 			map.put("mac", mac);
 			log.debug("翼支付退款请求数据[refund]->request:\n {}", ThlwsBeanUtil.formatJson(map));
@@ -154,25 +148,23 @@ public class BestpayCore implements BestpayApi{
      * @param request 撤销参数对象 {@link OrderReverseRequest}
      * @param key     商户数据Key,签名需要
      * @return 撤销结果对象 {@link OrderReverseResponse}
-     * @throws Exception the exception
-     */
-    public static OrderReverseResponse reverse(OrderReverseRequest request, String key)  throws Exception {
+	 */
+    public static OrderReverseResponse reverse(OrderReverseRequest request, String key) {
 		
 		
-		OrderReverseResponse out = null;
+		OrderReverseResponse out;
 
 		try {
-			StringBuilder sb = new StringBuilder();
-			sb.append("MERCHANTID=").append(request.getMerchantId());
-			sb.append("&MERCHANTPWD=").append(request.getMerchantPwd());
-			sb.append("&OLDORDERNO=").append(request.getOldOrderNo());
-			sb.append("&OLDORDERREQNO=").append(request.getOldOrderReqNo());
-			sb.append("&REFUNDREQNO=").append(request.getRefundReqNo());
-			sb.append("&REFUNDREQDATE=").append(request.getRefundReqDate());
-			sb.append("&TRANSAMT=").append(request.getTransAmt());
-			sb.append("&KEY=").append(key);
 
-			String mac = MD5.sign(sb.toString());
+			String sb = "MERCHANTID=" + request.getMerchantId() +
+					"&MERCHANTPWD=" + request.getMerchantPwd() +
+					"&OLDORDERNO=" + request.getOldOrderNo() +
+					"&OLDORDERREQNO=" + request.getOldOrderReqNo() +
+					"&REFUNDREQNO=" + request.getRefundReqNo() +
+					"&REFUNDREQDATE=" + request.getRefundReqDate() +
+					"&TRANSAMT=" + request.getTransAmt() +
+					"&KEY=" + key;
+			String mac = MD5.sign(sb);
 			Map<String, Object> map = BeanUtil.beanToMap(request,false,true);
 			map.put("mac", mac);
 			log.debug("翼支付撤销请求数据[reverse]->request:\n {}", ThlwsBeanUtil.formatJson(map));

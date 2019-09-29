@@ -9,15 +9,17 @@ import com.alipay.api.AlipayConstants;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.alipay.api.request.AlipayTradeWapPayRequest;
-import com.alipay.trade.model.ExtendParams;
-import com.alipay.trade.model.builder.*;
-import com.alipay.trade.model.result.*;
-import com.alipay.trade.service.AlipayTradeService;
-import com.alipay.trade.service.impl.AlipayTradeServiceImpl;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.thlws.payment.alipay.entity.request.*;
 import org.thlws.payment.alipay.entity.response.*;
+import org.thlws.payment.alipay.trade.model.ExtendParams;
+import org.thlws.payment.alipay.trade.model.builder.*;
+import org.thlws.payment.alipay.trade.model.result.*;
+import org.thlws.payment.alipay.trade.service.AlipayTradeService;
+import org.thlws.payment.alipay.trade.service.impl.AlipayTradeServiceImpl;
 import org.thlws.utils.JsonUtil;
+
+import java.util.Objects;
 
 /**
  * 支付宝支付核心处理入口,封装支付常用API，包括当面付、新版网页支付、退款操作、订单查询;
@@ -58,12 +60,8 @@ public class AlipayCore {
      */
     private AlipayCore(ClientBuilder builder) {
 
-        if (StringUtils.isEmpty(builder.getAppId())){
-            throw new NullPointerException("appid should not be NULL!");
-        }
-        if (StringUtils.isEmpty(builder.getPrivateKey())){
-            throw new NullPointerException("private should not be NULL!");
-        }
+        Assert.notEmpty(builder.getAppId(), "appId should not be NULL!");
+        Assert.notEmpty(builder.getPrivateKey(), "private should not be NULL!");
         this.builder = builder;
         AlipayTradeServiceImpl.ClientBuilder alipayTradebuilder = new AlipayTradeServiceImpl.ClientBuilder();
         alipayTradebuilder.setAlipayPublicKey(builder.getAlipayPublicKey());
@@ -93,24 +91,13 @@ public class AlipayCore {
          */
         public AlipayCore build() {
 
-            if (StringUtils.isEmpty(appId)){
-                throw new NullPointerException("please set appid first!");
-            }
-            if (StringUtils.isEmpty(privateKey)){
-                throw new NullPointerException("please set private_key first!");
-            }
-            if (StringUtils.isEmpty(signType)){
-                throw new NullPointerException("please set sign_type first!");
-            }else{
-                if(signType.equalsIgnoreCase(AlipayConstants.SIGN_TYPE_RSA2) && StringUtils.isEmpty(alipayPublicKey)){
-                    throw new NullPointerException("please set alipay_public_key first,when the sign_type is RSA2!");
-                }
-            }
+            Assert.notEmpty(appId, "please set appid first!");
+            Assert.notEmpty(privateKey, "please set private_key first!");
+            Assert.notEmpty(signType, "please set sign_type first!");
 
-            if (StringUtils.isEmpty(alipayPublicKey) && signType.equalsIgnoreCase(AlipayConstants.SIGN_TYPE_RSA2)){
-                throw new NullPointerException("please set alipay_public_key first,when you using RSA2");
+            if(signType.equalsIgnoreCase(AlipayConstants.SIGN_TYPE_RSA2)){
+                Assert.notEmpty(alipayPublicKey, "please set alipay_public_key first,when the sign_type is RSA2!");
             }
-
 
             return new AlipayCore(this);
         }
@@ -233,7 +220,7 @@ public class AlipayCore {
      */
     public String payInWebSite(AlipayWebSiteRequest request) throws Exception{
 
-       log.debug("payInWebSite request=\n" + request.toString());
+       log.debug("payInWebSite request={}" , request.toString());
         String form = "<font style='color: red'>请求支付宝超时,请稍后再试!</font>";
 
         try {
@@ -252,7 +239,7 @@ public class AlipayCore {
             log.error(e);
             throw e;
         } finally {
-           log.debug("payInWebSite response=\n" + form);
+           log.debug("payInWebSite response={}" , form);
         }
 
         return form;
@@ -265,18 +252,16 @@ public class AlipayCore {
      *
      * @param request the request 扫码支付所需参数
      * @return the alipay qrcode response 扫码支付结果
-     * @throws Exception the exception
      * @see <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
      */
-    public AlipayQrcodeResponse preCreate(AlipayQrcodeRequest request) throws Exception{
+    public AlipayQrcodeResponse preCreate(AlipayQrcodeRequest request) {
 
-        log.debug("preCreate request=\n" + request.toString());
+        log.debug("preCreate request={}" , request.toString());
         AlipayQrcodeResponse response = new AlipayQrcodeResponse();
 
         try {
-            if (null == tradeService){
-                throw new Exception("Please set AlipayCore.ClientBuider first and call build().");
-            }
+
+            Objects.requireNonNull(tradeService, "Please set AlipayCore.ClientBuider first and call build().");
 
             // 业务扩展参数，目前可添加由支付宝分配的系统商编号(通过setSysServiceProviderId方法)，详情请咨询支付宝技术支持
             ExtendParams extendParams = new ExtendParams();
@@ -319,7 +304,7 @@ public class AlipayCore {
             log.error(e);
             throw e;
         } finally {
-           log.debug("precreate response=\n" + response.toString());
+           log.debug("precreate response={}" , response.toString());
         }
         return response;
     }
@@ -328,19 +313,16 @@ public class AlipayCore {
      * 当面付.条码支付,是支付宝给到线下传统行业的一种收款方式。商户使用扫码枪等条码识别设备扫描用户支付宝钱包上的条码/二维码，完成收款。用户仅需出示付款码，所有操作由商户端完成。
      * @param request the request 条码支付 所需参数
      * @return alipay trade response 条码支付所需参数
-     * @throws Exception the exception
      * @see  <a href="https://docs.open.alipay.com/194/105170">https://docs.open.alipay.com/194/105170</a>
      */
-    public AlipayTradeResponse pay(AlipayTradeRequest request) throws Exception{
+    public AlipayTradeResponse pay(AlipayTradeRequest request) {
 
-        log.debug("pay request=\n" + request.toString());
+        log.debug("pay request={}" , request.toString());
         AlipayTradeResponse response = new AlipayTradeResponse();
 
         try {
 
-            if (null == tradeService){
-                throw new Exception("Please set AlipayCore.ClientBuider first and call build().");
-            }
+            Objects.requireNonNull(tradeService, "Please set AlipayCore.ClientBuider first and call build().");
 
             // 业务扩展参数，目前可添加由支付宝分配的系统商编号(通过setSysServiceProviderId方法)，详情请咨询支付宝技术支持
             String providerId = "2088100200300400500";
@@ -383,7 +365,7 @@ public class AlipayCore {
             log.error(e);
             throw e;
         } finally {
-            log.debug("pay response=\n" + response.toString());
+            log.debug("pay response={}" , response.toString());
         }
         return response;
     }
@@ -394,17 +376,14 @@ public class AlipayCore {
      *
      * @param outTradeNo the out trade no
      * @return the alipay query response
-     * @throws Exception the exception
      */
-    public AlipayQueryResponse query(String outTradeNo) throws Exception {
+    public AlipayQueryResponse query(String outTradeNo) {
 
-       log.debug("query outTradeNo=" + outTradeNo);
+       log.debug("query outTradeNo={}", outTradeNo);
         AlipayQueryResponse response = new AlipayQueryResponse();
 
         try {
-            if (null == tradeService){
-                throw new Exception("Please set AlipayCore.ClientBuider first and call build().");
-            }
+            Objects.requireNonNull(tradeService, "Please set AlipayCore.ClientBuider first and call build().");
 
             AlipayTradeQueryRequestBuilder builder = new AlipayTradeQueryRequestBuilder()
                     .setOutTradeNo(outTradeNo);
@@ -437,7 +416,7 @@ public class AlipayCore {
             log.error(e);
             throw e;
         } finally {
-           log.debug("query response=\n" + response.toString());
+           log.debug("query response={}" , response.toString());
         }
         return response;
     }
@@ -454,14 +433,12 @@ public class AlipayCore {
      */
     public AlipayRefundResponse refund(AlipayRefundRequest request) throws Exception{
 
-       log.debug("refund request=\n" + request.toString());
+       log.debug("refund request={}" , request.toString());
 
         AlipayRefundResponse response = new AlipayRefundResponse();
 
         try {
-            if (null == tradeService){
-                throw new Exception("Please set AlipayCore.ClientBuider first and call build().");
-            }
+            Objects.requireNonNull(tradeService, "Please set AlipayCore.ClientBuider first and call build().");
 
             AlipayTradeRefundRequestBuilder builder = new AlipayTradeRefundRequestBuilder();
 
@@ -530,12 +507,14 @@ public class AlipayCore {
      *
      * @param outTradeNo the out trade no
      * @return the alipay cancel response
-     * @throws Exception the exception
      */
-    public AlipayCancelResponse cancel(String outTradeNo) throws Exception {
+    public AlipayCancelResponse cancel(String outTradeNo) {
         AlipayCancelResponse response = new AlipayCancelResponse();
 
         try {
+
+            Objects.requireNonNull(tradeService, "Please set AlipayCore.ClientBuider first and call build().");
+
             AlipayTradeCancelRequestBuilder builder = new AlipayTradeCancelRequestBuilder();
             builder.setOutTradeNo(outTradeNo);
 
@@ -574,7 +553,7 @@ public class AlipayCore {
             log.error(e);
             throw e;
         }finally {
-           log.debug("cancel response=\n"+response.toString());
+           log.debug("cancel response={}",response.toString());
         }
 
         return response;

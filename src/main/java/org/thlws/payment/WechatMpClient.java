@@ -1,5 +1,6 @@
 package org.thlws.payment;
 
+import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.core.WechatMpCore;
@@ -38,11 +39,8 @@ public class WechatMpClient implements WechatMpApi {
      * @author HanleyTang
      */
     public static MpOauthTokenResponse obtainOauthAccessToken(Map<String, Object> mapToken) throws  Exception{
-		
-		if (null == mapToken){
-			throw new Exception("mapToken can not be null");
-		}
 
+		Objects.requireNonNull(mapToken, "mapToken can not be null");
 		return WechatMpCore.obtainOauthAccessToken(mapToken);
 
 	}
@@ -57,10 +55,7 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static MpOauthTokenResponse obtainOauthAccessToken(MpObtainOauthTokenRequest request) throws  Exception{
 
-		if (null == request){
-			throw new Exception("request can not be null");
-		}
-
+		Objects.requireNonNull(request, "request can not be null");
 		return WechatMpCore.obtainOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 
 	}
@@ -76,9 +71,7 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static MpOauthTokenResponse refreshOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
 
-		if (null == mapToken){
-			throw new Exception("mapToken can not be null");
-		}
+		Objects.requireNonNull(mapToken, "mapToken can not be null");
 
 		return WechatMpCore.refreshOauthAccessToken(mapToken);
 
@@ -94,9 +87,7 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static MpOauthTokenResponse refreshOauthAccessToken(MpRefreshOauthTokenRequest request)throws  Exception{
 
-		if (null == request){
-			throw new Exception("request can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null");
 		return WechatMpCore.refreshOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 	}
 
@@ -134,10 +125,7 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static MpUserInfoResponse obtainUserInfo(Map<String, Object> userInfoMap)throws  Exception{
 		 
-		if (null == userInfoMap){
-			throw new Exception("mapToken can not be null");
-		}
-
+		Objects.requireNonNull(userInfoMap, "mapToken can not be null");
 		return WechatMpCore.obtainUserInfo(userInfoMap);
 		
 	}
@@ -152,10 +140,7 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static MpUserInfoResponse obtainUserInfo(MpUserInfoRequest request)throws  Exception{
 
-		if (null == request){
-			throw new Exception("request can not be null");
-		}
-
+		Objects.requireNonNull(request, "request can not be null");
 		return WechatMpCore.obtainUserInfo(ThlwsBeanUtil.objectToMap(request));
 
 	}
@@ -171,9 +156,7 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static boolean isvalidOauthAccessToken(Map<String, Object> mapToken)throws  Exception{
 
-		if (null == mapToken){
-			throw new Exception("mapToken can not be null");
-		}
+		Objects.requireNonNull(mapToken, "mapToken can not be null");
 		return WechatMpCore.isvalidOauthAccessToken(mapToken);
 
 	}
@@ -188,10 +171,7 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static boolean isvalidOauthAccessToken(MpValidOauthTokenRequest request)throws  Exception{
 
-		if (null == request){
-			throw new Exception("request can not be null");
-		}
-
+		Objects.requireNonNull(request, "request can not be null");
 		return WechatMpCore.isvalidOauthAccessToken(ThlwsBeanUtil.objectToMap(request));
 
 	}
@@ -209,9 +189,8 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static MpTokenResponse obtainAccessToken(String appid, String secret)throws  Exception{
 
-		if (StrUtil.isEmpty(appid) || StrUtil.isEmpty(secret)){
-			throw new Exception("appid,secret can not be null");
-		}
+		Assert.notEmpty(appid, "appid can not be null");
+		Assert.notEmpty(secret, "secret can not be null");
 
 		return WechatMpCore.obtainAccessToken(appid,secret);
 
@@ -228,9 +207,7 @@ public class WechatMpClient implements WechatMpApi {
     public static MpJsApiTicketResponse obtainJsApiTicket(String token)throws  Exception{
 
 
-		if (StrUtil.isEmpty(token)){
-			throw new Exception("token can not be null");
-		}
+		Assert.notEmpty(token, "token can not be null");
 
 		return WechatMpCore.obtainJsApiTicket(token);
 
@@ -248,9 +225,8 @@ public class WechatMpClient implements WechatMpApi {
     public static MpJsApiTicketResponse obtainJsApiTicket(String appid, String secret)throws  Exception{
 
 
-		if (StrUtil.isEmpty(appid) || StrUtil.isEmpty(secret)){
-			throw new Exception("appid,secret can not be null");
-		}
+		Assert.notEmpty(appid, "appid can not be null");
+		Assert.notEmpty(secret, "secret can not be null");
 
 		return WechatMpCore.obtainJsApiTicket(appid,secret);
 
@@ -267,10 +243,8 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static MpTemplateResponse obtainTemplateId(String access_token, String template_id_short)throws  Exception{
 
-		if (StrUtil.isEmpty(access_token) || StrUtil.isEmpty(template_id_short)){
-			throw new Exception("access_token,template_id_short can not be null");
-		}
-
+		Assert.notEmpty(access_token, "access_token can not be null");
+		Assert.notEmpty(template_id_short, "template_id_short can not be null");
 		return WechatMpCore.obtainTemplateId(access_token,template_id_short);
 	}
 
@@ -278,22 +252,19 @@ public class WechatMpClient implements WechatMpApi {
     /***
 	 * 设置行业属性
      * {@link WechatMpCore#setupIndustry}
-     * @param access_token the access token
-     * @param industry_id1 the industry id 1
-     * @param industry_id2 the industry id 2
+     * @param accessToken the access token
+     * @param industryId1 the industry id 1
+     * @param industryId2 the industry id 2
      * @return industry response
      * @throws Exception the exception
      */
-    public static MpSetIndustryResponse setupIndustry(String access_token, String industry_id1, String industry_id2)throws  Exception{
+    public static MpSetIndustryResponse setupIndustry(String accessToken, String industryId1, String industryId2)throws  Exception{
 
+		Assert.notEmpty(accessToken, "accessToken can not be null");
+		Assert.notEmpty(industryId1, "industryId1 can not be null");
+		Assert.notEmpty(industryId2, "industryId2 can not be null");
 
-		if (StrUtil.isEmpty(access_token)
-				|| StrUtil.isEmpty(industry_id1)
-				|| StrUtil.isEmpty(industry_id2)){
-			throw new Exception("access_token,industry_id1,industry_id2 can not be null");
-		}
-
-		return WechatMpCore.setupIndustry(access_token,industry_id1,industry_id2);
+		return WechatMpCore.setupIndustry(accessToken,industryId1,industryId2);
 
 	}
 
@@ -306,10 +277,7 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static MpGetIndustryResponse getIndustry(String accessToken)throws  Exception{
 
-		if (StrUtil.isEmpty(accessToken)){
-			throw new Exception("access_token can not be null");
-		}
-
+		Assert.notEmpty(accessToken, "accessToken can not be null");
 		return WechatMpCore.getIndustry(accessToken);
 	}
 
@@ -323,10 +291,8 @@ public class WechatMpClient implements WechatMpApi {
      */
     public static MpSendDataResponse sendMsgToUser(String access_token, String data)throws  Exception{
 
-		if (StrUtil.isEmpty(access_token)
-				|| StrUtil.isEmpty(data)){
-			throw new Exception("access_token,data can not be null");
-		}
+		Assert.notEmpty(access_token, "access_token can not be null");
+		Assert.notEmpty(data, "data can not be null");
 
 		return WechatMpCore.sendMsgToUser(access_token,data);
 
@@ -354,17 +320,13 @@ public class WechatMpClient implements WechatMpApi {
 	 */
 	public static Code2SessionResponse code2Session(Code2SessionRequest request) throws  Exception{
 
-		if (Objects.isNull(request)){
-			throw new Exception("request can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null");
 
 		//GET https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
 
-		StringBuilder sb = new StringBuilder(code2session);
-		sb.append("appid=").append(request.getAppId()).append("&secret=").append(request.getSecret())
-				.append("&js_code=").append(request.getJsCode()).append("&grant_type=authorization_code");
-
-		return WechatMpCore.code2Session(sb.toString());
+		String sb = code2session + "appid=" + request.getAppId() + "&secret=" + request.getSecret() +
+				"&js_code=" + request.getJsCode() + "&grant_type=authorization_code";
+		return WechatMpCore.code2Session(sb);
 
 	}
 

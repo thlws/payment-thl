@@ -1,10 +1,12 @@
 package org.thlws.payment;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.lang.Assert;
 import org.thlws.payment.wechat.api.WechatMpApi;
 import org.thlws.payment.wechat.core.WechatPayCore;
 import org.thlws.payment.wechat.entity.request.*;
 import org.thlws.payment.wechat.entity.response.*;
+
+import java.util.Objects;
 
 /**
  * 微信支付入口
@@ -26,9 +28,8 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static UnifiedOrderResponse unifiedOrder(UnifiedOrderRequest request, String apiKey) throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey)){
-			throw new Exception("request,apiKey can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
 
 		return WechatPayCore.unifiedOrder(request,apiKey);
 	}
@@ -45,9 +46,9 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static WechatRefundResponse refund(WechatRefundRequest request, String apiKey, String p12FilePath)throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey) || StrUtil.isEmpty(p12FilePath)){
-			throw new Exception("request,apiKey,p12FilePath can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
+		Assert.notEmpty(p12FilePath, "p12FilePath can not be null");
 
 		return WechatPayCore.refund(request,apiKey,p12FilePath);
 
@@ -66,9 +67,9 @@ public class WechatPayClient implements WechatMpApi {
     public static WechatReverseResponse reverse(WechatReverseRequest request, String apiKey, String p12FilePath)throws  Exception{
 
 
-		if (null == request || StrUtil.isEmpty(apiKey) || StrUtil.isEmpty(p12FilePath)){
-			throw new Exception("request,apiKey,p12FilePath can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
+		Assert.notEmpty(p12FilePath, "p12FilePath can not be null");
 
 		return WechatPayCore.reverse(request,apiKey,p12FilePath);
 	}
@@ -85,9 +86,8 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static WechatPayResponse microPay(WechatPayRequest request, String apiKey) throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey)){
-			throw new Exception("request,apiKey can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
 
 		return WechatPayCore.microPay(request,apiKey);
 	}
@@ -103,9 +103,8 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static OrderQueryResponse orderQuery(OrderQueryRequest request, String apiKey)throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey)){
-			throw new Exception("request,apiKey can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
 
 		return	WechatPayCore.orderQuery(request,apiKey);
 	}
@@ -121,9 +120,8 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static CloseOrderResponse closeOrder(CloseOrderRequest request, String apiKey)throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey)){
-			throw new Exception("request,apiKey can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
 
 		return WechatPayCore.closeOrder(request,apiKey);
 	}
@@ -140,9 +138,8 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static OpenidQueryResponse openidQuery(OpenidQueryRequest request, String apiKey)throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey)){
-			throw new Exception("request,apiKey can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
 
 		return WechatPayCore.openidQuery(request,apiKey);
 	}
@@ -159,9 +156,9 @@ public class WechatPayClient implements WechatMpApi {
     public static MicroMchResponse queryMicroMch(MicroMchRequest request, String apiKey, String p12FilePath) throws  Exception{
 
 
-		if (null == request || StrUtil.isEmpty(apiKey) || StrUtil.isEmpty(p12FilePath)){
-			throw new Exception("request,apiKey ,p12FilePath can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
+		Assert.notEmpty(p12FilePath, "p12FilePath can not be null");
 
 		return WechatPayCore.queryMicroMch(request,apiKey,p12FilePath);
 	}
@@ -177,9 +174,9 @@ public class WechatPayClient implements WechatMpApi {
      */
     public static MicroMchResponse postMicroMch(MicroMchRequest request, String apiKey, String p12FilePath) throws  Exception{
 
-		if (null == request || StrUtil.isEmpty(apiKey) || StrUtil.isEmpty(p12FilePath)){
-			throw new Exception("request,apiKey ,p12FilePath can not be null");
-		}
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
+		Assert.notEmpty(p12FilePath, "p12FilePath can not be null");
 
 		return WechatPayCore.postMicroMch(request,apiKey,p12FilePath);
 	}

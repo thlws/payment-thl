@@ -1,8 +1,11 @@
 package org.thlws.payment;
 
+import cn.hutool.core.lang.Assert;
 import org.thlws.payment.alipay.core.AlipayCore;
 import org.thlws.payment.alipay.entity.request.*;
 import org.thlws.payment.alipay.entity.response.*;
+
+import java.util.Objects;
 
 /**
  * 支付宝支付入口Class
@@ -23,13 +26,9 @@ public class AlipayClient {
      */
     public static String payInMobileSite(AlipayMobileSiteRequest request, AlipayCore alipayCore) throws Exception{
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be nul.");
+        Objects.requireNonNull(request, "AlipayMobileSiteRequest can not be null.");
 
-        if (null == request){
-            throw new Exception("AlipayMobileSiteRequest can not be nul.");
-        }
         return alipayCore.payInMobileSite(request);
 
     }
@@ -44,12 +43,8 @@ public class AlipayClient {
      */
     public static  String payInWebSite(AlipayWebSiteRequest request, AlipayCore alipayCore) throws Exception{
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == request){
-            throw new Exception("AlipayWebSiteRequest can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be nul.");
+        Objects.requireNonNull(request, "AlipayWebSiteRequest can not be null.");
 
         return alipayCore.payInWebSite(request);
     }
@@ -61,16 +56,11 @@ public class AlipayClient {
      * @param request the request
      * @param alipayCore the alipay core
      * @return alipay qrcode response
-     * @throws Exception the exception
      */
-    public static  AlipayQrcodeResponse preCreate(AlipayQrcodeRequest request, AlipayCore alipayCore) throws Exception{
+    public static  AlipayQrcodeResponse preCreate(AlipayQrcodeRequest request, AlipayCore alipayCore) {
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == request){
-            throw new Exception("AlipayQrcodeRequest can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be nul.");
+        Objects.requireNonNull(request, "AlipayQrcodeRequest can not be null.");
 
         return alipayCore.preCreate(request);
     }
@@ -82,16 +72,11 @@ public class AlipayClient {
      * @param request the request
      * @param alipayCore the alipay core
      * @return alipay trade response
-     * @throws Exception the exception
      */
-    public static  AlipayTradeResponse pay(AlipayTradeRequest request, AlipayCore alipayCore) throws Exception{
+    public static  AlipayTradeResponse pay(AlipayTradeRequest request, AlipayCore alipayCore) {
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == request){
-            throw new Exception("AlipayTradeRequest can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be nul.");
+        Objects.requireNonNull(request, "AlipayTradeRequest can not be null.");
 
         return alipayCore.pay(request);
     }
@@ -103,16 +88,11 @@ public class AlipayClient {
      * @param outTradeNo the out trade no
      * @param alipayCore the alipay core
      * @return alipay query response
-     * @throws Exception the exception
      */
-    public static  AlipayQueryResponse query(String outTradeNo, AlipayCore alipayCore) throws Exception {
+    public static  AlipayQueryResponse query(String outTradeNo, AlipayCore alipayCore) {
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == outTradeNo || outTradeNo.length() == 0){
-            throw new Exception("outTradeNo can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be null.");
+        Assert.notEmpty(outTradeNo, "outTradeNo can not be null");
 
         return alipayCore.query(outTradeNo);
     }
@@ -129,12 +109,8 @@ public class AlipayClient {
      */
     public static  AlipayRefundResponse refund(AlipayRefundRequest request, AlipayCore alipayCore) throws Exception{
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == request){
-            throw new Exception("AlipayRefundRequest can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be null.");
+        Objects.requireNonNull(request, "AlipayRefundRequest can not be null.");
 
         return alipayCore.refund(request);
     }
@@ -146,16 +122,11 @@ public class AlipayClient {
      * @param outTradeNo the out trade no
      * @param alipayCore the alipay core
      * @return alipay cancel response
-     * @throws Exception the exception
      */
-    public static  AlipayCancelResponse cancel(String outTradeNo, AlipayCore alipayCore) throws Exception {
+    public static  AlipayCancelResponse cancel(String outTradeNo, AlipayCore alipayCore) {
 
-        if (null == alipayCore){
-            throw new Exception("alipayCore can not be nul.");
-        }
-        if (null == outTradeNo || outTradeNo.length() == 0){
-            throw new Exception("outTradeNo can not be nul.");
-        }
+        Objects.requireNonNull(alipayCore, "alipayCore can not be null.");
+        Assert.notEmpty(outTradeNo, "outTradeNo can not be null.");
 
         return alipayCore.cancel(outTradeNo);
     }
