@@ -3,9 +3,7 @@ package org.thlws.payment.alipay.entity.response;
 import org.thlws.utils.JsonUtil;
 
 /**
- *
- * @author HanleyTang
- * @date 2017/3/8
+ * Created by HanleyTang on 2017/3/8.
  */
 public class AlipayCancelResponse {
 

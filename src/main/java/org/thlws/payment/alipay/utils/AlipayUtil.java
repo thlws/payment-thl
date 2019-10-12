@@ -15,7 +15,6 @@ import java.util.Map;
 
 /***
  * 支付宝通知处理类,处理支付宝各接口通知返回
- * @author HanleyTang
  */
 public class AlipayUtil {
 
@@ -104,9 +103,9 @@ public class AlipayUtil {
      */
 	private static boolean getSignVeryfy(Map<String, String> params, String sign,String alipayPublicKey) {
     	//过滤空值、sign与sign_type参数
-    	Map<String, String> sParaNew = VerifyUtil.paraFilter(params);
+    	Map<String, String> sParaNew = VeryfyUtil.paraFilter(params);
         //获取待签名字符串
-        String preSignStr = VerifyUtil.createLinkString(sParaNew);
+        String preSignStr = VeryfyUtil.createLinkString(sParaNew);
         //获得签名验证结果
         boolean isSign = false;
         //if(AlipayConfig.sign_type.equals("RSA")){

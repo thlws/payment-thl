@@ -1,15 +1,16 @@
 package org.thlws.utils;
 
+import java.io.File;
+import java.util.Hashtable;
+
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
-
-import java.io.File;
-import java.util.Hashtable;
 
 /***
  * 条形码 二维码 生成工具类
@@ -44,11 +45,11 @@ public class ZxingUtil {
      * @param height   the height
      */
     public static void barCode(String contents,String imgPath,int width, int height) {
-        int codeWidth = 3 +
-                (7 * 6) +
-                5 +
-                (7 * 6) +
-                3;
+        int codeWidth = 3 + // start guard
+                (7 * 6) + // left bars
+                5 + // middle guard
+                (7 * 6) + // right bars
+                3; // end guard
         codeWidth = Math.max(codeWidth, width);
         try {
             BitMatrix bitMatrix = new MultiFormatWriter().encode(contents,BarcodeFormat.CODE_128, codeWidth, height, null);
@@ -121,9 +122,8 @@ public class ZxingUtil {
 		resMatrix.clear();
 		for (int i = 0; i < resWidth; i++) {
 			for (int j = 0; j < resHeight; j++) {
-				if (matrix.get(i + rec[0], j + rec[1])) {
+				if (matrix.get(i + rec[0], j + rec[1]))
 					resMatrix.set(i, j);
-				}
 			}
 		}
 		return resMatrix;

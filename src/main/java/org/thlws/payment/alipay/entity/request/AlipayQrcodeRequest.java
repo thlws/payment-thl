@@ -1,6 +1,6 @@
 package org.thlws.payment.alipay.entity.request;
 
-import org.thlws.payment.alipay.trade.model.GoodsDetail;
+import com.alipay.trade.model.GoodsDetail;
 import org.thlws.utils.JsonUtil;
 
 import java.io.Serializable;
