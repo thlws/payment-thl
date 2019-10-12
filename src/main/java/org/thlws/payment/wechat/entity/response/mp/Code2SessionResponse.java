@@ -3,8 +3,6 @@ package org.thlws.payment.wechat.entity.response.mp;
 import com.google.gson.annotations.SerializedName;
 import org.thlws.utils.JsonUtil;
 
-import java.util.Objects;
-
 /**
  * @author HanleyTang 2019/9/13
  *
@@ -72,7 +70,7 @@ public class Code2SessionResponse {
     }
 
     public boolean isSuccess(){
-        return (Objects.isNull(errCode)|| errCode == 0);
+        return errCode == 0;
     }
 
     @Override
