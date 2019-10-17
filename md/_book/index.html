@@ -357,7 +357,7 @@
 <pre><code>&lt;dependency&gt;
     &lt;groupId&gt;org.thlws&lt;/groupId&gt;
     &lt;artifactId&gt;payment-thl&lt;/artifactId&gt;
-    &lt;version&gt;1.1.3&lt;/version&gt;
+    &lt;version&gt;1.1.5&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><h3 id="&#x7279;&#x6027;&#x8BF4;&#x660E;">&#x7279;&#x6027;&#x8BF4;&#x660E;</h3>
 <ul>
@@ -394,6 +394,8 @@
 <li>v1.1.1 &#x5347;&#x7EA7;&#x652F;&#x4ED8;&#x5B9D;SDK&#xFF0C;&#x4FEE;&#x6539; &#x652F;&#x4ED8;&#x5B9D;&#x652F;&#x4ED8;&#x4E2D;productCode&#x7684;&#x8D4B;&#x503C;</li>
 <li>v1.1.2 &#x4F18;&#x5316;&#x652F;&#x4ED8;&#x5B9D;&#x7F51;&#x7AD9;&#x3001;&#x624B;&#x673A;&#x7F51;&#x7AD9;&#x652F;&#x4ED8;&#x65F6; productCode &#x5E73;&#x53F0;&#x53C2;&#x6570;&#xFF0C;&#x540C;&#x6B65;&#x66F4;&#x65B0;payment-simple</li>
 <li>v1.1.3 &#x65B0;&#x589E;code2session&#x63A5;&#x53E3;,&#x4FEE;&#x6B63; <a href="https://github.com/thlws/payment-thl/issues/1" target="_blank">github#1</a>, <a href="https://gitee.com/thlws/payment-thl/issues/I12BOM" target="_blank">gitee#I12BOM</a></li>
+<li>v1.1.4 &#x652F;&#x4ED8;&#x5B9D;SDK&#x5347;&#x7EA7;&#xFF0C;JDK&#x6700;&#x4F4E;&#x7248;&#x672C;&#x8981;&#x6C42;1.8+&#xFF0C;&#x63A5;&#x53E3;&#x4F18;&#x5316;&#x7B49;&#x3002;</li>
+<li>v1.1.5 &#x89E3;&#x51B3;Session2Code &#x5C0F;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x63A5;&#x53E3;isSuccess&#x903B;&#x8F91;.</li>
 </ul>
 <h3 id="&#x6E90;&#x7801;&#x6258;&#x7BA1;">&#x6E90;&#x7801;&#x6258;&#x7BA1;</h3>
 <ul>
@@ -439,7 +441,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目介绍","level":"1.1","depth":1,"next":{"title":"支付宝支付","level":"1.2","depth":1,"path":"alipay/alipay.md","ref":"alipay/alipay.md","articles":[{"title":"参数及配置","level":"1.2.1","depth":2,"path":"alipay/params.md","ref":"alipay/params.md","articles":[]},{"title":"接口列表","level":"1.2.2","depth":2,"path":"alipay/interfaces.md","ref":"alipay/interfaces.md","articles":[]},{"title":"快速上手","level":"1.2.3","depth":2,"path":"alipay/starter.md","ref":"alipay/starter.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-09-19T14:01:48.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-19T14:01:59.426Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目介绍","level":"1.1","depth":1,"next":{"title":"支付宝支付","level":"1.2","depth":1,"path":"alipay/alipay.md","ref":"alipay/alipay.md","articles":[{"title":"参数及配置","level":"1.2.1","depth":2,"path":"alipay/params.md","ref":"alipay/params.md","articles":[]},{"title":"接口列表","level":"1.2.2","depth":2,"path":"alipay/interfaces.md","ref":"alipay/interfaces.md","articles":[]},{"title":"快速上手","level":"1.2.3","depth":2,"path":"alipay/starter.md","ref":"alipay/starter.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-10-17T09:22:08.376Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T09:22:13.813Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
