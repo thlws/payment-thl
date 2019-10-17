@@ -1,6 +1,6 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.1.4-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.4-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.4/jar) 
+[![](https://img.shields.io/badge/release-v1.1.5-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.5-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.5/jar) 
 [![](https://img.shields.io/badge/jdk-1.8%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 
@@ -195,4 +195,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - v1.1.2 优化支付宝网站、手机网站支付时 productCode 平台参数，同步更新payment-simple
 - v1.1.3 新增code2session接口,修正 [github#1](https://github.com/thlws/payment-thl/issues/1), [gitee#I12BOM](https://gitee.com/thlws/payment-thl/issues/I12BOM)
 - v1.1.4 支付宝SDK升级，JDK最低版本要求1.8+，接口优化等。
+- v1.1.5 解决Session2Code 小程序调用接口isSuccess逻辑.
 
