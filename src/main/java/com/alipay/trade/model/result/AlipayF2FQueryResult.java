@@ -1,12 +1,15 @@
-package com.alipay.trade.model.result;
+package org.thlws.payment.alipay.trade.model.result;
 
 import com.alipay.api.response.AlipayTradeQueryResponse;
-import com.alipay.trade.model.TradeStatus;
+import org.thlws.payment.alipay.trade.model.TradeStatus;
 
 /**
- * Created by liuyangkly on 15/8/27.
+ *
+ * @author liuyangkly
+ * date15/8/27
  */
 public class AlipayF2FQueryResult implements Result {
+
     private TradeStatus tradeStatus;
     private AlipayTradeQueryResponse response;
 

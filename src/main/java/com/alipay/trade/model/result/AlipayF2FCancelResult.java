@@ -1,10 +1,12 @@
-package com.alipay.trade.model.result;
+package org.thlws.payment.alipay.trade.model.result;
 
 import com.alipay.api.response.AlipayTradeCancelResponse;
-import com.alipay.trade.model.TradeStatus;
+import org.thlws.payment.alipay.trade.model.TradeStatus;
 
 /**
- * Created by HanleyTang on 2017/3/7.
+ *
+ * @author HanleyTang
+ * date2017/3/7
  */
 public class AlipayF2FCancelResult implements Result {
 

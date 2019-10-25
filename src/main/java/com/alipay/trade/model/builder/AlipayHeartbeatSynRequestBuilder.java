@@ -1,16 +1,18 @@
-package com.alipay.trade.model.builder;
+package org.thlws.payment.alipay.trade.model.builder;
 
-import com.alipay.trade.model.hb.*;
-import com.alipay.trade.utils.Utils;
 import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.thlws.payment.alipay.trade.model.hb.*;
+import org.thlws.payment.alipay.trade.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by liuyangkly on 16/3/2.
+ *
+ * @author liuyangkly
+ * date16/3/2
  */
 public class AlipayHeartbeatSynRequestBuilder extends RequestBuilder {
 

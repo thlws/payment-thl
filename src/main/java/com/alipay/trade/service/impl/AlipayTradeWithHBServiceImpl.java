@@ -1,4 +1,4 @@
-package com.alipay.trade.service.impl;
+package org.thlws.payment.alipay.trade.service.impl;
 
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
@@ -6,15 +6,14 @@ import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradePayRequest;
 import com.alipay.api.response.AlipayTradePayResponse;
 import com.alipay.api.response.AlipayTradeQueryResponse;
-import com.alipay.trade.model.TradeStatus;
-import com.alipay.trade.model.builder.AlipayTradePayRequestBuilder;
-import com.alipay.trade.model.builder.AlipayTradeQueryRequestBuilder;
-import com.alipay.trade.model.result.AlipayF2FPayResult;
-import com.alipay.trade.service.impl.hb.HbListener;
-import com.alipay.trade.service.impl.hb.TradeListener;
-import com.alipay.trade.config.Constants;
-
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.thlws.payment.alipay.trade.config.Constants;
+import org.thlws.payment.alipay.trade.model.TradeStatus;
+import org.thlws.payment.alipay.trade.model.builder.AlipayTradePayRequestBuilder;
+import org.thlws.payment.alipay.trade.model.builder.AlipayTradeQueryRequestBuilder;
+import org.thlws.payment.alipay.trade.model.result.AlipayF2FPayResult;
+import org.thlws.payment.alipay.trade.service.impl.hb.HbListener;
+import org.thlws.payment.alipay.trade.service.impl.hb.TradeListener;
 
 import java.net.ConnectException;
 import java.net.NoRouteToHostException;
@@ -23,11 +22,14 @@ import java.net.SocketTimeoutException;
 
 
 /**
- * Created by liuyangkly on 15/7/29.
+ *
+ * @author liuyangkly
+ * date15/7/29
  * <p>
  * 一定要在创建AlipayTradeService之前调用Configs.init("alipayrisk10");设置参数
  */
 public class AlipayTradeWithHBServiceImpl extends AbsAlipayTradeService {
+
     private TradeListener listener;
 
     /**

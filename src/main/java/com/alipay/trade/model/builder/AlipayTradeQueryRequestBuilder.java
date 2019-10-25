@@ -1,10 +1,12 @@
-package com.alipay.trade.model.builder;
+package org.thlws.payment.alipay.trade.model.builder;
 
 import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
- * Created by liuyangkly on 16/3/3.
+ *
+ * @author liuyangkly
+ * date16/3/3
  */
 public class AlipayTradeQueryRequestBuilder extends RequestBuilder {
 

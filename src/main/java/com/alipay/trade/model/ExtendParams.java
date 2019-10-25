@@ -1,13 +1,15 @@
-package com.alipay.trade.model;
+package org.thlws.payment.alipay.trade.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by liuyangkly on 15/6/26.
+ *
+ * @author liuyangkly
+ * date15/6/26
  * 扩展信息
  */
 public class ExtendParams {
-    // 系统商编号
+
     @SerializedName("sys_service_provider_id")
     private String sysServiceProviderId;
 

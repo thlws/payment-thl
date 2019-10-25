@@ -4,9 +4,11 @@ import java.util.*;
 
 /**
  * 支付宝验证Util Class
- * Created by HanleyTang on 2017/3/9.
+ *
+ * @author HanleyTang
+ * date2017/3/9
  */
-public class VeryfyUtil {
+public class VerifyUtil {
 
 
     /**

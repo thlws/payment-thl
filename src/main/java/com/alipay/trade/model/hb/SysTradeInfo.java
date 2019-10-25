@@ -1,11 +1,14 @@
-package com.alipay.trade.model.hb;
+package org.thlws.payment.alipay.trade.model.hb;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by liuyangkly on 15/8/27.
+ *
+ * @author liuyangkly
+ * date15/8/27
  */
 public class SysTradeInfo implements TradeInfo {
+
     @SerializedName("OTN")
     private String outTradeNo;
 

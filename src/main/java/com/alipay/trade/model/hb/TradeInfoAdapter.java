@@ -1,19 +1,22 @@
-package com.alipay.trade.model.hb;
+package org.thlws.payment.alipay.trade.model.hb;
 
-import com.alipay.trade.utils.Utils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.thlws.payment.alipay.trade.utils.Utils;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
 /**
- * Created by liuyangkly on 15/9/28.
+ *
+ * @author liuyangkly
+ * date15/9/28
  */
 public class TradeInfoAdapter implements JsonSerializer<List<TradeInfo>> {
+
     @Override
     public JsonElement serialize(List<TradeInfo> tradeInfoList, Type type, JsonSerializationContext jsonSerializationContext) {
         if (Utils.isListEmpty(tradeInfoList)) {

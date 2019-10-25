@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6</version>
 </dependency>
 ```
 
@@ -45,6 +45,7 @@
 - v1.1.3 新增code2session接口,修正 [github#1](https://github.com/thlws/payment-thl/issues/1), [gitee#I12BOM](https://gitee.com/thlws/payment-thl/issues/I12BOM)
 - v1.1.4 支付宝SDK升级，JDK最低版本要求1.8+，接口优化等。
 - v1.1.5 解决Session2Code 小程序调用接口isSuccess逻辑.
+- v1.1.6 例行更新,升级 alipay-sdk-java hutoll,规范javadoc
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)

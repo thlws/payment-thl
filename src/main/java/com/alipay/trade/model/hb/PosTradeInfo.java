@@ -1,7 +1,9 @@
-package com.alipay.trade.model.hb;
+package org.thlws.payment.alipay.trade.model.hb;
 
 /**
- * Created by liuyangkly on 15/9/28.
+ *
+ * @author liuyangkly
+ * date15/9/28
  */
 public class PosTradeInfo implements TradeInfo {
     private HbStatus status;

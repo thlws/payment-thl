@@ -1,36 +1,51 @@
-package com.alipay.trade.model;
+package org.thlws.payment.alipay.trade.model;
 
 
-import com.alipay.trade.utils.Utils;
+import org.thlws.payment.alipay.trade.utils.Utils;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by liuyangkly on 15/6/26.
+ *
+ * @author liuyangkly
+ * date15/6/26
  * 商品明细
  */
 public class GoodsDetail {
-    // 商品编号(国标)
+
+    /**
+     * 商品编号(国标)
+     */
     @SerializedName("goods_id")
     private String goodsId;
 
     @SerializedName("alipay_goods_id")
     private String alipayGoodsId;
 
-    // 商品名称
+    /**
+     * 商品名称
+     */
     @SerializedName("goods_name")
     private String goodsName;
 
-    // 商品数量
+    /**
+     * 商品数量
+     */
     private int quantity;
 
-    // 商品价格，此处单位为元，精确到小数点后2位
+    /**
+     * 商品价格，此处单位为元，精确到小数点后2位
+     */
     private String price;
 
-    // 商品类别
+    /**
+     * 商品类别
+     */
     @SerializedName("goods_category")
     private String goodsCategory;
 
-    // 商品详情
+    /**
+     * 商品详情
+     */
     private String body;
 
     /**

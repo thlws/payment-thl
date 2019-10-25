@@ -1,14 +1,16 @@
-package com.alipay.trade.model.builder;
+package org.thlws.payment.alipay.trade.model.builder;
 
-import com.alipay.trade.model.ExtendParams;
-import com.alipay.trade.model.GoodsDetail;
 import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.thlws.payment.alipay.trade.model.ExtendParams;
+import org.thlws.payment.alipay.trade.model.GoodsDetail;
 
 import java.util.List;
 
 /**
- * Created by liuyangkly on 16/3/3.
+ *
+ * @author liuyangkly
+ * date16/3/3
  */
 public class AlipayTradePrecreateRequestBuilder extends RequestBuilder {
 
