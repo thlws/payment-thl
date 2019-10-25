@@ -74,7 +74,8 @@ public class Code2SessionResponse {
      * @return boolean
      */
     public boolean isSuccess(){
-        return errCode == 0;
+        return false;
+        //return (Objects.isNull(errCode)|| errCode == 0);
     }
 
     @Override
