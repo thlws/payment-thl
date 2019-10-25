@@ -71,6 +71,10 @@ public class Code2SessionResponse {
         this.unionId = unionId;
     }
 
+    /**
+     * 是否成功
+     * @return boolean
+     */
     public boolean isSuccess(){
         return (Objects.isNull(errCode)|| errCode == 0);
     }
