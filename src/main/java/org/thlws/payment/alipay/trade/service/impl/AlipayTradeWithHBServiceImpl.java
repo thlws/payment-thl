@@ -24,7 +24,7 @@ import java.net.SocketTimeoutException;
 /**
  *
  * @author liuyangkly
- * @date 15/7/29
+ * date15/7/29
  * <p>
  * 一定要在创建AlipayTradeService之前调用Configs.init("alipayrisk10");设置参数
  */

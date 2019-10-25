@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  *
  * @author liuyangkly
- * @date 16/3/2
+ * date16/3/2
  */
 public class AlipayHeartbeatSynRequestBuilder extends RequestBuilder {
 

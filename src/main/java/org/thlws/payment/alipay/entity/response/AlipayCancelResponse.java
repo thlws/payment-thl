@@ -5,7 +5,7 @@ import org.thlws.utils.JsonUtil;
 /**
  *
  * @author HanleyTang
- * @date 2017/3/8
+ * date2017/3/8
  */
 public class AlipayCancelResponse {
 

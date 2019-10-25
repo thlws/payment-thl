@@ -10,7 +10,7 @@ import java.util.List;
 /**
  *
  * @author liuyangkly
- * @date 16/3/3
+ * date16/3/3
  */
 public class AlipayTradePrecreateRequestBuilder extends RequestBuilder {
 

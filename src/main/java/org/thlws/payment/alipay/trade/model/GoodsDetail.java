@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  *
  * @author liuyangkly
- * @date 15/6/26
+ * date15/6/26
  * 商品明细
  */
 public class GoodsDetail {

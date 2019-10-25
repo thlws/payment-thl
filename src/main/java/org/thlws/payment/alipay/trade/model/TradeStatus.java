@@ -3,7 +3,7 @@ package org.thlws.payment.alipay.trade.model;
 /**
  *
  * @author liuyangkly
- * @date 15/8/29
+ * date15/8/29
  */
 public enum TradeStatus {
     /**

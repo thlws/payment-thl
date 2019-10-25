@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 /**
  *
  * @author liuyangkly
- * @date 16/3/3
+ * date16/3/3
  */
 public class AlipayTradePayRequestBuilder extends RequestBuilder {
 

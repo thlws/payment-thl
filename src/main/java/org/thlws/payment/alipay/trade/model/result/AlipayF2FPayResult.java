@@ -6,7 +6,7 @@ import org.thlws.payment.alipay.trade.model.TradeStatus;
 /**
  *
  * @author liuyangkly
- * @date 15/8/26
+ * date15/8/26
  */
 public class AlipayF2FPayResult implements Result {
 

@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  *
  * @author liuyangkly
- * @date 16/3/3
+ * date16/3/3
  */
 public class AlipayTradeRefundRequestBuilder extends RequestBuilder {
     private BizContent bizContent = new BizContent();

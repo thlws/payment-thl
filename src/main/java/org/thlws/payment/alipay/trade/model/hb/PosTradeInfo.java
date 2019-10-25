@@ -3,7 +3,7 @@ package org.thlws.payment.alipay.trade.model.hb;
 /**
  *
  * @author liuyangkly
- * @date 15/9/28
+ * date15/9/28
  */
 public class PosTradeInfo implements TradeInfo {
     private HbStatus status;

@@ -6,7 +6,7 @@ import java.util.*;
  * 支付宝验证Util Class
  *
  * @author HanleyTang
- * @date 2017/3/9
+ * date2017/3/9
  */
 public class VerifyUtil {
 

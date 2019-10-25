@@ -13,7 +13,7 @@ import java.util.List;
 /**
  *
  * @author liuyangkly
- * @date 15/8/27
+ * date15/8/27
  */
 public class ExceptionInfoAdapter implements JsonSerializer<List<ExceptionInfo>> {
 

@@ -6,7 +6,7 @@ import org.thlws.payment.alipay.trade.model.TradeStatus;
 /**
  *
  * @author HanleyTang
- * @date 2017/3/7
+ * date2017/3/7
  */
 public class AlipayF2FCancelResult implements Result {
 

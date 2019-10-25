@@ -6,7 +6,7 @@ import org.thlws.payment.alipay.trade.model.builder.AlipayHeartbeatSynRequestBui
 /**
  *
  * @author liuyangkly
- * @date 15/10/22
+ * date15/10/22
  */
 public interface AlipayMonitorService {
 

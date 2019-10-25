@@ -6,7 +6,7 @@ import org.thlws.payment.alipay.trade.model.result.*;
 /**
  *
  * @author liuyangkly
- * @date 15/7/29
+ * date15/7/29
  */
 public interface AlipayTradeService {
 

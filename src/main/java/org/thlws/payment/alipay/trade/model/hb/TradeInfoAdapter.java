@@ -13,7 +13,7 @@ import java.util.List;
 /**
  *
  * @author liuyangkly
- * @date 15/9/28
+ * date15/9/28
  */
 public class TradeInfoAdapter implements JsonSerializer<List<TradeInfo>> {
 

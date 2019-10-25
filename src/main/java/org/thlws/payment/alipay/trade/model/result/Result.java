@@ -3,7 +3,7 @@ package org.thlws.payment.alipay.trade.model.result;
 /**
  *
  * @author liuyangkly
- * @date 15/8/27
+ * date15/8/27
  */
 public interface Result {
 

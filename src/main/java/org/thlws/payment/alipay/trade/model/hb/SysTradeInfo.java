@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  *
  * @author liuyangkly
- * @date 15/8/27
+ * date15/8/27
  */
 public class SysTradeInfo implements TradeInfo {
 

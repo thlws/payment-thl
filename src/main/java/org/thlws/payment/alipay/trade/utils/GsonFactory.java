@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  * @author liuyangkly
- * @date 15/6/26
+ * date15/6/26
  * 使用google gson作为json序列化反序列化工具
  */
 public class GsonFactory {

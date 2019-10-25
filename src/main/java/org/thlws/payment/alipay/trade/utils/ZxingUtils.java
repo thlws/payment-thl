@@ -18,7 +18,7 @@
 ///**
 // *
 // * @author liuyangkly
-// * @date 15/6/27
+// * date15/6/27
 // * 使用了google zxing作为二维码生成工具
 // */
 //public class ZxingUtils {
