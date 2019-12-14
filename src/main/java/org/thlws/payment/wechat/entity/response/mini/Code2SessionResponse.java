@@ -1,4 +1,4 @@
-package org.thlws.payment.wechat.entity.response.mp;
+package org.thlws.payment.wechat.entity.response.mini;
 
 import com.google.gson.annotations.SerializedName;
 import org.thlws.utils.JsonUtil;

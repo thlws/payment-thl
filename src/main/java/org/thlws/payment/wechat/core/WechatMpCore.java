@@ -1,7 +1,6 @@
 package org.thlws.payment.wechat.core;
 
 import cn.hutool.core.util.URLUtil;
-import cn.hutool.http.HttpUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.google.gson.JsonObject;
@@ -30,6 +29,8 @@ import java.util.regex.Pattern;
 public class WechatMpCore implements WechatMpApi {
 
 	private static final Log log = LogFactory.get();
+
+	private static Pattern pattern = Pattern.compile("MicroMessenger/(\\d+).+");
 
     /***
      * 通过code换取网页授权access_token
@@ -373,8 +374,7 @@ public class WechatMpCore implements WechatMpApi {
 
 		String userAgent = request.getHeader("User-Agent");
 		if (StringUtils.isNotBlank(userAgent)) {
-			Pattern p = Pattern.compile("MicroMessenger/(\\d+).+");
-			Matcher m = p.matcher(userAgent);
+			Matcher m = pattern.matcher(userAgent);
 			if (m.find()) {
 				String version = m.group(1);
 				if (null != version && NumberUtils.toInt(version) >= 5) {
@@ -386,12 +386,7 @@ public class WechatMpCore implements WechatMpApi {
 	}
 
 
-	public static Code2SessionResponse code2Session(String url) throws  Exception {
 
-		String json = HttpUtil.get(url);
-		return ThlwsBeanUtil.jsonToBean(json, Code2SessionResponse.class);
-
-	}
 
 
 }

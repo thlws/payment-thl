@@ -1,6 +1,6 @@
 糖葫芦支付
 ============
-[![](https://img.shields.io/badge/release-v1.1.6-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.6-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.6/jar) 
+[![](https://img.shields.io/badge/release-v1.1.7-green.svg)](https://github.com/thlws/payment-thl)   [![](https://img.shields.io/badge/license-Apache--2-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html) [![](https://img.shields.io/badge/maven%20central-v1.1.7-blue.svg)](https://search.maven.org/artifact/org.thlws/payment-thl/1.1.7/jar) 
 [![](https://img.shields.io/badge/jdk-1.8%2B-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 
@@ -197,4 +197,5 @@ System.out.println("isSuccess="+flag+", message="+message);
 - v1.1.4 支付宝SDK升级，JDK最低版本要求1.8+，接口优化等。
 - v1.1.5 解决Session2Code 小程序调用接口isSuccess逻辑.
 - v1.1.6 例行更新,升级 alipay-sdk-java hutoll,规范javadoc
+- v1.1.7 抽离小程序API，升级alipay-sdk-java hutoll
 

@@ -1,4 +1,4 @@
-package org.thlws.payment.wechat.entity.request.mp;
+package org.thlws.payment.wechat.entity.request.mini;
 
 /**
  * 属性	        类型默认值	必填	说明

@@ -62,9 +62,5 @@ public interface WechatMpApi {
      */
     String cgibin_send_data = "https://api.weixin.qq.com/cgi-bin/message/template/send";
 
-    /***
-     * 小程序 登录凭证校验 URL
-     */
-    String code2session = "https://api.weixin.qq.com/sns/jscode2session?";
 
 }
