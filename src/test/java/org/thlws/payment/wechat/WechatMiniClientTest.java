@@ -59,15 +59,18 @@ public class WechatMiniClientTest {
     @Test
     public void testSendMsgToUser(){
         try {
+            String zxl = "ogj985QqZkc8VYnMrZFWw1Ugl04M";
+            String thl = "ogj985ZYA4KLoPVUbLMIwn8WFx1U";
             MiniSendDataRequest request = new MiniSendDataRequest();
-            request.setToUser("ogj985ZYA4KLoPVUbLMIwn8WFx1U");
+            request.setToUser(zxl);
             request.setTemplateId("0JxUYpCyxIVEQKlN3wAFtXgFuGELJgTjd9aZ29ijwN0");
             HashMap<String, MiniSendDataRequest.Value> data = new HashMap<>();
             data.put("thing1",new MiniSendDataRequest.Value("能力检测"));
             data.put("thing2",new MiniSendDataRequest.Value("恭喜您,得分80,请静候佳音."));
             data.put("number3",new MiniSendDataRequest.Value("10010"));
+            request.setData(data);
 
-            WechatMiniClient.sendMsgToUser("28_6L-HgXoaZ_pf9UXw0dnq_rfoHZjhX5vYX2-W7R0w17iZYgRBLlpY5DU5CGz_G75WCav3tBDo--buUD5-QkK5YtbukkoucAQ5vwWD3cevq4T7IhU4VjkEbq0AD9XZJc70XpCKOVQ7Ad_pYfIFLSJjAJACJA",request);
+            WechatMiniClient.sendMsgToUser("28_xkQYxQ-NSL4MvjhPXKA9ceVXm4JUQGHrxSesdnUMF9FtfbsI8j6f5ww9NzrtahLF0l6Pf2j1gzmtGXDohFm2Gsx0Z98Y2KiJYzW6DwAY6U7oFHcPmk9R71NcKQADHIcAHAMQR",request);
         } catch (Exception e) {
             e.printStackTrace();
         }
