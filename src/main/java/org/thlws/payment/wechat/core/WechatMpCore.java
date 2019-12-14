@@ -8,6 +8,7 @@ import com.google.gson.JsonParser;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.thlws.payment.wechat.api.WechatMpApi;
+import org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ConnUtil;
 import org.thlws.utils.ThlwsBeanUtil;
@@ -339,11 +340,11 @@ public class WechatMpCore implements WechatMpApi {
     /***
      * 发送数据至于用户公微信所关注的微信公账号
      * @param accessToken the access token
-     * @param data json格式数据，这里是JSON数据，是的{@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON格式
+     * @param data 数据，{@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON格式
      * @return send data response
      * @throws Exception the exception
      */
-    public static MpSendDataResponse sendMsgToUser(String accessToken, String data)throws  Exception{
+    public static MpSendDataResponse sendMsgToUser(String accessToken, MpSendDataRequest data)throws  Exception{
 
 		MpSendDataResponse response;
 
@@ -352,7 +353,7 @@ public class WechatMpCore implements WechatMpApi {
 			sb.append(cgibin_send_data);
 			sb.append("?access_token=");
 			sb.append(accessToken);
-			String result = ConnUtil.connRemoteWithJson(data, sb.toString());
+			String result = ConnUtil.connRemoteWithJson(ThlwsBeanUtil.beanToJson(data), sb.toString());
 			response = ThlwsBeanUtil.jsonToBean(result, MpSendDataResponse.class);
 			log.debug("send data result:{}",result);
 		}catch (Exception e){
@@ -362,6 +363,35 @@ public class WechatMpCore implements WechatMpApi {
 
 		return response;
 	}
+
+
+
+	/***
+	 * 发送数据至于用户公微信所关注的微信公账号
+	 * @param accessToken the access token
+	 * @param data json格式数据，这里是JSON数据，是的{@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON格式
+	 * @return send data response
+	 * @throws Exception the exception
+	 */
+	public static MpSendDataResponse sendMsgToUser(String accessToken, String data)throws  Exception{
+
+		MpSendDataResponse response;
+
+		try {
+			String sb = cgibin_send_data +
+					"?access_token=" +
+					accessToken;
+			String result = ConnUtil.connRemoteWithJson(data, sb);
+			response = ThlwsBeanUtil.jsonToBean(result, MpSendDataResponse.class);
+			log.debug("send data result:{}",result);
+		}catch (Exception e){
+			log.error(e);
+			throw e;
+		}
+
+		return response;
+	}
+
 
 
 	/**

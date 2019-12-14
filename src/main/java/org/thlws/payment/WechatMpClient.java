@@ -4,10 +4,7 @@ import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
 import org.thlws.payment.wechat.core.WechatMpCore;
 import org.thlws.payment.wechat.entity.extra.AuthorizeType;
-import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.*;
 import org.thlws.payment.wechat.entity.response.mp.*;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -281,19 +278,20 @@ public class WechatMpClient  {
     /***
 	 * 发送数据至于用户公微信所关注的微信公账号
      * {@link WechatMpCore#sendMsgToUser}
-     * @param access_token the access token
-     * @param data json格式数据,是 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON
+     * @param accessToken the access token
+     * @param request 数据格式 {@link org.thlws.payment.wechat.entity.request.mp.MpSendDataRequest} JSON
      * @return send data response
      * @throws Exception the exception
      */
-    public static MpSendDataResponse sendMsgToUser(String access_token, String data)throws  Exception{
+    public static MpSendDataResponse sendMsgToUser(String accessToken, MpSendDataRequest request)throws  Exception{
 
-		Assert.notEmpty(access_token, "access_token can not be null");
-		Assert.notEmpty(data, "data can not be null");
+		Assert.notEmpty(accessToken, "accessToken can not be null");
+		Objects.requireNonNull(request,"data can not be null");
 
-		return WechatMpCore.sendMsgToUser(access_token,data);
+		return WechatMpCore.sendMsgToUser(accessToken,request);
 
 	}
+
 
 	/**
 	 *

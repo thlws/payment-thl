@@ -47,16 +47,16 @@ public class WechatMiniClient implements WechatMiniApi {
 	 * 发送数据至于用户公微信所关注的微信公账号
 	 * https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.send.html
      * {@link WechatMiniCore#sendMsgToUser}
-     * @param access_token the access token
+     * @param accessToken the access token
      * @param request json格式数据,是 {@link MiniSendDataRequest} JSON
      * @return send data response
      * @throws Exception the exception
      */
-    public static MiniSendDataResponse sendMsgToUser(String access_token, MiniSendDataRequest request)throws  Exception{
+    public static MiniSendDataResponse sendMsgToUser(String accessToken, MiniSendDataRequest request)throws  Exception{
 
-		Assert.notEmpty(access_token, "access_token can not be null");
+		Assert.notEmpty(accessToken, "accessToken can not be null");
 		Objects.requireNonNull(request,"data can not be null");
-		return WechatMiniCore.sendMsgToUser(access_token,request);
+		return WechatMiniCore.sendMsgToUser(accessToken,request);
 
 	}
 

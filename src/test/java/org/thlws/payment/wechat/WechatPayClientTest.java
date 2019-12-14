@@ -111,6 +111,7 @@ public class WechatPayClientTest {
             request.setBody("pay test");
 
             WechatPayResponse response = WechatPayClient.microPay(request,apiKey);
+            System.out.println(ThlwsBeanUtil.beanToJson(response));
             boolean flag = response.isSuccess();
             String  message = response.getMessage();
             log.debug("isSuccess="+flag+", message="+message);

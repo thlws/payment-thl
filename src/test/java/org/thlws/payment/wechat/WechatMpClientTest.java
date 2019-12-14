@@ -5,10 +5,7 @@ import cn.hutool.log.LogFactory;
 import org.junit.Test;
 import org.thlws.payment.WechatMpClient;
 import org.thlws.payment.wechat.entity.extra.AuthorizeType;
-import org.thlws.payment.wechat.entity.request.mp.MpObtainOauthTokenRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpRefreshOauthTokenRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpUserInfoRequest;
-import org.thlws.payment.wechat.entity.request.mp.MpValidOauthTokenRequest;
+import org.thlws.payment.wechat.entity.request.mp.*;
 import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpGetIndustryResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
@@ -51,8 +48,6 @@ public class WechatMpClientTest {
 
             MpObtainOauthTokenRequest request = new MpObtainOauthTokenRequest("","","");
             MpOauthTokenResponse response = WechatMpClient.obtainOauthAccessToken(request);
-
-
             System.out.println("openid="+response.getOpenid());
             assertNotNull(response.getOpenid());
         } catch (Exception e) {
@@ -221,12 +216,24 @@ public class WechatMpClientTest {
 
 
     /**
-     * 测试消息发送
+     * 公众号推送消息
      */
     @Test
     public void testSendMsgToUser(){
         try {
-            WechatMpClient.sendMsgToUser("","");
+            HashMap<String, MpSendDataRequest.Node> data = new HashMap<>();
+            data.put("first",new MpSendDataRequest.Node("您的团队申请提醒","#173177"));
+            data.put("keyword1",new MpSendDataRequest.Node("犀牛帮","#173177"));
+            data.put("keyword2",new MpSendDataRequest.Node("10人","#173177"));
+            data.put("remark",new MpSendDataRequest.Node("友好的和大家相处吧.","#173177"));
+
+            MpSendDataRequest request = new MpSendDataRequest();
+            request.setTemplate_id("Xc5A-Ge4ZikgPPgnTfqIIO65C_XwH289fALdtQXvCxU");
+            request.setTouser("");
+            //request.setUrl("");
+            request.setData(data);
+            WechatMpClient.sendMsgToUser("",request);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
