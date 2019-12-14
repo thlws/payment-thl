@@ -7,14 +7,14 @@
 ![](img/thl.png)
 
 ### 在线Demo
-- [http://39.105.94.70:7171/](http://39.105.94.70:7171/)
+- [http://47.100.122.135:7171/](http://47.100.122.135:7171/)
 
 ### 依赖安装
 ```
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </dependency>
 ```
 
