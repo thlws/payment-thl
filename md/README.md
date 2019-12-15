@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.7</version>
+    <version>1.1.8</version>
 </dependency>
 ```
 
@@ -47,6 +47,7 @@
 - v1.1.5 解决Session2Code 小程序调用接口isSuccess逻辑.
 - v1.1.6 例行更新,升级 alipay-sdk-java hutoll,规范javadoc
 - v1.1.7 抽离小程序API，升级alipay-sdk-java hutoll
+- v1.1.8 调整公众号推送（公众号模板推送）接口
 
 ### 源码托管
 - [https://gitee.com/thlws/payment-thl](https://gitee.com/thlws/payment-thl)
