@@ -102,7 +102,7 @@ public class WechatWebDemo {
 
 
             /*第四步，数据处理用于页面调用微信JS支付模块*/
-            WechatUtil.h5_pay(request,unifiedOrderOutput,outTradeNo,test_wechat_apikey);
+            WechatUtil.frontData(request,unifiedOrderOutput,outTradeNo,test_wechat_apikey);
 
 
             /*第五步，页面跳转至 wechat_pay.jsp ,供用户完成微信付款，支付完成后同步跳转页面，提示支付成功等 */

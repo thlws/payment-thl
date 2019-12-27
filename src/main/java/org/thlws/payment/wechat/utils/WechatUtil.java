@@ -192,7 +192,14 @@ public class WechatUtil {
      * @param outTradeNo the out trade no
      * @param apiKey the api key
      */
-    public static void h5_pay(HttpServletRequest request
+    /***
+     * 微信 H5 公众号支付，数据处理（存入request,返回jsp页面时用于发起H5支付）
+     * @param request the request
+     * @param response the response
+     * @param outTradeNo the out trade no
+     * @param apiKey the api key
+     */
+    public static void frontData(HttpServletRequest request
             , UnifiedOrderResponse response
             , String outTradeNo
             , String apiKey){
@@ -216,6 +223,39 @@ public class WechatUtil {
         request.setAttribute("signType", "MD5");
         request.setAttribute("paySign", paySign);
         request.setAttribute("outTradeNo", outTradeNo);
+    }
+
+
+    /**
+     * 小程序支付，公众号支付，前端需要的支付数据
+     * 适用于前后端分离架构
+     * @param response   the response
+     * @param apiKey     the api key
+     * @return the map
+     */
+    public static Map<String, Object>  frontData(UnifiedOrderResponse response , String apiKey){
+
+        long time = System.currentTimeMillis() / 1000;
+        String timeStamp = String.valueOf(time);
+        String appId = response.getAppId();
+        String nonceStr = response.getNonceStr();
+        String _package = "prepay_id=" + response.getPrepayId();
+        Map<String, Object> sParam = new HashMap<>();
+        sParam.put("appId", appId);
+        sParam.put("timeStamp",timeStamp);
+        sParam.put("nonceStr", nonceStr);
+        sParam.put("package", _package);
+        sParam.put("signType", "MD5");
+        String paySign = WechatUtil.sign(sParam, apiKey);
+
+        sParam.clear();
+        sParam.put("appId", appId);
+        sParam.put("timeStamp", timeStamp);
+        sParam.put("nonceStr", nonceStr);
+        sParam.put("packageStr", _package);
+        sParam.put("signType", "MD5");
+        sParam.put("paySign", paySign);
+        return sParam;
     }
 
 
