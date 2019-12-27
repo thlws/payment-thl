@@ -9,7 +9,7 @@ import org.thlws.utils.JsonUtil;
 /**
  *
  * @author HanleyTang
- * @date 2016/11/18
+ *2016/11/18
  */
 @Data
 @Builder
