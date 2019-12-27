@@ -1,5 +1,9 @@
 package org.thlws.payment.wechat.entity.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.payment.wechat.entity.WechatResponse;
 import org.thlws.utils.JsonUtil;
 
@@ -13,6 +17,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Hanley | hanley@thlws.com
  * @version 1.0
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UnifiedOrderResponse  extends WechatResponse {
@@ -62,190 +70,5 @@ public class UnifiedOrderResponse  extends WechatResponse {
 		return JsonUtil.format(this);
 	}
 
-    /**
-     * Instantiates a new Unified order response.
-     */
-    public UnifiedOrderResponse() {
-	}
 
-
-    /**
-     * Gets app id.
-     *
-     * @return the app id
-     */
-    public String getAppId() {
-		return appId;
-	}
-
-    /**
-     * Sets app id.
-     *
-     * @param appId the app id
-     */
-    public void setAppId(String appId) {
-		this.appId = appId;
-	}
-
-    /**
-     * Gets mch id.
-     *
-     * @return the mch id
-     */
-    public String getMchId() {
-		return mchId;
-	}
-
-    /**
-     * Sets mch id.
-     *
-     * @param mchId the mch id
-     */
-    public void setMchId(String mchId) {
-		this.mchId = mchId;
-	}
-
-    /**
-     * Gets nonce str.
-     *
-     * @return the nonce str
-     */
-    public String getNonceStr() {
-		return nonceStr;
-	}
-
-    /**
-     * Sets nonce str.
-     *
-     * @param nonceStr the nonce str
-     */
-    public void setNonceStr(String nonceStr) {
-		this.nonceStr = nonceStr;
-	}
-
-    /**
-     * Gets sign.
-     *
-     * @return the sign
-     */
-    public String getSign() {
-		return sign;
-	}
-
-    /**
-     * Sets sign.
-     *
-     * @param sign the sign
-     */
-    public void setSign(String sign) {
-		this.sign = sign;
-	}
-
-    /**
-     * Gets prepay id.
-     *
-     * @return the prepay id
-     */
-    public String getPrepayId() {
-		return prepayId;
-	}
-
-    /**
-     * Sets prepay id.
-     *
-     * @param prepayId the prepay id
-     */
-    public void setPrepayId(String prepayId) {
-		this.prepayId = prepayId;
-	}
-
-    /**
-     * Gets trade type.
-     *
-     * @return the trade type
-     */
-    public String getTradeType() {
-		return tradeType;
-	}
-
-    /**
-     * Sets trade type.
-     *
-     * @param tradeType the trade type
-     */
-    public void setTradeType(String tradeType) {
-		this.tradeType = tradeType;
-	}
-
-    /**
-     * Gets device info.
-     *
-     * @return the device info
-     */
-    public String getDeviceInfo() {
-		return deviceInfo;
-	}
-
-    /**
-     * Sets device info.
-     *
-     * @param deviceInfo the device info
-     */
-    public void setDeviceInfo(String deviceInfo) {
-		this.deviceInfo = deviceInfo;
-	}
-
-    /**
-     * Gets code url.
-     *
-     * @return the code url
-     */
-    public String getCodeUrl() {
-		return codeUrl;
-	}
-
-    /**
-     * Sets code url.
-     *
-     * @param codeUrl the code url
-     */
-    public void setCodeUrl(String codeUrl) {
-		this.codeUrl = codeUrl;
-	}
-
-    /**
-     * Gets sub app id.
-     *
-     * @return the sub app id
-     */
-    public String getSubAppId() {
-		return subAppId;
-	}
-
-    /**
-     * Sets sub app id.
-     *
-     * @param subAppId the sub app id
-     */
-    public void setSubAppId(String subAppId) {
-		this.subAppId = subAppId;
-	}
-
-    /**
-     * Gets sub mch id.
-     *
-     * @return the sub mch id
-     */
-    public String getSubMchId() {
-		return subMchId;
-	}
-
-    /**
-     * Sets sub mch id.
-     *
-     * @param subMchId the sub mch id
-     */
-    public void setSubMchId(String subMchId) {
-		this.subMchId = subMchId;
-	}
 }

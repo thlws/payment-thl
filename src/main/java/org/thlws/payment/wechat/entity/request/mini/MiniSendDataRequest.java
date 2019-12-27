@@ -1,6 +1,10 @@
 package org.thlws.payment.wechat.entity.request.mini;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -8,6 +12,10 @@ import java.util.HashMap;
 /**
  * @author HanleyTang 2019/12/14
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MiniSendDataRequest implements Serializable {
 
     @SerializedName("touser")
@@ -22,54 +30,13 @@ public class MiniSendDataRequest implements Serializable {
     @SerializedName("data")
     private HashMap<String, MiniSendDataRequest.Value> data;
 
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class Value{
         private String value;
-
-        public Value(String value) {
-            this.value = value;
-        }
-
-        public Value() {
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
     }
 
-    public String getToUser() {
-        return toUser;
-    }
 
-    public void setToUser(String toUser) {
-        this.toUser = toUser;
-    }
-
-    public String getTemplateId() {
-        return templateId;
-    }
-
-    public void setTemplateId(String templateId) {
-        this.templateId = templateId;
-    }
-
-    public String getPage() {
-        return page;
-    }
-
-    public void setPage(String page) {
-        this.page = page;
-    }
-
-    public HashMap<String, Value> getData() {
-        return data;
-    }
-
-    public void setData(HashMap<String, Value> data) {
-        this.data = data;
-    }
 }

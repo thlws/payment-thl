@@ -1,5 +1,9 @@
 package org.thlws.payment.wechat.entity.request;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.utils.JsonUtil;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -15,6 +19,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OpenidQueryRequest {
@@ -45,67 +53,6 @@ public class OpenidQueryRequest {
         return JsonUtil.format(this);
     }
 
-    public String getSubMchId() {
-        return subMchId;
-    }
-
-    public void setSubMchId(String subMchId) {
-        this.subMchId = subMchId;
-    }
-
-    /**
-     * Gets app id.
-     *
-     * @return the app id
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    /**
-     * Sets app id.
-     *
-     * @param appId the app id
-     */
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    /**
-     * Gets mch id.
-     *
-     * @return the mch id
-     */
-    public String getMchId() {
-        return mchId;
-    }
-
-    /**
-     * Sets mch id.
-     *
-     * @param mchId the mch id
-     */
-    public void setMchId(String mchId) {
-        this.mchId = mchId;
-    }
-
-    /**
-     * Gets auth code.
-     *
-     * @return the auth code
-     */
-    public String getAuthCode() {
-        return authCode;
-    }
-
-    /**
-     * Sets auth code.
-     *
-     * @param authCode the auth code
-     */
-    public void setAuthCode(String authCode) {
-        this.authCode = authCode;
-    }
 }
 
 

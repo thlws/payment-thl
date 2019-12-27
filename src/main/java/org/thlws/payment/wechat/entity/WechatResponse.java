@@ -1,6 +1,9 @@
 package org.thlws.payment.wechat.entity;
 
 import cn.hutool.core.util.StrUtil;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -9,7 +12,11 @@ import java.io.Serializable;
 
 /***
  * API请求结果
+ * @author HanleyTang
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @XmlAccessorType(XmlAccessType.FIELD)
 public class WechatResponse implements Serializable {
 
@@ -35,16 +42,6 @@ public class WechatResponse implements Serializable {
 
 
     /**
-     * Gets message.
-     *
-     * @return the message
-     */
-    public String getMessage() {
-        return isSuccess() ? returnMsg:errCode+","+errCodeDes;
-    }
-
-
-    /**
      * Is success boolean.
      *
      * @return the boolean
@@ -53,93 +50,8 @@ public class WechatResponse implements Serializable {
         return StrUtil.equalsIgnoreCase(returnCode,resultCode) && StrUtil.equals("SUCCESS",resultCode);
     }
 
-    /**
-     * Gets return code.
-     *
-     * @return the return code
-     */
-    public String getReturnCode() {
-        return returnCode;
+    public String getMessage() {
+        return isSuccess() ? returnMsg:errCode+","+errCodeDes;
     }
 
-    /**
-     * Sets return code.
-     *
-     * @param returnCode the return code
-     */
-    public void setReturnCode(String returnCode) {
-        this.returnCode = returnCode;
-    }
-
-    /**
-     * Gets return msg.
-     *
-     * @return the return msg
-     */
-    public String getReturnMsg() {
-        return returnMsg;
-    }
-
-    /**
-     * Sets return msg.
-     *
-     * @param returnMsg the return msg
-     */
-    public void setReturnMsg(String returnMsg) {
-        this.returnMsg = returnMsg;
-    }
-
-    /**
-     * Gets result code.
-     *
-     * @return the result code
-     */
-    public String getResultCode() {
-        return resultCode;
-    }
-
-    /**
-     * Sets result code.
-     *
-     * @param resultCode the result code
-     */
-    public void setResultCode(String resultCode) {
-        this.resultCode = resultCode;
-    }
-
-    /**
-     * Gets err code.
-     *
-     * @return the err code
-     */
-    public String getErrCode() {
-        return errCode;
-    }
-
-    /**
-     * Sets err code.
-     *
-     * @param errCode the err code
-     */
-    public void setErrCode(String errCode) {
-        this.errCode = errCode;
-    }
-
-    /**
-     * Gets err code des.
-     *
-     * @return the err code des
-     */
-    public String getErrCodeDes() {
-        return errCodeDes;
-    }
-
-    /**
-     * Sets err code des.
-     *
-     * @param errCodeDes the err code des
-     */
-    public void setErrCodeDes(String errCodeDes) {
-        this.errCodeDes = errCodeDes;
-    }
 }

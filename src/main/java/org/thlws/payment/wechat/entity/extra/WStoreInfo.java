@@ -1,6 +1,10 @@
 package org.thlws.payment.wechat.entity.extra;
 
 import cn.hutool.json.JSONUtil;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.payment.wechat.entity.request.UnifiedOrderRequest;
 import org.thlws.payment.wechat.entity.request.WechatPayRequest;
 
@@ -13,6 +17,10 @@ import java.util.HashMap;
  * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class WStoreInfo{
 
     /**门店唯一标识 String(32)*/
@@ -31,77 +39,6 @@ public class WStoreInfo{
     /**门店详细地址*/
     private String address;
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Gets area code.
-     *
-     * @return the area code
-     */
-    public String getArea_code() {
-        return area_code;
-    }
-
-    /**
-     * Sets area code.
-     *
-     * @param area_code the area code
-     */
-    public void setArea_code(String area_code) {
-        this.area_code = area_code;
-    }
-
-    /**
-     * Gets address.
-     *
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * Sets address.
-     *
-     * @param address the address
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     /**
      * 创建场景JSON数据,完成创建后，请将结果赋值给 scene_info

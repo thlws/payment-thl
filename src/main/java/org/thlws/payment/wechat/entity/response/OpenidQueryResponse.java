@@ -1,5 +1,9 @@
 package org.thlws.payment.wechat.entity.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.payment.wechat.entity.WechatResponse;
 import org.thlws.utils.JsonUtil;
 
@@ -15,6 +19,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Hanley[hanley @thlws.com]
  * @version 1.0
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OpenidQueryResponse extends WechatResponse {
@@ -44,93 +52,4 @@ public class OpenidQueryResponse extends WechatResponse {
         return JsonUtil.format(this);
     }
 
-    /**
-     * Gets app id.
-     *
-     * @return the app id
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    /**
-     * Sets app id.
-     *
-     * @param appId the app id
-     */
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    /**
-     * Gets mch id.
-     *
-     * @return the mch id
-     */
-    public String getMchId() {
-        return mchId;
-    }
-
-    /**
-     * Sets mch id.
-     *
-     * @param mchId the mch id
-     */
-    public void setMchId(String mchId) {
-        this.mchId = mchId;
-    }
-
-    /**
-     * Gets nonce str.
-     *
-     * @return the nonce str
-     */
-    public String getNonceStr() {
-        return nonceStr;
-    }
-
-    /**
-     * Sets nonce str.
-     *
-     * @param nonceStr the nonce str
-     */
-    public void setNonceStr(String nonceStr) {
-        this.nonceStr = nonceStr;
-    }
-
-    /**
-     * Gets sign.
-     *
-     * @return the sign
-     */
-    public String getSign() {
-        return sign;
-    }
-
-    /**
-     * Sets sign.
-     *
-     * @param sign the sign
-     */
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
-
-    /**
-     * Gets open id.
-     *
-     * @return the open id
-     */
-    public String getOpenId() {
-        return openId;
-    }
-
-    /**
-     * Sets open id.
-     *
-     * @param openId the open id
-     */
-    public void setOpenId(String openId) {
-        this.openId = openId;
-    }
 }
