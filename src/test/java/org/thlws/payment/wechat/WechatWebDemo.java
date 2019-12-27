@@ -129,10 +129,10 @@ public class WechatWebDemo {
         PrintWriter writer = null;
         try {
             writer = response.getWriter();
-            StringBuffer xmlResult = new StringBuffer();
+            StringBuilder xmlResult = new StringBuilder();
             InputStream is = request.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            String buffer = null;
+            String buffer;
             while ((buffer = br.readLine()) != null){
                 xmlResult.append(buffer);
             }
