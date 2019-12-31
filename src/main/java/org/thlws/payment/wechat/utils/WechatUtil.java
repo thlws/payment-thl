@@ -12,7 +12,7 @@ import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.XmlUtil;
 import org.thlws.payment.wechat.entity.dto.MpPayment;
 import org.thlws.payment.wechat.entity.dto.MpTicket;
-import org.thlws.payment.wechat.entity.response.NotifyResponse;
+import org.thlws.payment.wechat.entity.response.result.WeChatPayNotifyResult;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -112,8 +112,8 @@ public class WechatUtil {
      * @return notify response
      * @throws JAXBException the jaxb exception
      */
-    public static NotifyResponse parseNotifyMsgToBean(String xmlResult) throws JAXBException {
-        NotifyResponse response = ThlwsBeanUtil.xmlToBean(xmlResult, NotifyResponse.class);
+    public static WeChatPayNotifyResult parseNotifyMsgToBean(String xmlResult) throws JAXBException {
+        WeChatPayNotifyResult response = ThlwsBeanUtil.xmlToBean(xmlResult, WeChatPayNotifyResult.class);
         return response;
     }
 
@@ -123,7 +123,7 @@ public class WechatUtil {
      * @return notify response
      * @throws Exception exception
      */
-    public static NotifyResponse parseNotifyMsgToBean(HttpServletRequest request) throws Exception{
+    public static WeChatPayNotifyResult parseNotifyMsgToBean(HttpServletRequest request) throws Exception{
        return parseNotifyMsgToBean(parseNotifyMsgToXml(request));
     }
 

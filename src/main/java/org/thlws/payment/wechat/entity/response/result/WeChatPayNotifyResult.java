@@ -1,4 +1,4 @@
-package org.thlws.payment.wechat.entity.response;
+package org.thlws.payment.wechat.entity.response.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @AllArgsConstructor
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class NotifyResponse  extends WechatResponse {
+public class WeChatPayNotifyResult extends WechatResponse {
 
 	private String appid           ;
 	private String mch_id          ;
