@@ -8,9 +8,9 @@ import org.thlws.payment.WechatMpClient;
 import org.thlws.payment.WechatPayClient;
 import org.thlws.payment.wechat.entity.extra.AuthorizeType;
 import org.thlws.payment.wechat.entity.request.UnifiedOrderRequest;
-import org.thlws.payment.wechat.entity.response.result.WeChatPayNotifyResult;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
+import org.thlws.payment.wechat.entity.response.result.WeChatPayNotifyResult;
 import org.thlws.payment.wechat.utils.WechatUtil;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -148,6 +148,47 @@ public class WechatWebDemo {
     }
 
 
+    /**
+     * SpringBoot  异步处理
+     */
+//    @ResponseBody
+//    @PostMapping(value = "/notify",consumes = MediaType.TEXT_XML_VALUE
+//            ,produces = MediaType.APPLICATION_XML_VALUE)
+//    public WeChatPayResult notifyWechatPay(@RequestBody NotifyResponse notifyOutput){
+//        try {
+//            log.info("================== notify start ======================");
+//            log.info("微信支付异步通知:{}",notifyOutput.toString());
+//            supplyOrderService.updatePayment(notifyOutput.getOut_trade_no(),notifyOutput.getTransaction_id());
+//            log.info("==================notify end ======================");
+//        } catch (Exception e) {
+//            log.info("===============================");
+//            log.error("微信异步通知异常",e);
+//            log.info("===============================");
+//            return WeChatPayResult.error();
+//        }
+//        return WeChatPayResult.success();
+//    }
 
+//    @Data
+//    @Builder
+//    @NoArgsConstructor
+//    @AllArgsConstructor
+//    @JacksonXmlRootElement(localName = "xml")
+//    public class WeChatPayResult implements Serializable {
+//
+//        @JacksonXmlProperty(localName = "return_code")
+//        private String returnCode;
+//
+//        @JacksonXmlProperty(localName = "return_msg")
+//        private String returnMsg;
+//
+//        public static WeChatPayResult success(){
+//            return WeChatPayResult.builder().returnCode("SUCCESS").returnMsg("处理成功").build();
+//        }
+//
+//        public static WeChatPayResult error(){
+//            return WeChatPayResult.builder().returnCode("ERROR").returnMsg("处理失败").build();
+//        }
+//    }
 
 }
