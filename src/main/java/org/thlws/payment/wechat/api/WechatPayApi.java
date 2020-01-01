@@ -63,4 +63,12 @@ public interface WechatPayApi {
     String micro_mch_qry = "https://api.mch.weixin.qq.com/secapi/mch/submchmanage?action=query";
 
 
+    /**
+     * 付款到个人微信
+     * https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2
+     */
+    String transfers = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
+
+
+
 }

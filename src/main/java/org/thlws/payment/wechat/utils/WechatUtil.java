@@ -180,8 +180,7 @@ public class WechatUtil {
         Map<String, Object> map = XmlUtil.xmlToMap(originXml);
         String sign = WechatUtil.sign(map,apiKey);
         map.put("sign", sign);
-        String  xml = XmlUtil.mapToXmlStr(map, "xml");
-        return xml;
+        return XmlUtil.mapToXmlStr(map, "xml");
     }
 
 
