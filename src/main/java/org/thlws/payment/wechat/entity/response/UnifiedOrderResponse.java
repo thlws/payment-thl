@@ -57,6 +57,10 @@ public class UnifiedOrderResponse  extends WechatResponse {
 	@XmlElement(name="sub_mch_id")
 	private String subMchId ;
 
+	/**h5支付时调用支付地址*/
+	@XmlElement(name="mweb_url")
+	private String mwebUrl ;
+
 	@Override
 	public String toString() {
 		return JsonUtil.format(this);
@@ -247,5 +251,13 @@ public class UnifiedOrderResponse  extends WechatResponse {
      */
     public void setSubMchId(String subMchId) {
 		this.subMchId = subMchId;
+	}
+
+	public String getMwebUrl() {
+		return mwebUrl;
+	}
+
+	public void setMwebUrl(String mwebUrl) {
+		this.mwebUrl = mwebUrl;
 	}
 }
