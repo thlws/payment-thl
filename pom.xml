@@ -6,7 +6,7 @@
 
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-     <version>1.2.0</version>
+    <version>1.2.1</version>
 
     <name>payment-thl</name>
     <url>https://thlws.github.io/payment-thl</url>
@@ -39,12 +39,12 @@
 
     <dependencies>
 
-
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
             <version>${alipay.sdk.version}</version>
         </dependency>
+
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
@@ -58,11 +58,13 @@
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>${zxing.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
@@ -75,6 +77,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
+
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
@@ -87,18 +90,21 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -113,12 +119,14 @@
         <system>Github Issue</system>
         <url>https://github.com/thlws/payment-thl/issues</url>
     </issueManagement>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <id>hanley</id>
@@ -128,7 +136,7 @@
         <developer>
             <id>alterem</id>
             <name>alterem</name>
-            <email>alterem@163.com</email>
+            <email>alterem520@gmail.com</email>
         </developer>
     </developers>
 
@@ -137,7 +145,6 @@
         <connection>scm:git@github.com/thlws/payment-thl.git</connection>
         <developerConnection>scm:git@github.com:thlws/payment-thl.git</developerConnection>
     </scm>
-
 
     <distributionManagement>
         <repository>
@@ -149,7 +156,6 @@
             <url>${maven-snapshot-repo-url}</url>
         </snapshotRepository>
     </distributionManagement>
-
 
     <build>
         <plugins>
@@ -187,7 +193,6 @@
         </plugins>
 
     </build>
-
 
     <profiles>
         <profile>
