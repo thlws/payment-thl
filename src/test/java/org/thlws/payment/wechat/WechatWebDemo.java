@@ -8,9 +8,9 @@ import org.thlws.payment.WechatMpClient;
 import org.thlws.payment.WechatPayClient;
 import org.thlws.payment.wechat.entity.extra.AuthorizeType;
 import org.thlws.payment.wechat.entity.request.UnifiedOrderRequest;
-import org.thlws.payment.wechat.entity.response.NotifyResponse;
 import org.thlws.payment.wechat.entity.response.UnifiedOrderResponse;
 import org.thlws.payment.wechat.entity.response.mp.MpOauthTokenResponse;
+import org.thlws.payment.wechat.entity.response.result.WeChatPayNotifyResult;
 import org.thlws.payment.wechat.utils.WechatUtil;
 import org.thlws.utils.ThlwsBeanUtil;
 
@@ -102,7 +102,7 @@ public class WechatWebDemo {
 
 
             /*第四步，数据处理用于页面调用微信JS支付模块*/
-            WechatUtil.h5_pay(request,unifiedOrderOutput,outTradeNo,test_wechat_apikey);
+            WechatUtil.frontData(request,unifiedOrderOutput,outTradeNo,test_wechat_apikey);
 
 
             /*第五步，页面跳转至 wechat_pay.jsp ,供用户完成微信付款，支付完成后同步跳转页面，提示支付成功等 */
@@ -129,15 +129,15 @@ public class WechatWebDemo {
         PrintWriter writer = null;
         try {
             writer = response.getWriter();
-            StringBuffer xmlResult = new StringBuffer();
+            StringBuilder xmlResult = new StringBuilder();
             InputStream is = request.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            String buffer = null;
+            String buffer;
             while ((buffer = br.readLine()) != null){
                 xmlResult.append(buffer);
             }
             log.debug("微信异步返回信息："+ ThlwsBeanUtil.formatXml(xmlResult.toString()));
-            NotifyResponse notifyOutput = WechatUtil.parseNotifyMsgToBean(xmlResult.toString());
+            WeChatPayNotifyResult notifyOutput = WechatUtil.parseNotifyMsgToBean(xmlResult.toString());
             //notifyOutput 是微信推送数据转换为Java对象，直接从该对象取值并进行相关业务操作
             //TODO 业务逻辑
         } catch (Exception e) {
@@ -148,6 +148,47 @@ public class WechatWebDemo {
     }
 
 
+    /**
+     * SpringBoot  异步处理
+     */
+//    @ResponseBody
+//    @PostMapping(value = "/notify",consumes = MediaType.TEXT_XML_VALUE
+//            ,produces = MediaType.APPLICATION_XML_VALUE)
+//    public WeChatPayResult notifyWechatPay(@RequestBody NotifyResponse notifyOutput){
+//        try {
+//            log.info("================== notify start ======================");
+//            log.info("微信支付异步通知:{}",notifyOutput.toString());
+//            supplyOrderService.updatePayment(notifyOutput.getOut_trade_no(),notifyOutput.getTransaction_id());
+//            log.info("==================notify end ======================");
+//        } catch (Exception e) {
+//            log.info("===============================");
+//            log.error("微信异步通知异常",e);
+//            log.info("===============================");
+//            return WeChatPayResult.error();
+//        }
+//        return WeChatPayResult.success();
+//    }
 
+//    @Data
+//    @Builder
+//    @NoArgsConstructor
+//    @AllArgsConstructor
+//    @JacksonXmlRootElement(localName = "xml")
+//    public class WeChatPayResult implements Serializable {
+//
+//        @JacksonXmlProperty(localName = "return_code")
+//        private String returnCode;
+//
+//        @JacksonXmlProperty(localName = "return_msg")
+//        private String returnMsg;
+//
+//        public static WeChatPayResult success(){
+//            return WeChatPayResult.builder().returnCode("SUCCESS").returnMsg("处理成功").build();
+//        }
+//
+//        public static WeChatPayResult error(){
+//            return WeChatPayResult.builder().returnCode("ERROR").returnMsg("处理失败").build();
+//        }
+//    }
 
 }

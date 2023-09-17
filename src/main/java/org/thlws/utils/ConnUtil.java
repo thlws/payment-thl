@@ -11,6 +11,7 @@ import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.security.KeyStore;
 
 
@@ -117,7 +118,7 @@ public final class ConnUtil {
 			File p12File = new File(absoluteFile);
 			if(!p12File.exists()){
 				log.error("p12文件不存在,请检查路径下是否存在p12:"+absoluteFile);
-				throw new Exception("p12文件不存在,请检查路径下是否存在p12:"+absoluteFile);
+				throw new FileNotFoundException("p12文件不存在,请检查路径下是否存在p12:"+absoluteFile);
 			}
 			
 			//读取证书，初始化http相关参数

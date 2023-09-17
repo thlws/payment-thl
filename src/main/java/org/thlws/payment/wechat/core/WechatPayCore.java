@@ -313,6 +313,30 @@ public class WechatPayCore implements WechatPayApi {
             throw e;
         }
         return response;
+    }
 
+    /**
+     * 企业转账到个人
+     * @param request 请求参数对象
+     * @param apiKey apiKey
+     * @param p12FilePath p12FilePath
+     * @return TransferResponse
+     * @throws Exception Exception
+     */
+    public static TransferResponse transfer(TransferRequest request, String apiKey, String p12FilePath) throws  Exception{
+        TransferResponse response;
+        try {
+
+            String xml = WechatUtil.buildXmlRequest(request, TransferRequest.class,apiKey);
+            log.debug("企业转账到个人[transfer] xml request:\n {}",xml);
+
+            String xmlResponse =ConnUtil.encryptPost(xml, transfers, request.getMchId(), p12FilePath);
+            log.debug("企业转账到个人[transfer] xml response:\n {}",xmlResponse);
+            response = ThlwsBeanUtil.xmlToBean(xmlResponse,TransferResponse.class);
+        } catch (Exception e) {
+            log.error(e);
+            throw e;
+        }
+        return response;
     }
 }

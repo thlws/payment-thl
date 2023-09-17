@@ -1,6 +1,10 @@
 package org.thlws.payment.wechat.entity.response.mini;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.utils.JsonUtil;
 
 import java.util.Objects;
@@ -14,6 +18,10 @@ import java.util.Objects;
  * errcode	    number	错误码
  * errmsg	    string	错误信息
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Code2SessionResponse {
 
     @SerializedName("openid")
@@ -31,45 +39,6 @@ public class Code2SessionResponse {
     @SerializedName("errmsg")
     private String errMsg;
 
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public String getSessionKey() {
-        return sessionKey;
-    }
-
-    public void setSessionKey(String sessionKey) {
-        this.sessionKey = sessionKey;
-    }
-
-    public Integer getErrCode() {
-        return errCode;
-    }
-
-    public void setErrCode(Integer errCode) {
-        this.errCode = errCode;
-    }
-
-    public String getErrMsg() {
-        return errMsg;
-    }
-
-    public void setErrMsg(String errMsg) {
-        this.errMsg = errMsg;
-    }
-
-    public String getUnionId() {
-        return unionId;
-    }
-
-    public void setUnionId(String unionId) {
-        this.unionId = unionId;
-    }
 
     /**
      * 是否成功

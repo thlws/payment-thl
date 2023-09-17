@@ -1,6 +1,10 @@
 package org.thlws.payment.alipay.entity.request;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.utils.JsonUtil;
 
 /**
@@ -9,6 +13,10 @@ import org.thlws.utils.JsonUtil;
  * @author hanley @thlws.com
  *  2018 /11/16
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AlipayMobileSiteRequest {
 
     /**业务参数*/
@@ -20,63 +28,14 @@ public class AlipayMobileSiteRequest {
     /**异步通知地址*/
     private String notifyUrl       ;
 
-    /**
-     * Gets biz content.
-     *
-     * @return the biz content
-     */
-    public BizContent getBizContent() {
-        return bizContent;
-    }
-
-    /**
-     * Sets biz content.
-     *
-     * @param bizContent the biz content
-     */
-    public void setBizContent(BizContent bizContent) {
-        this.bizContent = bizContent;
-    }
-
-    /**
-     * Gets return url.
-     *
-     * @return the return url
-     */
-    public String getReturnUrl() {
-        return returnUrl;
-    }
-
-    /**
-     * Sets return url.
-     *
-     * @param returnUrl the return url
-     */
-    public void setReturnUrl(String returnUrl) {
-        this.returnUrl = returnUrl;
-    }
-
-    /**
-     * Gets notify url.
-     *
-     * @return the notify url
-     */
-    public String getNotifyUrl() {
-        return notifyUrl;
-    }
-
-    /**
-     * Sets notify url.
-     *
-     * @param notifyUrl the notify url
-     */
-    public void setNotifyUrl(String notifyUrl) {
-        this.notifyUrl = notifyUrl;
-    }
 
     /**
      * The type Biz content.
      */
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class BizContent{
 
         @SerializedName("out_trade_no")
@@ -94,88 +53,6 @@ public class AlipayMobileSiteRequest {
          */
         @SerializedName("product_code")
         private String productCode = "QUICK_WAP_WAY"  ;
-
-
-        /**
-         * Gets out trade no.
-         *
-         * @return the out trade no
-         */
-        public String getOutTradeNo() {
-            return outTradeNo;
-        }
-
-        /**
-         * Sets out trade no.
-         *
-         * @param outTradeNo the out trade no
-         */
-        public void setOutTradeNo(String outTradeNo) {
-            this.outTradeNo = outTradeNo;
-        }
-
-        /**
-         * Gets total amount.
-         *
-         * @return the total amount
-         */
-        public String getTotalAmount() {
-            return totalAmount;
-        }
-
-        /**
-         * Sets total amount.
-         *
-         * @param totalAmount the total amount
-         */
-        public void setTotalAmount(String totalAmount) {
-            this.totalAmount = totalAmount;
-        }
-
-        /**
-         * Gets subject.
-         *
-         * @return the subject
-         */
-        public String getSubject() {
-            return subject;
-        }
-
-        /**
-         * Sets subject.
-         *
-         * @param subject the subject
-         */
-        public void setSubject(String subject) {
-            this.subject = subject;
-        }
-
-        /**
-         * Gets seller id.
-         *
-         * @return the seller id
-         */
-        public String getSellerId() {
-            return sellerId;
-        }
-
-        /**
-         * Sets seller id.
-         *
-         * @param sellerId the seller id
-         */
-        public void setSellerId(String sellerId) {
-            this.sellerId = sellerId;
-        }
-
-        /**
-         * Gets product code.
-         *
-         * @return the product code
-         */
-        public String getProductCode() {
-            return productCode;
-        }
 
     }
 

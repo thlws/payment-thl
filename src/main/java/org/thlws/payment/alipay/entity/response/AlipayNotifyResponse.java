@@ -1,11 +1,20 @@
 package org.thlws.payment.alipay.entity.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * 支付异步通知,核心返回参数
  *
  * @author hanley @thlws.com
  *  2018 /11/16
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AlipayNotifyResponse {
 
 
@@ -26,75 +35,4 @@ public class AlipayNotifyResponse {
      */
     private String tradeStatus;
 
-    /**
-     * Is verify flg boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isVerifyFlg() {
-        return verifyFlg;
-    }
-
-    /**
-     * Sets verify flg.
-     *
-     * @param verifyFlg the verify flg
-     */
-    public void setVerifyFlg(boolean verifyFlg) {
-        this.verifyFlg = verifyFlg;
-    }
-
-    /**
-     * Gets out trade no.
-     *
-     * @return the out trade no
-     */
-    public String getOutTradeNo() {
-        return outTradeNo;
-    }
-
-    /**
-     * Sets out trade no.
-     *
-     * @param outTradeNo the out trade no
-     */
-    public void setOutTradeNo(String outTradeNo) {
-        this.outTradeNo = outTradeNo;
-    }
-
-    /**
-     * Gets trade no.
-     *
-     * @return the trade no
-     */
-    public String getTradeNo() {
-        return tradeNo;
-    }
-
-    /**
-     * Sets trade no.
-     *
-     * @param tradeNo the trade no
-     */
-    public void setTradeNo(String tradeNo) {
-        this.tradeNo = tradeNo;
-    }
-
-    /**
-     * Gets trade status.
-     *
-     * @return the trade status
-     */
-    public String getTradeStatus() {
-        return tradeStatus;
-    }
-
-    /**
-     * Sets trade status.
-     *
-     * @param tradeStatus the trade status
-     */
-    public void setTradeStatus(String tradeStatus) {
-        this.tradeStatus = tradeStatus;
-    }
 }

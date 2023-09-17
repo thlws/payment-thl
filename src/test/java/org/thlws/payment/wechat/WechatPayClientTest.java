@@ -2,6 +2,7 @@ package org.thlws.payment.wechat;
 
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.IdUtil;
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import org.junit.Test;
@@ -46,6 +47,13 @@ public class WechatPayClientTest {
     private static final String test_wechat_mchid="1336236101";
     private static final String test_wechat_apikey="d24a3e612fca66ae28137de28916f875";
 
+    /*小程序*/
+    private static final String mini_wechat_appid= "wx8955431b7b4f0fd8";
+    private static final String mini_wechat_appsecret="1d966d16174c8b53eb72c862b0f722dd";
+    private static final String mini_wechat_mchid="1537918641";
+    private static final String mini_wechat_apikey="128c3adec3567888990b665d01aea765";
+
+    private String p12 = "/usr/local/zone/p12/apiclient_cert.p12";
 
     /***
      * 扫码支付 & 公众支付 时必须调用该接口
@@ -310,6 +318,29 @@ public class WechatPayClientTest {
     }
 
 
+    @Test
+    public void TestTransfer(){
+
+        try {
+            TransferRequest request = TransferRequest.builder()
+                    .mchAppId("wx8955431b7b4f0fd8")
+                    .mchId(mini_wechat_mchid)
+                    .nonceStr(RandomUtil.randomString(32))
+                    .partnerTradeNo(System.currentTimeMillis()+"")
+                    .openId("ogj985cTSkZMGX5qDk_ipMWr1RpI")
+                    .checkName("NO_CHECK")
+                    .amount("1")
+                    .desc("转账测试")
+                    .spbillCreateIp(NetUtil.getLocalhostStr())
+                    .build();
+
+            TransferResponse response = WechatPayClient.transfer(request, mini_wechat_apikey, p12);
+            log.info("transfer response={}",response.toString());
+        } catch (Exception e) {
+            log.equals(e);
+        }
+
+    }
 
 
 

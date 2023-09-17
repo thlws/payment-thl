@@ -180,4 +180,12 @@ public class WechatPayClient implements WechatMpApi {
 
 		return WechatPayCore.postMicroMch(request,apiKey,p12FilePath);
 	}
+
+
+	public static TransferResponse transfer(TransferRequest request, String apiKey, String p12FilePath) throws  Exception{
+		Objects.requireNonNull(request, "request can not be null.");
+		Assert.notEmpty(apiKey, "apiKey can not be null");
+		Assert.notEmpty(p12FilePath, "p12FilePath can not be null");
+		return WechatPayCore.transfer(request,apiKey,p12FilePath);
+	}
 }

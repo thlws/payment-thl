@@ -1,5 +1,9 @@
 package org.thlws.payment.wechat.entity.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.payment.wechat.entity.WechatResponse;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,6 +17,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Hanley Tang | hanley@hanley.cn
  * @version 1.0
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MicroMchResponse extends WechatResponse {
@@ -27,57 +35,4 @@ public class MicroMchResponse extends WechatResponse {
 	private String microMchId ;	//result_code 为 SUCCESS 的时候有返回
 
 
-    /**
-     * Gets mch id.
-     *
-     * @return the mch id
-     */
-    public String getMchId() {
-		return mchId;
-	}
-
-    /**
-     * Sets mch id.
-     *
-     * @param mchId the mch id
-     */
-    public void setMchId(String mchId) {
-		this.mchId = mchId;
-	}
-
-    /**
-     * Gets sign.
-     *
-     * @return the sign
-     */
-    public String getSign() {
-		return sign;
-	}
-
-    /**
-     * Sets sign.
-     *
-     * @param sign the sign
-     */
-    public void setSign(String sign) {
-		this.sign = sign;
-	}
-
-    /**
-     * Gets micro mch id.
-     *
-     * @return the micro mch id
-     */
-    public String getMicroMchId() {
-		return microMchId;
-	}
-
-    /**
-     * Sets micro mch id.
-     *
-     * @param microMchId the micro mch id
-     */
-    public void setMicroMchId(String microMchId) {
-		this.microMchId = microMchId;
-	}
 }

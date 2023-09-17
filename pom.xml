@@ -6,10 +6,10 @@
 
     <groupId>org.thlws</groupId>
     <artifactId>payment-thl</artifactId>
-    <version>1.1.10</version>
+     <version>1.2.0</version>
 
     <name>payment-thl</name>
-    <url>https://thlws.gitee.io/payment-thl</url>
+    <url>https://thlws.github.io/payment-thl</url>
     <description>基于Java实现的多平台支付依赖库</description>
 
     <properties>

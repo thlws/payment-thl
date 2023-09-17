@@ -1,5 +1,9 @@
 package org.thlws.payment.alipay.entity.request;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.thlws.payment.alipay.trade.model.GoodsDetail;
 import org.thlws.utils.JsonUtil;
 
@@ -11,6 +15,10 @@ import java.util.List;
  * @author hanley @thlws.com
  *  2018 /11/16
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AlipayTradeRequest {
 
     /**(必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线*/
@@ -52,204 +60,6 @@ public class AlipayTradeRequest {
 
     /**产品明细*/
     private List<GoodsDetail> goodsDetailList;
-
-    /**
-     * Gets out trade no.
-     *
-     * @return the out trade no
-     */
-    public String getOutTradeNo() {
-        return outTradeNo;
-    }
-
-    /**
-     * Sets out trade no.
-     *
-     * @param outTradeNo the out trade no
-     */
-    public void setOutTradeNo(String outTradeNo) {
-        this.outTradeNo = outTradeNo;
-    }
-
-    /**
-     * Gets subject.
-     *
-     * @return the subject
-     */
-    public String getSubject() {
-        return subject;
-    }
-
-    /**
-     * Sets subject.
-     *
-     * @param subject the subject
-     */
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    /**
-     * Gets total amount.
-     *
-     * @return the total amount
-     */
-    public String getTotalAmount() {
-        return totalAmount;
-    }
-
-    /**
-     * Sets total amount.
-     *
-     * @param totalAmount the total amount
-     */
-    public void setTotalAmount(String totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    /**
-     * Gets auth code.
-     *
-     * @return the auth code
-     */
-    public String getAuthCode() {
-        return authCode;
-    }
-
-    /**
-     * Sets auth code.
-     *
-     * @param authCode the auth code
-     */
-    public void setAuthCode(String authCode) {
-        this.authCode = authCode;
-    }
-
-    /**
-     * Gets store id.
-     *
-     * @return the store id
-     */
-    public String getStoreId() {
-        return storeId;
-    }
-
-    /**
-     * Sets store id.
-     *
-     * @param storeId the store id
-     */
-    public void setStoreId(String storeId) {
-        this.storeId = storeId;
-    }
-
-    /**
-     * Gets undiscountable amount.
-     *
-     * @return the undiscountable amount
-     */
-    public String getUndiscountableAmount() {
-        return undiscountableAmount;
-    }
-
-    /**
-     * Sets undiscountable amount.
-     *
-     * @param undiscountableAmount the undiscountable amount
-     */
-    public void setUndiscountableAmount(String undiscountableAmount) {
-        this.undiscountableAmount = undiscountableAmount;
-    }
-
-    /**
-     * Gets discountable amount.
-     *
-     * @return the discountable amount
-     */
-    public String getDiscountableAmount() {
-        return discountableAmount;
-    }
-
-    /**
-     * Sets discountable amount.
-     *
-     * @param discountableAmount the discountable amount
-     */
-    public void setDiscountableAmount(String discountableAmount) {
-        this.discountableAmount = discountableAmount;
-    }
-
-    /**
-     * Gets seller id.
-     *
-     * @return the seller id
-     */
-    public String getSellerId() {
-        return sellerId;
-    }
-
-    /**
-     * Sets seller id.
-     *
-     * @param sellerId the seller id
-     */
-    public void setSellerId(String sellerId) {
-        this.sellerId = sellerId;
-    }
-
-    /**
-     * Gets operator id.
-     *
-     * @return the operator id
-     */
-    public String getOperatorId() {
-        return operatorId;
-    }
-
-    /**
-     * Sets operator id.
-     *
-     * @param operatorId the operator id
-     */
-    public void setOperatorId(String operatorId) {
-        this.operatorId = operatorId;
-    }
-
-    /**
-     * Gets body.
-     *
-     * @return the body
-     */
-    public String getBody() {
-        return body;
-    }
-
-    /**
-     * Sets body.
-     *
-     * @param body the body
-     */
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    /**
-     * Gets goods detail list.
-     *
-     * @return the goods detail list
-     */
-    public List<GoodsDetail> getGoodsDetailList() {
-        return goodsDetailList;
-    }
-
-    /**
-     * Sets goods detail list.
-     *
-     * @param goodsDetailList the goods detail list
-     */
-    public void setGoodsDetailList(List<GoodsDetail> goodsDetailList) {
-        this.goodsDetailList = goodsDetailList;
-    }
 
     @Override
     public String toString() {
